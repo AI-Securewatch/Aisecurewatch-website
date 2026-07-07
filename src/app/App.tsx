@@ -12,18 +12,19 @@ import {
   Archive,
   BarChart3,
   Scale,
-  Eye,
   Layers,
   Lock,
   ChevronRight,
   AlertCircle,
   Building2,
-  Zap,
   Database,
   Network,
   CheckCircle2,
   Send,
   Mail,
+  GitBranch,
+  FileSignature,
+  Fingerprint,
 } from "lucide-react";
 
 const PLATFORM = "https://pay-reality-demo.vercel.app";
@@ -39,12 +40,12 @@ function mailto(to: string, subject: string, body?: string) {
 }
 
 const NAV_LINKS = [
-  { label: "Products", href: "#platform" },
-  { label: "Platform", href: "#architecture" },
-  { label: "Solutions", href: "#industries" },
-  { label: "Research", href: "#research" },
+  { label: "How It Works", href: "#how-it-works" },
+  { label: "Platform", href: "#platform" },
+  { label: "Use Cases", href: "#use-cases" },
+  { label: "Architecture", href: "#architecture" },
+  { label: "Evidence", href: "#evidence" },
   { label: "Company", href: "#company" },
-  { label: "Resources", href: "#resources" },
 ];
 
 const MODULES = [
@@ -52,150 +53,153 @@ const MODULES = [
     name: "Command Center",
     slug: "command-center",
     icon: Activity,
-    desc: "Unified governance dashboard with real-time decision monitoring across every AI agent in your environment.",
+    desc: "A live view of every authority decision — approved, rejected, or escalated — across every AI agent and business system.",
     accent: "#7c6fff",
   },
   {
-    name: "AI Agents Registry",
-    slug: "ai-agents-registry",
-    icon: Cpu,
-    desc: "Canonical identity and capability records for all autonomous AI systems operating in your enterprise.",
-    accent: "#3b8cf8",
-  },
-  {
-    name: "Authority Center",
-    slug: "authority-center",
-    icon: Shield,
-    desc: "Define and manage the delegated authority boundaries granted to each AI agent across your organization.",
-    accent: "#a78bfa",
-  },
-  {
-    name: "Policy Library",
-    slug: "policy-library",
+    name: "Policy Studio",
+    slug: "policy-studio",
     icon: FileText,
-    desc: "Machine-enforceable governance policies that translate your existing DoA frameworks into runtime rules.",
+    desc: "Upload Delegation of Authority documents and compile them into versioned, deterministic rules using Open Policy Agent.",
     accent: "#22d3ee",
   },
   {
-    name: "Governance Simulation",
-    slug: "governance-simulation",
-    icon: Layers,
-    desc: "Test governance scenarios in a safe sandbox before deploying authority boundaries to production.",
-    accent: "#60a5fa",
+    name: "Intent API",
+    slug: "intent-api",
+    icon: Send,
+    desc: "The interface AI agents call to submit an intended action for authorization before a single side effect occurs.",
+    accent: "#3b8cf8",
   },
   {
-    name: "Decision Intercepts",
-    slug: "decision-intercepts",
-    icon: AlertCircle,
-    desc: "Real-time evaluation engine that approves, escalates, or denies AI actions before execution occurs.",
-    accent: "#f59e0b",
+    name: "Authority Engine",
+    slug: "authority-engine",
+    icon: Shield,
+    desc: "The deterministic runtime that evaluates each intent against published policy and returns a binding decision.",
+    accent: "#a78bfa",
   },
   {
-    name: "Approvals",
-    slug: "approvals",
+    name: "Human Review Console",
+    slug: "human-review-console",
     icon: Users,
-    desc: "Structured human approval workflows for actions that exceed autonomous authority thresholds.",
+    desc: "A structured queue for the intents your policy routes to a person, with full context and a binding resolution.",
     accent: "#34d399",
+  },
+  {
+    name: "Simulation Sandbox",
+    slug: "simulation-sandbox",
+    icon: Layers,
+    desc: "Run a new or edited policy against historical and synthetic intents to see its effect before you publish it.",
+    accent: "#60a5fa",
   },
   {
     name: "Evidence Vault",
     slug: "evidence-vault",
     icon: Archive,
-    desc: "Immutable audit repository recording every governance decision with verifiable, tamper-evident evidence.",
+    desc: "An immutable, cryptographically signed record of every decision, the policy version behind it, and the intent that triggered it.",
     accent: "#fb923c",
   },
   {
-    name: "Assurance Center",
-    slug: "assurance-center",
+    name: "Assurance Dashboard",
+    slug: "assurance-dashboard",
     icon: BarChart3,
-    desc: "Governance assurance, audit readiness, and continuous compliance visibility across all AI operations.",
+    desc: "Audit-ready reporting on authority outcomes, override rates, and policy coverage across the organization.",
     accent: "#2dd4bf",
   },
-];
-
-const ARCHITECTURE_STEPS = [
-  { label: "AI Agent", sub: "Autonomous system requesting action", icon: Cpu, color: "#7c6fff" },
-  { label: "AI Agents Registry", sub: "Identity verification", icon: Database, color: "#6366f1" },
-  { label: "Authority Center", sub: "Delegation boundary check", icon: Shield, color: "#3b8cf8" },
-  { label: "Policy Library", sub: "Governance rule evaluation", icon: FileText, color: "#22d3ee" },
-  { label: "Decision Intercepts", sub: "Approve · Escalate · Deny", icon: AlertCircle, color: "#a78bfa" },
-  { label: "Enterprise Systems", sub: "Action executed, or blocked", icon: Building2, color: "#60a5fa" },
-];
-
-const RESEARCH = [
   {
-    tag: "Foundational",
-    title: "Why Identity Is Not Authority",
-    excerpt:
-      "IAM answers who the agent is. It cannot answer what the agent is permitted to do. This gap is the defining governance challenge of the autonomous AI era.",
-    readTime: "12 min read",
-  },
-  {
-    tag: "Analysis",
-    title: "The Delegated Authority Gap",
-    excerpt:
-      "Every enterprise already operates a delegation of authority framework for humans. None of those frameworks were designed for systems that can execute decisions at machine speed.",
-    readTime: "9 min read",
-  },
-  {
-    tag: "Technical",
-    title: "Runtime Governance for Autonomous AI",
-    excerpt:
-      "Pre-execution policy evaluation is the only reliable mechanism for ensuring AI agents operate within authorized boundaries before actions are taken.",
-    readTime: "15 min read",
-  },
-  {
-    tag: "Strategy",
-    title: "Enterprise Authority Infrastructure",
-    excerpt:
-      "A new control layer is emerging between AI agents and enterprise systems. Organizations that build it now will define the governance standard for the coming decade.",
-    readTime: "11 min read",
+    name: "Agent Directory",
+    slug: "agent-directory",
+    icon: Cpu,
+    desc: "The record of which AI systems are permitted to submit intents, and under which policy scope.",
+    accent: "#6366f1",
   },
 ];
 
-const INDUSTRIES = [
-  { name: "Financial Services", icon: Scale },
-  { name: "Public Sector", icon: Building2 },
-  { name: "Healthcare", icon: Eye },
-  { name: "Energy", icon: Zap },
-  { name: "Mining", icon: Layers },
-  { name: "Manufacturing", icon: Network },
-  { name: "Enterprise SaaS", icon: Database },
+const HOW_IT_WORKS = [
+  { step: "01", label: "Policy", sub: "Enterprise uploads existing Delegation of Authority policies", icon: FileText, color: "#7c6fff" },
+  { step: "02", label: "Compile", sub: "Policies are compiled into deterministic rules using Open Policy Agent", icon: GitBranch, color: "#6366f1" },
+  { step: "03", label: "Review", sub: "A human reviews and signs the compiled policy", icon: FileSignature, color: "#3b8cf8" },
+  { step: "04", label: "Publish", sub: "The signed policy is published to the runtime", icon: CheckCircle2, color: "#22d3ee" },
+  { step: "05", label: "Intent", sub: "An AI agent submits an intent before it executes an action", icon: Send, color: "#2dd4bf" },
+  { step: "06", label: "Authority Engine", sub: "PayReality evaluates the intent against published policy", icon: Shield, color: "#a78bfa" },
+  { step: "07", label: "Decision", sub: "Approve · Reject · Human Review", icon: AlertCircle, color: "#f59e0b" },
+  { step: "08", label: "Evidence Vault", sub: "Immutable, verifiable evidence of the decision is stored", icon: Fingerprint, color: "#fb923c" },
+];
+
+const EVIDENCE_ARTIFACTS = [
+  {
+    tag: "Signed",
+    title: "Every decision is signed",
+    excerpt:
+      "Each Approve, Reject, or Human Review outcome is cryptographically signed at the moment it's made — not reconstructed afterward from application logs.",
+    meta: "Per-decision",
+  },
+  {
+    tag: "Traceable",
+    title: "Policy version provenance",
+    excerpt:
+      "Every decision record links to the exact signed policy version that was in force at evaluation time, so you can always answer why an outcome happened.",
+    meta: "Per-policy version",
+  },
+  {
+    tag: "Immutable",
+    title: "Tamper-evident by design",
+    excerpt:
+      "Decision records cannot be edited or deleted after the fact. The Evidence Vault is an append-only ledger, not an editable log table.",
+    meta: "Append-only",
+  },
+  {
+    tag: "Exportable",
+    title: "Built for auditors and regulators",
+    excerpt:
+      "Evidence exports to the format your audit, risk, and compliance teams already use — no bespoke tooling required to prove authorization.",
+    meta: "Audit-ready",
+  },
+];
+
+const USE_CASES = [
+  { name: "Procurement", icon: Layers },
+  { name: "Insurance", icon: Shield },
+  { name: "Claims", icon: AlertCircle },
+  { name: "Finance", icon: BarChart3 },
+  { name: "ERP", icon: Database },
+  { name: "HR", icon: Users },
+  { name: "Customer Operations", icon: Network },
+  { name: "Manufacturing", icon: Building2 },
 ];
 
 const PERSONAS = [
   {
+    role: "Chief Information Officers",
+    desc: "Get a definitive, auditable answer to whether an AI agent was authorized before it acted — not a best guess after the fact.",
+  },
+  {
+    role: "Chief Information Security Officers",
+    desc: "Extend existing access controls to cover what AI agents are allowed to execute, not just what data they can reach.",
+  },
+  {
+    role: "Enterprise & Chief Architects",
+    desc: "Deploy a runtime authority layer between AI agents and systems of record without re-architecting what already works.",
+  },
+  {
     role: "Chief Risk Officers",
-    desc: "Extend existing risk frameworks to govern AI agents with the same rigor applied to human decision-makers.",
+    desc: "Apply the delegated authority discipline your organization already uses for people to every autonomous AI action.",
   },
   {
-    role: "Enterprise Architects",
-    desc: "Deploy a purpose-built control layer between AI systems and enterprise applications without replacing existing infrastructure.",
+    role: "Heads of AI & Automation",
+    desc: "Move AI from recommending actions to executing them, backed by a runtime that enforces authorization at every step.",
   },
   {
-    role: "AI Transformation Leaders",
-    desc: "Accelerate autonomous AI adoption by giving boards and risk committees the governance evidence they require.",
-  },
-  {
-    role: "CIOs",
-    desc: "Gain organization-wide visibility into what every AI agent is authorized to do, and proof that it stayed within those boundaries.",
-  },
-  {
-    role: "Governance Officers",
-    desc: "Translate existing delegation of authority policies into machine-enforceable rules without rebuilding your frameworks from scratch.",
-  },
-  {
-    role: "Compliance Teams",
-    desc: "Generate audit-ready evidence for every AI decision, with immutable records that satisfy regulatory requirements.",
+    role: "Internal Audit & Compliance",
+    desc: "Produce cryptographically verifiable evidence for every AI decision, ready for regulator, auditor, or board review.",
   },
 ];
 
 const EXISTING_FRAMEWORKS = [
   { label: "Delegation of Authority", icon: Scale },
-  { label: "Approval Frameworks", icon: Users },
-  { label: "Governance Policies", icon: FileText },
-  { label: "Risk Controls", icon: Shield },
-  { label: "Compliance Requirements", icon: Lock },
+  { label: "Approval Matrices", icon: Users },
+  { label: "Procurement Policy", icon: FileText },
+  { label: "Risk Frameworks", icon: Shield },
+  { label: "Internal Controls", icon: Lock },
   { label: "Audit Processes", icon: Archive },
 ];
 
@@ -209,16 +213,16 @@ const FOOTER_COLUMNS = [
     })),
   },
   {
-    heading: "Solutions",
-    links: ["Financial Services", "Public Sector", "Healthcare", "Energy", "Manufacturing"].map(
-      (label) => ({ label, href: "#industries" })
+    heading: "Use Cases",
+    links: ["Procurement", "Insurance", "Claims", "Finance", "ERP"].map(
+      (label) => ({ label, href: "#use-cases" })
     ),
   },
   {
     heading: "Company",
     links: [
       { label: "About", href: mailto(CONTACT_EMAIL, "About PayReality") },
-      { label: "Research", href: "#research" },
+      { label: "Evidence", href: "#evidence" },
       { label: "Careers", href: mailto(CAREERS_EMAIL, "Careers at AI Securewatch") },
       { label: "Contact", href: mailto(CONTACT_EMAIL, "Contact Inquiry: PayReality") },
       { label: "Request Demo", action: "demo" as const },
@@ -266,8 +270,8 @@ export default function App() {
   const handleDemoSubmit = (e: FormEvent) => {
     e.preventDefault();
     const subject = paperTopic
-      ? `Research Paper Request: ${paperTopic}`
-      : `Enterprise Demo Request: ${demoForm.company || demoForm.name}`;
+      ? `Technical Overview Request: ${paperTopic}`
+      : `Demo Request: ${demoForm.company || demoForm.name}`;
     const body = [
       `Name: ${demoForm.name}`,
       `Work email: ${demoForm.email}`,
@@ -465,18 +469,18 @@ export default function App() {
 
             {/* CTAs */}
             <div className="hidden lg:flex items-center gap-3">
-              <button className="btn-ghost px-4 py-2 rounded-lg text-sm" onClick={openDemo}>
-                Request Enterprise Demo
-              </button>
               <a
                 href={PLATFORM}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary px-4 py-2 rounded-lg text-sm flex items-center gap-2"
+                className="btn-ghost px-4 py-2 rounded-lg text-sm flex items-center gap-2"
               >
-                Launch Platform
+                View Platform
                 <ExternalLink size={13} />
               </a>
+              <button className="btn-primary px-4 py-2 rounded-lg text-sm" onClick={openDemo}>
+                Book a Demo
+              </button>
             </div>
 
             {/* Mobile toggle */}
@@ -504,17 +508,17 @@ export default function App() {
                 </a>
               ))}
               <div className="flex flex-col gap-3 pt-2">
-                <button className="btn-ghost px-4 py-2.5 rounded-lg text-sm text-center" onClick={openDemo}>
-                  Request Enterprise Demo
-                </button>
                 <a
                   href={PLATFORM}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-primary px-4 py-2.5 rounded-lg text-sm text-center flex items-center justify-center gap-2"
+                  className="btn-ghost px-4 py-2.5 rounded-lg text-sm text-center flex items-center justify-center gap-2"
                 >
-                  Launch Platform <ExternalLink size={13} />
+                  View Platform <ExternalLink size={13} />
                 </a>
+                <button className="btn-primary px-4 py-2.5 rounded-lg text-sm text-center" onClick={openDemo}>
+                  Book a Demo
+                </button>
               </div>
             </div>
           </div>
@@ -569,7 +573,7 @@ export default function App() {
               style={{ background: "#7c6fff", boxShadow: "0 0 8px #7c6fff" }}
             />
             <span className="mono text-xs" style={{ color: "#a78bfa", letterSpacing: "0.08em" }}>
-              DELEGATED AUTHORITY INFRASTRUCTURE
+              ENTERPRISE AI AUTHORITY INFRASTRUCTURE
             </span>
           </div>
 
@@ -585,10 +589,10 @@ export default function App() {
               color: "#e8ecf4",
             }}
           >
-            Enterprise Infrastructure
+            The Authority Layer
             <br />
             for{" "}
-            <span className="grad-text">Trusted Autonomous AI</span>
+            <span className="grad-text">Autonomous AI</span>
           </h1>
 
           {/* Sub headline */}
@@ -596,38 +600,38 @@ export default function App() {
             className="mx-auto mb-12 text-muted-foreground leading-relaxed"
             style={{ maxWidth: 620, fontSize: "1.125rem", fontWeight: 400 }}
           >
-            Organizations already understand delegated authority for people.
-            PayReality translates your existing governance frameworks into
-            machine-enforceable authority for autonomous AI systems, enforced
-            before actions are executed.
+            Organizations already know how to delegate authority to people.
+            They have no infrastructure to delegate it safely to AI. PayReality
+            determines whether an AI system is actually authorized to execute a
+            business action — before it executes it.
           </p>
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
+            <button
+              className="btn-primary px-8 py-4 rounded-xl text-base flex items-center gap-3"
+              onClick={openDemo}
+            >
+              Book a Demo
+              <ArrowRight size={16} />
+            </button>
             <a
               href={PLATFORM}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary px-8 py-4 rounded-xl text-base flex items-center gap-3"
+              className="btn-ghost px-8 py-4 rounded-xl text-base flex items-center gap-3"
             >
-              Launch Platform
+              View Platform
               <ExternalLink size={16} />
             </a>
-            <button
-              className="btn-ghost px-8 py-4 rounded-xl text-base flex items-center gap-3"
-              onClick={openDemo}
-            >
-              Request Enterprise Demo
-              <ArrowRight size={16} />
-            </button>
           </div>
 
           {/* Stats row */}
           <div className="mt-20 grid grid-cols-3 gap-px max-w-2xl mx-auto">
             {[
-              { val: "Pre-execution", label: "Authority enforcement" },
-              { val: "Immutable", label: "Audit evidence" },
-              { val: "Zero-change", label: "Infrastructure migration" },
+              { val: "Pre-execution", label: "Authority decisions" },
+              { val: "Deterministic", label: "Approve · Reject · Review" },
+              { val: "Cryptographic", label: "Verifiable evidence" },
             ].map((s) => (
               <div key={s.label} className="px-6 py-4 text-center">
                 <div
@@ -659,11 +663,11 @@ export default function App() {
         </div>
       </section>
 
-      {/* ── Industry Shift Timeline ── */}
+      {/* ── The Problem ── */}
       <section className="py-32 px-6 relative overflow-hidden">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-20">
-            <div className="section-label mb-4">01 / THE SHIFT</div>
+            <div className="section-label mb-4">01 / THE PROBLEM</div>
             <h2
               style={{
                 fontFamily: "'Onest', system-ui, sans-serif",
@@ -673,10 +677,15 @@ export default function App() {
                 color: "#e8ecf4",
               }}
             >
-              The evolution that changes
+              AI is moving from
               <br />
-              enterprise governance
+              recommendation to execution
             </h2>
+            <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
+              As soon as AI begins executing business actions on its own, enterprises need
+              infrastructure that can answer one question: is this AI actually authorized
+              to do this?
+            </p>
           </div>
 
           <div className="relative">
@@ -688,11 +697,10 @@ export default function App() {
 
             <div className="flex flex-col gap-0">
               {[
-                { era: "Traditional Software", desc: "Deterministic logic. Humans decide, systems execute.", done: true },
-                { era: "AI Assistants", desc: "Suggestions at human request. Humans remain in control.", done: true },
-                { era: "AI Copilots", desc: "AI-initiated recommendations. Humans still approve.", done: true },
-                { era: "Autonomous AI Agents", desc: "AI executes business actions without human initiation.", active: true },
-                { era: "Delegated Authority Infrastructure", desc: "The governance layer that makes autonomous AI safe to deploy at enterprise scale.", highlight: true },
+                { era: "Assistant", desc: "AI answers questions at human request. Humans decide and act.", done: true },
+                { era: "Recommendation", desc: "AI proposes an action. A human still approves before anything happens.", done: true },
+                { era: "Execution", desc: "AI initiates and executes business actions directly against enterprise systems.", active: true },
+                { era: "The Authority Layer", desc: "The infrastructure that determines whether that execution was actually authorized.", highlight: true },
               ].map((step, i) => (
                 <div
                   key={step.era}
@@ -749,7 +757,7 @@ export default function App() {
 
         <div className="max-w-5xl mx-auto relative">
           <div className="text-center mb-20">
-            <div className="section-label mb-4">02 / THE PROBLEM</div>
+            <div className="section-label mb-4">02 / WHY EXISTING INFRASTRUCTURE FAILS</div>
             <h2
               style={{
                 fontFamily: "'Onest', system-ui, sans-serif",
@@ -759,10 +767,11 @@ export default function App() {
                 color: "#e8ecf4",
               }}
             >
-              Identity is not authority
+              Governance exists. Enforcement doesn't.
             </h2>
             <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
-              Traditional IAM answers one question. Autonomous AI requires a second.
+              Organizations have governance committees, IAM, and policy frameworks. None of them
+              determine whether an AI is actually authorized to execute a given action.
             </p>
           </div>
 
@@ -775,18 +784,18 @@ export default function App() {
               >
                 <Lock size={24} style={{ color: "#3b8cf8" }} />
               </div>
-              <div className="mono text-xs mb-3" style={{ color: "#3b8cf8", letterSpacing: "0.1em" }}>IDENTITY (IAM)</div>
+              <div className="mono text-xs mb-3" style={{ color: "#3b8cf8", letterSpacing: "0.1em" }}>GOVERNANCE & IAM</div>
               <div
                 className="mb-3"
                 style={{ fontFamily: "'Onest', system-ui, sans-serif", fontWeight: 700, fontSize: "1.3rem", color: "#e8ecf4" }}
               >
-                "Who is the agent?"
+                "Who is this, and what's the policy?"
               </div>
               <div className="text-sm text-muted-foreground leading-relaxed">
-                Authenticates the AI system. Confirms it is who it claims to be.
+                Authenticates the system and documents the rule. Neither one evaluates a specific action against it.
               </div>
               <div className="mt-6 px-3 py-1.5 rounded-full inline-block" style={{ background: "rgba(59,140,248,0.1)", border: "1px solid rgba(59,140,248,0.2)" }}>
-                <span className="mono text-xs" style={{ color: "#3b8cf8" }}>SOLVED</span>
+                <span className="mono text-xs" style={{ color: "#3b8cf8" }}>ALREADY IN PLACE</span>
               </div>
             </div>
 
@@ -809,10 +818,10 @@ export default function App() {
                 <div
                   style={{ fontFamily: "'Onest', system-ui, sans-serif", fontWeight: 700, fontSize: "1rem", color: "#fca5a5" }}
                 >
-                  Identity ≠ Authority
+                  Policy ≠ Enforcement
                 </div>
                 <div className="text-xs text-muted-foreground mt-2">
-                  Knowing who the agent is does not tell you what it is allowed to do
+                  A written policy does not stop an AI agent from executing an unauthorized action
                 </div>
               </div>
               <div
@@ -832,54 +841,48 @@ export default function App() {
               >
                 <Shield size={24} style={{ color: "#7c6fff" }} />
               </div>
-              <div className="mono text-xs mb-3" style={{ color: "#7c6fff", letterSpacing: "0.1em" }}>AUTHORITY (PAYREALITY)</div>
+              <div className="mono text-xs mb-3" style={{ color: "#7c6fff", letterSpacing: "0.1em" }}>AUTHORITY RUNTIME (PAYREALITY)</div>
               <div
                 className="mb-3"
                 style={{ fontFamily: "'Onest', system-ui, sans-serif", fontWeight: 700, fontSize: "1.3rem", color: "#e8ecf4" }}
               >
-                "What may it do?"
+                "Is this action authorized, right now?"
               </div>
               <div className="text-sm text-muted-foreground leading-relaxed">
-                Validates delegated authority before every action. Enforces governance at runtime.
+                Evaluates the specific intent against published policy and returns a binding decision before execution.
               </div>
               <div className="mt-6 px-3 py-1.5 rounded-full inline-block" style={{ background: "rgba(124,111,255,0.1)", border: "1px solid rgba(124,111,255,0.25)" }}>
-                <span className="mono text-xs" style={{ color: "#a78bfa" }}>PAYREALITY SOLVES THIS</span>
+                <span className="mono text-xs" style={{ color: "#a78bfa" }}>THE MISSING LAYER</span>
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* ── Enterprise Reality ── */}
-      <section className="py-32 px-6">
-        <div className="max-w-5xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-center mt-24">
             <div>
-              <div className="section-label mb-4">03 / ENTERPRISE REALITY</div>
-              <h2
+              <h3
                 className="mb-6"
                 style={{
                   fontFamily: "'Onest', system-ui, sans-serif",
                   fontWeight: 700,
-                  fontSize: "clamp(1.8rem, 3.5vw, 2.6rem)",
+                  fontSize: "clamp(1.5rem, 3vw, 2.2rem)",
                   letterSpacing: "-0.025em",
                   color: "#e8ecf4",
                 }}
               >
-                Your frameworks
+                Your policies
                 <br />
                 already exist.
                 <br />
-                <span className="grad-text">We make them executable.</span>
-              </h2>
+                <span className="grad-text">We make them enforceable.</span>
+              </h3>
               <p className="text-muted-foreground leading-relaxed mb-8">
-                Every enterprise operates mature delegation of authority frameworks governing financial
-                approvals, procurement, vendor onboarding, and compliance decisions. These frameworks
-                were built for humans. PayReality makes them enforceable by autonomous AI, without
-                requiring you to rebuild your governance model.
+                Every enterprise already operates approval matrices, spending limits, delegation of
+                authority policies, procurement policies, and risk frameworks. These were written for
+                people. PayReality compiles them into rules an AI runtime can enforce, without asking
+                you to rebuild any of them.
               </p>
               <a
-                href="#architecture"
+                href="#how-it-works"
                 className="btn-ghost px-6 py-3 rounded-xl text-sm flex items-center gap-2 inline-flex"
               >
                 See how it works
@@ -906,7 +909,7 @@ export default function App() {
                 <div
                   style={{ fontFamily: "'Onest', system-ui, sans-serif", fontWeight: 700, fontSize: "0.9rem", color: "#a78bfa" }}
                 >
-                  ↓ PayReality makes these enforceable by AI
+                  ↓ PayReality compiles these into enforceable rules
                 </div>
               </div>
             </div>
@@ -914,12 +917,12 @@ export default function App() {
         </div>
       </section>
 
-      {/* ── Platform Architecture ── */}
-      <section id="architecture" className="py-32 px-6 relative" style={{ background: "rgba(13,16,32,0.6)" }}>
+      {/* ── How PayReality Works ── */}
+      <section id="how-it-works" className="py-32 px-6 relative" style={{ background: "rgba(13,16,32,0.6)" }}>
         <div className="absolute inset-0 pointer-events-none dot-grid opacity-40" />
         <div className="max-w-3xl mx-auto relative">
           <div className="text-center mb-20">
-            <div className="section-label mb-4">04 / ARCHITECTURE</div>
+            <div className="section-label mb-4">03 / HOW PAYREALITY WORKS</div>
             <h2
               style={{
                 fontFamily: "'Onest', system-ui, sans-serif",
@@ -929,15 +932,18 @@ export default function App() {
                 color: "#e8ecf4",
               }}
             >
-              How authority is enforced
+              A deterministic runtime,
+              <br />
+              not a review process
             </h2>
             <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
-              Every AI action passes through a structured governance evaluation before reaching enterprise systems.
+              Policy is compiled once and signed by a human. From there, every AI intent is evaluated
+              against it automatically, before execution.
             </p>
           </div>
 
           <div className="flex flex-col items-center">
-            {ARCHITECTURE_STEPS.map((step, i) => (
+            {HOW_IT_WORKS.map((step, i) => (
               <div key={step.label} className="flex flex-col items-center w-full max-w-sm">
                 <div
                   className="glass-card rounded-2xl p-5 w-full flex items-center gap-5"
@@ -966,9 +972,9 @@ export default function App() {
                     </div>
                     <div className="text-xs text-muted-foreground mt-0.5">{step.sub}</div>
                   </div>
-                  <div className="ml-auto mono text-xs text-muted-foreground">{String(i + 1).padStart(2, "0")}</div>
+                  <div className="ml-auto mono text-xs text-muted-foreground">{step.step}</div>
                 </div>
-                {i < ARCHITECTURE_STEPS.length - 1 && <div className="arch-connector" />}
+                {i < HOW_IT_WORKS.length - 1 && <div className="arch-connector" />}
               </div>
             ))}
           </div>
@@ -979,7 +985,7 @@ export default function App() {
       <section id="platform" className="py-32 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
-            <div className="section-label mb-4">05 / THE PLATFORM</div>
+            <div className="section-label mb-4">04 / THE PLATFORM</div>
             <h2
               style={{
                 fontFamily: "'Onest', system-ui, sans-serif",
@@ -989,11 +995,11 @@ export default function App() {
                 color: "#e8ecf4",
               }}
             >
-              Nine modules. One governance layer.
+              Nine modules. One authority runtime.
             </h2>
             <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
-              Every component of PayReality works together to form a complete delegated authority
-              infrastructure for autonomous AI.
+              Every component of PayReality works together to compile policy, evaluate intent, and
+              record evidence for autonomous AI.
             </p>
           </div>
 
@@ -1056,11 +1062,11 @@ export default function App() {
         </div>
       </section>
 
-      {/* ── Enterprise Integration ── */}
-      <section className="py-32 px-6" style={{ background: "rgba(13,16,32,0.5)" }}>
+      {/* ── Architecture ── */}
+      <section id="architecture" className="py-32 px-6" style={{ background: "rgba(13,16,32,0.5)" }}>
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-20">
-            <div className="section-label mb-4">06 / INTEGRATION</div>
+            <div className="section-label mb-4">05 / ARCHITECTURE</div>
             <h2
               style={{
                 fontFamily: "'Onest', system-ui, sans-serif",
@@ -1070,22 +1076,22 @@ export default function App() {
                 color: "#e8ecf4",
               }}
             >
-              Positioned between AI and
+              A runtime between AI and
               <br />
-              your enterprise systems
+              your systems of record
             </h2>
             <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
-              PayReality integrates with your existing IAM, ERP, and line-of-business systems without
-              requiring infrastructure replacement.
+              A policy compiler, a deterministic evaluation engine, and an evidence vault — sitting
+              between every AI agent and the enterprise systems it acts on.
             </p>
           </div>
 
-          {/* Integration diagram */}
+          {/* Architecture diagram */}
           <div className="grid lg:grid-cols-3 gap-8 items-stretch">
             {/* Left: Sources */}
             <div className="flex flex-col gap-3">
-              <div className="mono text-xs text-center mb-2" style={{ color: "#6b7280", letterSpacing: "0.1em" }}>ENTERPRISE IAM</div>
-              {["Active Directory", "Okta", "CyberArk", "SailPoint"].map((name) => (
+              <div className="mono text-xs text-center mb-2" style={{ color: "#6b7280", letterSpacing: "0.1em" }}>POLICY & IDENTITY SOURCES</div>
+              {["Delegation of Authority Policy", "Approval Matrices", "Enterprise IAM Context", "Risk Frameworks"].map((name) => (
                 <div key={name} className="glass-card rounded-xl px-4 py-3 text-sm text-center text-muted-foreground">
                   {name}
                 </div>
@@ -1119,18 +1125,29 @@ export default function App() {
                   PayReality
                 </div>
                 <div className="mono text-xs mt-2" style={{ color: "#a78bfa" }}>
-                  DELEGATED AUTHORITY LAYER
+                  AUTHORITY RUNTIME
                 </div>
-                <div className="text-xs text-muted-foreground mt-3 leading-relaxed">
-                  Evaluates every AI action against governance policies, authority boundaries, and contextual risk rules
+                <div className="text-xs text-muted-foreground mt-3 leading-relaxed mb-4">
+                  Policy Compiler · OPA-based deterministic evaluation · Human sign-off · Evidence Vault
+                </div>
+                <div className="flex flex-wrap gap-2 justify-center">
+                  {["Policy Compiler", "OPA", "Deterministic Evaluation", "Evidence Vault"].map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-2.5 py-1 rounded-full mono"
+                      style={{ fontSize: "10px", background: "rgba(124,111,255,0.12)", border: "1px solid rgba(124,111,255,0.25)", color: "#a78bfa" }}
+                    >
+                      {tag}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>
 
             {/* Right: Targets */}
             <div className="flex flex-col gap-3">
-              <div className="mono text-xs text-center mb-2" style={{ color: "#6b7280", letterSpacing: "0.1em" }}>ENTERPRISE SYSTEMS</div>
-              {["SAP · Oracle · Microsoft", "Salesforce · CRM", "ERP · Payments", "Procurement · HR"].map((name) => (
+              <div className="mono text-xs text-center mb-2" style={{ color: "#6b7280", letterSpacing: "0.1em" }}>SYSTEMS OF RECORD</div>
+              {["ERP · SAP · Oracle", "Procurement & Finance", "CRM · Customer Ops", "HR & Manufacturing Systems"].map((name) => (
                 <div key={name} className="glass-card rounded-xl px-4 py-3 text-sm text-center text-muted-foreground">
                   {name}
                 </div>
@@ -1140,122 +1157,11 @@ export default function App() {
         </div>
       </section>
 
-      {/* ── Research ── */}
-      <section id="research" className="py-32 px-6">
-        <div className="max-w-5xl mx-auto">
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
-            <div>
-              <div className="section-label mb-4">07 / RESEARCH</div>
-              <h2
-                style={{
-                  fontFamily: "'Onest', system-ui, sans-serif",
-                  fontWeight: 700,
-                  fontSize: "clamp(1.8rem, 4vw, 3rem)",
-                  letterSpacing: "-0.025em",
-                  color: "#e8ecf4",
-                }}
-              >
-                Executive research
-              </h2>
-            </div>
-            <button
-              onClick={() => openPaperRequest("Full Research Library")}
-              className="btn-ghost px-5 py-2.5 rounded-xl text-sm flex-shrink-0 inline-flex items-center gap-2"
-            >
-              View all research
-              <Mail size={14} />
-            </button>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-5">
-            {RESEARCH.map((r, i) => (
-              <button
-                key={r.title}
-                onClick={() => openPaperRequest(r.title)}
-                type="button"
-                className="glass-card rounded-2xl p-8 group cursor-pointer flex flex-col text-left w-full"
-                style={i === 0 ? { border: "1px solid rgba(124,111,255,0.22)", boxShadow: "0 0 24px rgba(124,111,255,0.06)" } : {}}
-              >
-                <div className="flex items-center justify-between mb-5">
-                  <span
-                    className="px-3 py-1 rounded-full mono text-xs"
-                    style={{
-                      background: "rgba(124,111,255,0.1)",
-                      border: "1px solid rgba(124,111,255,0.2)",
-                      color: "#a78bfa",
-                      letterSpacing: "0.08em",
-                    }}
-                  >
-                    {r.tag}
-                  </span>
-                  <span className="mono text-xs text-muted-foreground">{r.readTime}</span>
-                </div>
-                <h3
-                  className="mb-4"
-                  style={{
-                    fontFamily: "'Onest', system-ui, sans-serif",
-                    fontWeight: 600,
-                    fontSize: "1.1rem",
-                    color: "#e8ecf4",
-                    letterSpacing: "-0.015em",
-                    lineHeight: 1.3,
-                  }}
-                >
-                  {r.title}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed flex-1">{r.excerpt}</p>
-                <div className="mt-6 flex items-center gap-2 text-sm" style={{ color: "#7c6fff" }}>
-                  Request paper
-                  <Mail size={14} className="group-hover:translate-x-1 transition-transform" />
-                </div>
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Industries ── */}
-      <section id="industries" className="py-32 px-6" style={{ background: "rgba(13,16,32,0.5)" }}>
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="section-label mb-4">08 / INDUSTRIES</div>
-            <h2
-              style={{
-                fontFamily: "'Onest', system-ui, sans-serif",
-                fontWeight: 700,
-                fontSize: "clamp(1.8rem, 4vw, 3rem)",
-                letterSpacing: "-0.025em",
-                color: "#e8ecf4",
-              }}
-            >
-              Built for regulated industries
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
-            {INDUSTRIES.map((ind) => (
-              <div
-                key={ind.name}
-                className="glass-card rounded-xl p-5 text-center group cursor-default flex flex-col items-center gap-3"
-              >
-                <div
-                  className="w-10 h-10 rounded-xl flex items-center justify-center"
-                  style={{ background: "rgba(124,111,255,0.1)", border: "1px solid rgba(124,111,255,0.18)" }}
-                >
-                  <ind.icon size={18} style={{ color: "#7c6fff" }} />
-                </div>
-                <span className="text-xs text-muted-foreground leading-tight text-center">{ind.name}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── Built For ── */}
       <section className="py-32 px-6">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
-            <div className="section-label mb-4">09 / BUILT FOR</div>
+            <div className="section-label mb-4">06 / BUILT FOR</div>
             <h2
               style={{
                 fontFamily: "'Onest', system-ui, sans-serif",
@@ -1265,9 +1171,9 @@ export default function App() {
                 color: "#e8ecf4",
               }}
             >
-              Designed for enterprise
+              Built for the people
               <br />
-              governance leaders
+              accountable for AI
             </h2>
           </div>
 
@@ -1293,6 +1199,125 @@ export default function App() {
         </div>
       </section>
 
+      {/* ── Evidence ── */}
+      <section id="evidence" className="py-32 px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
+            <div>
+              <div className="section-label mb-4">07 / EVIDENCE</div>
+              <h2
+                style={{
+                  fontFamily: "'Onest', system-ui, sans-serif",
+                  fontWeight: 700,
+                  fontSize: "clamp(1.8rem, 4vw, 3rem)",
+                  letterSpacing: "-0.025em",
+                  color: "#e8ecf4",
+                }}
+              >
+                Provable authority,
+                <br />
+                not just a log line
+              </h2>
+              <p className="text-muted-foreground mt-4 max-w-md">
+                Every Approve, Reject, or Human Review decision generates cryptographically verifiable
+                evidence — automatically, not on request.
+              </p>
+            </div>
+            <button
+              onClick={() => openPaperRequest("Evidence Vault Technical Overview")}
+              className="btn-ghost px-5 py-2.5 rounded-xl text-sm flex-shrink-0 inline-flex items-center gap-2"
+            >
+              Request technical overview
+              <Mail size={14} />
+            </button>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-5">
+            {EVIDENCE_ARTIFACTS.map((r, i) => (
+              <button
+                key={r.title}
+                onClick={() => openPaperRequest(r.title)}
+                type="button"
+                className="glass-card rounded-2xl p-8 group cursor-pointer flex flex-col text-left w-full"
+                style={i === 0 ? { border: "1px solid rgba(124,111,255,0.22)", boxShadow: "0 0 24px rgba(124,111,255,0.06)" } : {}}
+              >
+                <div className="flex items-center justify-between mb-5">
+                  <span
+                    className="px-3 py-1 rounded-full mono text-xs"
+                    style={{
+                      background: "rgba(124,111,255,0.1)",
+                      border: "1px solid rgba(124,111,255,0.2)",
+                      color: "#a78bfa",
+                      letterSpacing: "0.08em",
+                    }}
+                  >
+                    {r.tag}
+                  </span>
+                  <span className="mono text-xs text-muted-foreground">{r.meta}</span>
+                </div>
+                <h3
+                  className="mb-4"
+                  style={{
+                    fontFamily: "'Onest', system-ui, sans-serif",
+                    fontWeight: 600,
+                    fontSize: "1.1rem",
+                    color: "#e8ecf4",
+                    letterSpacing: "-0.015em",
+                    lineHeight: 1.3,
+                  }}
+                >
+                  {r.title}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed flex-1">{r.excerpt}</p>
+                <div className="mt-6 flex items-center gap-2 text-sm" style={{ color: "#7c6fff" }}>
+                  Request details
+                  <Mail size={14} className="group-hover:translate-x-1 transition-transform" />
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Enterprise Use Cases ── */}
+      <section id="use-cases" className="py-32 px-6" style={{ background: "rgba(13,16,32,0.5)" }}>
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="section-label mb-4">08 / ENTERPRISE USE CASES</div>
+            <h2
+              style={{
+                fontFamily: "'Onest', system-ui, sans-serif",
+                fontWeight: 700,
+                fontSize: "clamp(1.8rem, 4vw, 3rem)",
+                letterSpacing: "-0.025em",
+                color: "#e8ecf4",
+              }}
+            >
+              Wherever AI executes,
+              <br />
+              authority has to travel with it
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {USE_CASES.map((ind) => (
+              <div
+                key={ind.name}
+                className="glass-card rounded-xl p-5 text-center group cursor-default flex flex-col items-center gap-3"
+              >
+                <div
+                  className="w-10 h-10 rounded-xl flex items-center justify-center"
+                  style={{ background: "rgba(124,111,255,0.1)", border: "1px solid rgba(124,111,255,0.18)" }}
+                >
+                  <ind.icon size={18} style={{ color: "#7c6fff" }} />
+                </div>
+                <span className="text-xs text-muted-foreground leading-tight text-center">{ind.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── Final CTA ── */}
       <section className="py-40 px-6 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
@@ -1304,7 +1329,7 @@ export default function App() {
         </div>
 
         <div className="max-w-3xl mx-auto text-center relative">
-          <div className="section-label mb-6">10 / GET STARTED</div>
+          <div className="section-label mb-6">09 / GET STARTED</div>
           <h2
             className="mb-6"
             style={{
@@ -1316,32 +1341,32 @@ export default function App() {
               lineHeight: 1.08,
             }}
           >
-            Ready to govern
+            Every AI action
             <br />
-            <span className="grad-text">autonomous AI?</span>
+            <span className="grad-text">needs authority.</span>
           </h2>
           <p className="text-muted-foreground mb-12 text-lg leading-relaxed max-w-xl mx-auto">
-            Every autonomous AI system will eventually require delegated authority
-            before executing actions. Identity proved who. PayReality proves authority.
+            Identity proved who the agent is. PayReality proves what it's authorized to do —
+            before it does it.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
+            <button
+              className="btn-primary px-10 py-4 rounded-xl text-base flex items-center gap-3"
+              onClick={openDemo}
+            >
+              Book a Demo
+              <ArrowRight size={16} />
+            </button>
             <a
               href={PLATFORM}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary px-10 py-4 rounded-xl text-base flex items-center gap-3"
+              className="btn-ghost px-10 py-4 rounded-xl text-base flex items-center gap-3"
             >
-              Launch Platform
+              View Platform
               <ExternalLink size={16} />
             </a>
-            <button
-              className="btn-ghost px-10 py-4 rounded-xl text-base flex items-center gap-3"
-              onClick={openDemo}
-            >
-              Request Enterprise Demo
-              <ArrowRight size={16} />
-            </button>
           </div>
         </div>
       </section>
@@ -1371,7 +1396,7 @@ export default function App() {
                 </span>
               </div>
               <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
-                Enterprise infrastructure for delegated authority and decision governance for autonomous AI systems.
+                The enterprise authority layer for autonomous AI. Deterministic, pre-execution authorization with verifiable evidence.
               </p>
               <p className="text-xs text-muted-foreground mt-4">
                 A product of{" "}
@@ -1416,7 +1441,7 @@ export default function App() {
 
           <div className="border-t border-border pt-8 flex flex-col lg:flex-row items-center justify-between gap-4">
             <p className="text-xs text-muted-foreground">
-              © 2025 AI Securewatch. All rights reserved.
+              © 2026 AI Securewatch. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
               {LEGAL_LINKS.map((l) => (
@@ -1429,7 +1454,7 @@ export default function App() {
         </div>
       </footer>
 
-      {/* ── Request Enterprise Demo Modal ── */}
+      {/* ── Book a Demo Modal ── */}
       {demoOpen && (
         <div
           className="fixed inset-0 z-[100] flex items-center justify-center p-4"
@@ -1477,7 +1502,7 @@ export default function App() {
                     letterSpacing: "-0.02em",
                   }}
                 >
-                  {paperTopic ? "Request Research Paper" : "Request Enterprise Demo"}
+                  {paperTopic ? "Request Technical Overview" : "Book a Demo"}
                 </h3>
                 <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
                   {paperTopic
@@ -1532,7 +1557,7 @@ export default function App() {
                     <a
                       href={mailto(
                         CONTACT_EMAIL,
-                        paperTopic ? `Research Paper Request: ${paperTopic}` : "Enterprise Demo Request"
+                        paperTopic ? `Technical Overview Request: ${paperTopic}` : "Demo Request"
                       )}
                       style={{ color: "#a78bfa" }}
                     >
