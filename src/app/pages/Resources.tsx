@@ -1,6 +1,7 @@
-import { ArrowRight, FileText, Newspaper, Radio, ScrollText, BookOpen, Building2 } from "lucide-react";
+import { ArrowRight, Bell, FileText, Newspaper, Radio, ScrollText, BookOpen, Building2 } from "lucide-react";
 import SEO from "../components/SEO";
 import { SITE_URL } from "../lib/site";
+import { useDemoModal } from "../context/DemoModalContext";
 
 const PLACEHOLDER_CATEGORIES = [
   { icon: BookOpen, title: "Research", desc: "Original research on delegated authority, AI execution risk, and runtime enforcement." },
@@ -11,6 +12,8 @@ const PLACEHOLDER_CATEGORIES = [
 ];
 
 export default function Resources() {
+  const { openPaperRequest } = useDemoModal();
+
   return (
     <>
       <SEO
@@ -126,7 +129,12 @@ export default function Resources() {
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
               {PLACEHOLDER_CATEGORIES.map((c) => (
-                <div key={c.title} className="glass-card rounded-2xl p-7 opacity-70">
+                <button
+                  key={c.title}
+                  type="button"
+                  onClick={() => openPaperRequest(`${c.title} Updates`)}
+                  className="glass-card rounded-2xl p-7 flex flex-col text-left w-full cursor-pointer"
+                >
                   <div
                     className="w-11 h-11 rounded-xl flex items-center justify-center mb-5"
                     style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
@@ -139,8 +147,12 @@ export default function Resources() {
                   >
                     {c.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{c.desc}</p>
-                </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed flex-1">{c.desc}</p>
+                  <div className="mt-5 flex items-center gap-2 text-xs font-medium" style={{ color: "#7c6fff" }}>
+                    <Bell size={13} />
+                    Notify me when this launches
+                  </div>
+                </button>
               ))}
             </div>
           </div>
