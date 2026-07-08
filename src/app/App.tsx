@@ -1401,7 +1401,7 @@ export default function App() {
                 The enterprise authority layer for autonomous AI. Deterministic, pre-execution authorization with verifiable evidence.
               </p>
               <p className="text-xs text-muted-foreground mt-4">
-                A product of{" "}
+                The flagship platform developed by{" "}
                 <span style={{ color: "#a78bfa" }}>AI Securewatch</span>
               </p>
             </div>
