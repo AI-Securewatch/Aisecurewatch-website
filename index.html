@@ -61,7 +61,11 @@
               "description": "AI Securewatch develops, owns, and operates PayReality, Enterprise AI Authority Infrastructure for autonomous AI.",
               "email": "sean@aisecurewatch.com",
               "brand": { "@id": "https://aisecurewatch.com/#brand" },
-              "owns": { "@id": "https://aisecurewatch.com/#software" }
+              "owns": { "@id": "https://aisecurewatch.com/#software" },
+              "founder": [
+                { "@id": "https://aisecurewatch.com/#person-sean" },
+                { "@id": "https://aisecurewatch.com/#person-nathan" }
+              ]
             },
             {
               "@type": "Brand",
@@ -71,6 +75,25 @@
               "description": "PayReality is Enterprise AI Authority Infrastructure: it transforms existing delegated authority into deterministic, machine-enforceable authority for autonomous AI.",
               "logo": "https://aisecurewatch.com/android-chrome-512x512.png",
               "url": "https://aisecurewatch.com/"
+            },
+            {
+              "@type": "Person",
+              "@id": "https://aisecurewatch.com/#person-sean",
+              "name": "Sean Chihwendu",
+              "jobTitle": "Founder & CEO",
+              "worksFor": { "@id": "https://aisecurewatch.com/#organization" },
+              "url": "https://aisecurewatch.com/leadership/sean-chihwendu",
+              "description": "Sean Chihwendu is Founder & CEO of AI Securewatch, developer of PayReality. His background is in procurement and tender management."
+            },
+            {
+              "@type": "Person",
+              "@id": "https://aisecurewatch.com/#person-nathan",
+              "name": "Chukwudi Nathan Obiekwe",
+              "alternateName": "Nathan Obiekwe",
+              "jobTitle": "Co-Founder & CTO",
+              "worksFor": { "@id": "https://aisecurewatch.com/#organization" },
+              "url": "https://aisecurewatch.com/leadership/nathan-obiekwe",
+              "description": "Chukwudi (Nathan) Obiekwe is Co-Founder & CTO of AI Securewatch. He built PayReality's deterministic authority runtime in Rust, gRPC, and Open Policy Agent."
             },
             {
               "@type": "WebSite",
@@ -96,6 +119,10 @@
               "manufacturer": { "@id": "https://aisecurewatch.com/#organization" },
               "producer": { "@id": "https://aisecurewatch.com/#organization" },
               "publisher": { "@id": "https://aisecurewatch.com/#organization" },
+              "author": [
+                { "@id": "https://aisecurewatch.com/#person-sean" },
+                { "@id": "https://aisecurewatch.com/#person-nathan" }
+              ],
               "image": "https://aisecurewatch.com/og-image.png"
             }
           ]
