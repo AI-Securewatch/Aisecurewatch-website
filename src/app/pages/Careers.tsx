@@ -10,7 +10,7 @@ export default function Careers() {
     <>
       <SEO
         title="Careers at AI Securewatch"
-        description="AI Securewatch is building Enterprise AI Authority Infrastructure. We're looking for exceptional engineers and enterprise architects — reach out."
+        description="AI Securewatch is building Enterprise AI Authority Infrastructure. We're looking for exceptional engineers and enterprise architects. Reach out."
         path="/careers"
         jsonLd={{
           "@context": "https://schema.org",
@@ -41,7 +41,7 @@ export default function Careers() {
 
           <div className="flex flex-col gap-5 text-muted-foreground leading-relaxed mb-12" style={{ fontSize: "1.0625rem" }}>
             <p>
-              AI Securewatch is building Enterprise AI Authority Infrastructure for autonomous AI — the
+              AI Securewatch is building Enterprise AI Authority Infrastructure for autonomous AI: the
               deterministic runtime, evidence architecture, and enterprise tooling that let organizations
               delegate authority to AI with the same confidence they delegate it to people.
             </p>

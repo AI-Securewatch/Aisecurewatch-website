@@ -32,7 +32,7 @@ const MODULES = [
     name: "Command Center",
     slug: "command-center",
     icon: Activity,
-    desc: "A live view of every authority decision — approved, rejected, or escalated — across every AI agent and business system.",
+    desc: "A live view of every authority decision across every AI agent and business system: approved, rejected, or escalated.",
     accent: "#7c6fff",
   },
   {
@@ -109,7 +109,7 @@ const EVIDENCE_ARTIFACTS = [
     tag: "Signed",
     title: "Every decision is signed",
     excerpt:
-      "Each Approve, Reject, or Human Review outcome is cryptographically signed at the moment it's made — not reconstructed afterward from application logs.",
+      "Each Approve, Reject, or Human Review outcome is cryptographically signed at the moment it's made. It is not reconstructed afterward from application logs.",
     meta: "Per-decision",
   },
   {
@@ -130,7 +130,7 @@ const EVIDENCE_ARTIFACTS = [
     tag: "Exportable",
     title: "Built for auditors and regulators",
     excerpt:
-      "Evidence exports to the format your audit, risk, and compliance teams already use — no bespoke tooling required to prove authorization.",
+      "Evidence exports to the format your audit, risk, and compliance teams already use, with no bespoke tooling required to prove authorization.",
     meta: "Audit-ready",
   },
 ];
@@ -149,7 +149,7 @@ const USE_CASES = [
 const PERSONAS = [
   {
     role: "Chief Information Officers",
-    desc: "Get a definitive, auditable answer to whether an AI agent was authorized before it acted — not a best guess after the fact.",
+    desc: "Get a definitive, auditable answer to whether an AI agent was authorized before it acted, not a best guess after the fact.",
   },
   {
     role: "Chief Information Security Officers",
@@ -266,7 +266,7 @@ export default function Home() {
             Organizations already know how to delegate authority to people.
             They have no infrastructure to delegate it safely to AI. PayReality
             determines whether an AI system is actually authorized to execute a
-            business action — before it executes it.
+            business action, before it executes it.
           </p>
 
           {/* CTAs */}
@@ -744,7 +744,7 @@ export default function Home() {
               your systems of record
             </h2>
             <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
-              A policy compiler, a deterministic evaluation engine, and an evidence vault — sitting
+              A policy compiler, a deterministic evaluation engine, and an evidence vault, sitting
               between every AI agent and the enterprise systems it acts on.
             </p>
           </div>
@@ -883,7 +883,7 @@ export default function Home() {
               </h2>
               <p className="text-muted-foreground mt-4 max-w-md">
                 Every Approve, Reject, or Human Review decision generates cryptographically verifiable
-                evidence — automatically, not on request.
+                evidence automatically, not on request.
               </p>
             </div>
             <button
@@ -1009,7 +1009,7 @@ export default function Home() {
             <span className="grad-text">needs authority.</span>
           </h2>
           <p className="text-muted-foreground mb-12 text-lg leading-relaxed max-w-xl mx-auto">
-            Identity proved who the agent is. PayReality proves what it's authorized to do —
+            Identity proved who the agent is. PayReality proves what it's authorized to do,
             before it does it.
           </p>
 

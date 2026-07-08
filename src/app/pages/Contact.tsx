@@ -10,7 +10,7 @@ export default function Contact() {
     <>
       <SEO
         title="Contact AI Securewatch"
-        description="Get in touch with AI Securewatch, developer of PayReality — Enterprise AI Authority Infrastructure. Sales, leadership, and careers contacts."
+        description="Get in touch with AI Securewatch, developer of PayReality, Enterprise AI Authority Infrastructure. Sales, leadership, and careers contacts."
         path="/contact"
         jsonLd={{
           "@context": "https://schema.org",
@@ -55,7 +55,7 @@ export default function Contact() {
                 Company
               </h2>
               <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                AI Securewatch (Pty) Ltd — the company behind PayReality, Enterprise AI Authority
+                AI Securewatch (Pty) Ltd, the company behind PayReality, Enterprise AI Authority
                 Infrastructure.{" "}
                 <a href="/about" style={{ color: "#a78bfa" }}>
                   About us →
@@ -78,7 +78,7 @@ export default function Contact() {
                 Office
               </h2>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Johannesburg, South Africa — where the team works together daily.
+                Johannesburg, South Africa, where the team works together daily.
               </p>
             </div>
 
@@ -118,7 +118,7 @@ export default function Contact() {
                 Careers
               </h2>
               <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                Exceptional engineers and enterprise architects — reach out directly.
+                Exceptional engineers and enterprise architects. Reach out directly.
               </p>
               <a href={mailto(CAREERS_EMAIL, "Interest: Working at AI Securewatch")} className="text-sm inline-flex items-center gap-2" style={{ color: "#7c6fff" }}>
                 <Mail size={14} />

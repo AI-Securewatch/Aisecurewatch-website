@@ -11,7 +11,7 @@ const VALUES = [
   {
     icon: ShieldCheck,
     title: "Evidence over assertion",
-    desc: "A decision is only as good as the proof behind it. Every Approve, Reject, or Human Review outcome produces a signed record — not a claim that has to be taken on trust.",
+    desc: "A decision is only as good as the proof behind it. Every Approve, Reject, or Human Review outcome produces a signed record, not a claim that has to be taken on trust.",
   },
   {
     icon: Sparkles,
@@ -34,7 +34,7 @@ const TIMELINE = [
   {
     year: "Early iteration",
     title: "A hidden-entity discovery platform",
-    desc: "The team's first product applies the underlying matching engine to entity verification, running over 40 customer discovery calls. A pilot commitment from an early prospect ultimately does not convert into a paying engagement — a formative lesson that interest and pilots are not the same thing as revenue.",
+    desc: "The team's first product applies the underlying matching engine to entity verification, running over 40 customer discovery calls. A pilot commitment from an early prospect ultimately does not convert into a paying engagement. It is a formative lesson: interest and pilots are not the same thing as revenue.",
   },
   {
     year: "November 2025",
@@ -44,12 +44,12 @@ const TIMELINE = [
   {
     year: "PayReality v1",
     title: "From entity discovery to policy matching",
-    desc: "The team rebuilds around a desktop matching tool that checks expenditure against policy step by step and flags irregularities. It secures the company's first paying customer — small, but proof that the underlying model has value.",
+    desc: "The team rebuilds around a desktop matching tool that checks expenditure against policy step by step and flags irregularities. It secures the company's first paying customer: small, but proof that the underlying model has value.",
   },
   {
     year: "PayReality v2",
     title: "A deterministic API for AI-executed actions",
-    desc: "The architecture generalizes into an API: AI agents submit an intended action, PayReality evaluates it against a signed policy in real time, and every decision produces a Verifiable Intent Certificate — a cryptographically signed record of what was authorized and what happened.",
+    desc: "The architecture generalizes into an API: AI agents submit an intended action, and PayReality evaluates it against a signed policy in real time. Every decision produces a Verifiable Intent Certificate, a cryptographically signed record of what was authorized and what happened.",
   },
   {
     year: "January 2026",
@@ -108,7 +108,7 @@ export default function About() {
             Africa.
           </p>
           <p className="text-muted-foreground leading-relaxed mb-20">
-            PayReality is not a side project of AI Securewatch — it is the company's flagship
+            PayReality is not a side project of AI Securewatch. It is the company's flagship
             platform, and the reason the company exists.
           </p>
 
@@ -131,7 +131,7 @@ export default function About() {
                 Every enterprise already knows how to delegate authority to people: procurement policy,
                 treasury policy, approval matrices, governance frameworks. Autonomous AI breaks that
                 model, because nothing forces an AI agent to check a policy before it acts. The gap is
-                not governance — it's translating authority that already exists into a form a machine
+                not governance. It's translating authority that already exists into a form a machine
                 can actually obey, before it executes, not after.
               </p>
               <a

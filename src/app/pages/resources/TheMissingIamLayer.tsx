@@ -51,7 +51,7 @@ export default function TheMissingIamLayer() {
               infrastructure: every human who logs into a corporate system is authenticated,
               authorized, and monitored. Role-based controls restrict database access, every API call
               is logged, sensitive transactions require multi-factor approval, and audit trails are kept
-              immutable. The model works because it starts from an explicit assumption — humans are a
+              immutable. The model works because it starts from an explicit assumption: humans are a
               potential source of error or abuse, so the system verifies before it trusts.
             </p>
             <p>
@@ -66,7 +66,7 @@ export default function TheMissingIamLayer() {
               None of that answers a much narrower, much harder question. If an agent holds valid
               write-access credentials, how does the system distinguish a legitimate instruction from a
               hallucination? If an agent is asked to approve a $100,000 order and instead approves
-              $1,000,000, role-based access control will not stop it — the agent has valid authorization
+              $1,000,000, role-based access control will not stop it. The agent has valid authorization
               to approve orders, and from the system's perspective, nothing technical was violated.
             </p>
             <p style={{ color: "#e8ecf4", fontWeight: 500 }}>
@@ -79,7 +79,7 @@ export default function TheMissingIamLayer() {
             <h2 style={sectionHeadingStyle}>The IAM precedent: how authority boundaries work</h2>
             <p>
               Enterprise IAM emerged from hard experience. In the 1990s and 2000s, every credentialed
-              insider represented systemic risk — a rogue database administrator could drop production
+              insider represented systemic risk: a rogue database administrator could drop production
               tables, a disgruntled employee could redirect funds, a contractor with domain admin could
               lock executives out of their own systems. Enterprises responded by building a rigorous
               identity architecture around four structural properties: authority is explicitly defined
@@ -104,7 +104,7 @@ export default function TheMissingIamLayer() {
             <p>
               In practice, enterprises don't deploy agents with no controls at all. CISOs scope API
               access, apply role-based restrictions, sandbox execution, and gate the highest-stakes
-              decisions behind human approval. But these controls are static and categorical — they ask
+              decisions behind human approval. But these controls are static and categorical: they ask
               whether an identity is valid, whether it holds credentials for a system, whether its role
               permits a class of action. Those are yes-or-no questions about the agent in general. They
               cannot ask the question that actually matters for a stochastic system:{" "}
@@ -123,8 +123,8 @@ export default function TheMissingIamLayer() {
             {/* III */}
             <h2 style={sectionHeadingStyle}>Safety and authority are complementary, not competitive</h2>
             <p>
-              The AI safety market — guardrails, prompt-injection detection, adversarial testing, content
-              filters — is well funded and doing important work. But safety and authority solve different
+              The AI safety market (guardrails, prompt-injection detection, adversarial testing, content
+              filters) is well funded and doing important work. But safety and authority solve different
               problems. Safety systems manage what a model <em>thinks</em> it should do: they operate on
               the reasoning layer, catching harmful outputs and behavioral drift. Authority systems
               manage what a model is <em>allowed to do</em>: they operate on the execution layer,
@@ -133,18 +133,18 @@ export default function TheMissingIamLayer() {
             </p>
             <p>
               In the procurement example, a safety system might flag that $150,000 is unusual relative
-              to historical patterns — but by the time that flag fires, the order has likely already
+              to historical patterns. But by the time that flag fires, the order has likely already
               reached the supplier and the money has moved. An authority system stops the action at the
               execution boundary, before the supplier system ever receives the instruction. For
               consequential enterprise decisions, authority constraints have to come first. Safety
-              guardrails augment that foundation — enterprises need both, not one instead of the other.
+              guardrails augment that foundation. Enterprises need both, not one instead of the other.
             </p>
 
             {/* IV */}
             <h2 style={sectionHeadingStyle}>Authority boundaries require deterministic enforcement</h2>
             <p>
               Enforcing agent authority with the rigor enterprise security demands means enforcing policy
-              at the execution layer, before consequences occur — an inline interceptor positioned
+              at the execution layer, before consequences occur: an inline interceptor positioned
               between the agent and the systems it acts on (databases, payment rails, contract-signing
               services), running as a deterministic policy engine rather than a judgment call.
             </p>
@@ -152,8 +152,8 @@ export default function TheMissingIamLayer() {
             <ol className="flex flex-col gap-4 pl-5" style={{ listStyleType: "decimal" }}>
               <li>
                 <strong style={{ color: "#e8ecf4" }}>Authority boundaries are defined as executable policy.</strong>{" "}
-                Compliance and business stakeholders translate organizational mandates — approval limits,
-                vendor restrictions, multi-signature thresholds — into machine-executable rules, compiled
+                Compliance and business stakeholders translate organizational mandates (approval limits,
+                vendor restrictions, multi-signature thresholds) into machine-executable rules, compiled
                 into a{" "}
                 <a href="/#architecture" style={{ color: "#a78bfa" }}>
                   policy language like OPA/Rego
@@ -169,13 +169,13 @@ export default function TheMissingIamLayer() {
               <li>
                 <strong style={{ color: "#e8ecf4" }}>Enforcement is deterministic.</strong> The same policy
                 and the same input always produce the same output. The rules are not subject to model
-                drift, hallucination, or prompt injection — if an attacker tries to talk an agent into
+                drift, hallucination, or prompt injection. If an attacker tries to talk an agent into
                 overriding its own authority, the interceptor ignores the prompt entirely and evaluates
                 only the action against the signed policy.
               </li>
               <li>
                 <strong style={{ color: "#e8ecf4" }}>Every decision is recorded as evidence.</strong>{" "}
-                Whether approved or blocked, each decision generates a record — agent identity, the
+                Whether approved or blocked, each decision generates a record: agent identity, the
                 policy version in force, the input parameters, the outcome, a timestamp, and a
                 cryptographic signature. Not a mutable log: a sealed certificate a third party can verify
                 independently.
@@ -185,7 +185,7 @@ export default function TheMissingIamLayer() {
               This mirrors how human IAM enforces boundaries, purpose-built instead for the velocity and
               scale of autonomous agents. Enterprises can delegate authority to agents with the same
               confidence they delegate it to people, because they can prove what was delegated and verify
-              that the rules were actually enforced — this is the{" "}
+              that the rules were actually enforced. This is the{" "}
               <a href="/#how-it-works" style={{ color: "#a78bfa" }}>
                 runtime enforcement model
               </a>{" "}
@@ -198,11 +198,11 @@ export default function TheMissingIamLayer() {
               Traditional enterprise logging has a structural weakness: the system being audited controls
               its own audit trail. In legal terms, evidence controlled by the party being audited is
               contestable. For autonomous agent decisions, risk committees, auditors, and regulators need
-              independent proof of what an agent was authorized to do and what it actually did — not as a
+              independent proof of what an agent was authorized to do and what it actually did, not as a
               technical nicety, but as a compliance requirement.
             </p>
             <p>
-              A practical implementation of this is a sealed, cryptographically signed decision record —
+              A practical implementation of this is a sealed, cryptographically signed decision record,
               minted every time an agent attempts an action, evaluated against the active policy, and
               resolved to one of three outcomes: approved, blocked, or escalated to a human. Pushed to
               immutable storage, it cannot be altered or deleted by any party after the fact. That matters
@@ -220,16 +220,16 @@ export default function TheMissingIamLayer() {
             <p>
               It's fair to ask why established IAM platforms haven't already solved this. The honest
               answer is that they're starting to. Major IAM vendors are actively investing in workload
-              identities and service principals — real, production-grade mechanisms for assigning
+              identities and service principals: real, production-grade mechanisms for assigning
               identity and authority to non-human entities, solving problems like API key management,
               credential rotation, and service-to-service audit.
             </p>
             <p>
               But there's a structural evolution underway. Human IAM, from the 1990s through the 2020s,
               handled authentication, authorization, and audit trails for people. Machine IAM, through
-              the 2020s, extended that to workloads and services — service principals, credential
-              management, service-to-service authorization. Agentic IAM — identity and access management
-              for autonomous agents — is the layer still being defined: how do you express and enforce
+              the 2020s, extended that to workloads and services: service principals, credential
+              management, service-to-service authorization. Agentic IAM (identity and access management
+              for autonomous agents) is the layer still being defined: how do you express and enforce
               the authority of a non-deterministic, goal-seeking system making decisions in real time?
             </p>
             <p>
@@ -238,7 +238,7 @@ export default function TheMissingIamLayer() {
               <a href="/" style={{ color: "#a78bfa" }}>
                 agentic authorization
               </a>
-              . Traditional RBAC and API scopes are necessary but not sufficient — enterprises need a way
+              . Traditional RBAC and API scopes are necessary but not sufficient. Enterprises need a way
               to express and enforce authority boundaries that account for stochasticity and
               hallucination risk, and that standard is still early.
             </p>
@@ -247,19 +247,19 @@ export default function TheMissingIamLayer() {
             <h2 style={sectionHeadingStyle}>Regulatory requirements are creating urgency</h2>
             <p>
               Enterprise architects aren't building agentic authority infrastructure as an academic
-              exercise — regulatory and operational pressure is mounting from three directions. The EU
+              exercise. Regulatory and operational pressure is mounting from three directions. The EU
               AI Act, enforced from August 2, 2026, mandates continuous automated logging of every
               high-risk AI action under Article 12, and verifiable human oversight with the ability to
               override agent decisions under Article 14. Traditional logging can satisfy Article 12 by
               recording what happened after the fact. Article 14's requirement for verifiable oversight
               and deterministic override implies that authority decisions have to be pre-execution and
-              auditable — exactly what an inline policy engine and sealed decision records are built to
+              auditable, exactly what an inline policy engine and sealed decision records are built to
               provide.
             </p>
             <p>
               Insurance underwriters are pushing in the same direction. Major insurers launching AI
               performance liability products cannot price policies or underwrite risk without verifiable
-              telemetry — they need machine-readable proof of what an agent was authorized to do, or the
+              telemetry. They need machine-readable proof of what an agent was authorized to do, or the
               AI liability insurance market stays constrained. And enterprise risk committees no longer
               accept "the AI handled it" as sufficient justification for a high-stakes decision; boards
               want proof that an agent operated within delegated authority and that policy was enforced.
@@ -275,10 +275,10 @@ export default function TheMissingIamLayer() {
               agents, the answer is still incomplete.
             </p>
             <p>
-              We have the architectural pattern — IAM's four-pillar structure of defined authority,
+              We have the architectural pattern: IAM's four-pillar structure of defined authority,
               pre-execution enforcement, immutable approvals, and real-time detection. We have the
-              technical primitives — policy engines, inline proxies, cryptographic signing, immutable
-              storage. We have the regulatory and business urgency — the EU AI Act, insurance
+              technical primitives: policy engines, inline proxies, cryptographic signing, immutable
+              storage. We have the regulatory and business urgency: the EU AI Act, insurance
               requirements, board oversight. What we don't yet have is a dominant, unified standard for
               enforcing agentic authority with the same rigor enterprises already apply to human
               authority. That is not a solved problem, and it is becoming one of the more consequential
@@ -288,19 +288,19 @@ export default function TheMissingIamLayer() {
             <h2 style={sectionHeadingStyle}>Conclusion</h2>
             <p>
               The shift from human-operated systems to autonomous, agent-operated systems is not a minor
-              change — it requires rethinking how enterprises define and enforce authority. Traditional
+              change. It requires rethinking how enterprises define and enforce authority. Traditional
               IAM answers the authority question for humans. Machine IAM answers it partially for
               services.{" "}
               <a href="/" style={{ color: "#a78bfa" }}>
                 Agentic authority
               </a>{" "}
-              — how to enforce it for stochastic, goal-seeking agents — is still being defined.
+              (how to enforce it for stochastic, goal-seeking agents) is still being defined.
             </p>
             <p>
               The enterprises that solve this well will be the ones that maintain control, visibility,
               and accountability as they scale autonomous agent deployment. The ones that don't will
               accumulate unauditable agent decisions and unquantifiable risk. This is a governance
-              problem in its consequences, but it is an infrastructure problem in its solution — read{" "}
+              problem in its consequences, but it is an infrastructure problem in its solution: read{" "}
               <a href="/why-we-exist" style={{ color: "#a78bfa" }}>
                 why AI Securewatch built PayReality to solve it
               </a>

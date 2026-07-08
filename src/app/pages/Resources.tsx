@@ -45,7 +45,7 @@ export default function Resources() {
           </h1>
           <p className="text-muted-foreground leading-relaxed mb-16" style={{ fontSize: "1.125rem", maxWidth: 640 }}>
             Insights, research, and technical writing on Enterprise AI Authority Infrastructure,
-            delegated authority, and runtime enforcement — from{" "}
+            delegated authority, and runtime enforcement, from{" "}
             <a href="/about" style={{ color: "#a78bfa" }}>
               AI Securewatch
             </a>

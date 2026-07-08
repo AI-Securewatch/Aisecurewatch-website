@@ -30,7 +30,7 @@ export default function SeanChihwendu() {
     <>
       <SEO
         title="Sean Chihwendu | Founder & CEO, AI Securewatch"
-        description="Sean Chihwendu founded AI Securewatch to build Enterprise AI Authority Infrastructure — the runtime that enforces delegated authority against autonomous AI."
+        description="Sean Chihwendu founded AI Securewatch to build Enterprise AI Authority Infrastructure: the runtime that enforces delegated authority against autonomous AI."
         path="/leadership/sean-chihwendu"
         jsonLd={{
           "@context": "https://schema.org",
@@ -89,8 +89,8 @@ export default function SeanChihwendu() {
                 Sean leads the development of PayReality: a deterministic runtime that compiles an
                 enterprise's existing delegated authority policy into machine-enforceable rules, and
                 evaluates every action an autonomous AI agent attempts to execute against that policy
-                before it runs. Every decision resolves to one of three outcomes — approve, reject, or
-                route to human review — and produces cryptographically verifiable evidence of what was
+                before it runs. Every decision resolves to one of three outcomes: approve, reject, or
+                route to human review, and produces cryptographically verifiable evidence of what was
                 authorized and what happened.
               </p>
             </section>
@@ -108,7 +108,7 @@ export default function SeanChihwendu() {
                 </p>
                 <p>
                   Sean's premise is that this is not a missing feature inside existing AI governance or
-                  AI security tooling — it is a distinct infrastructure layer that does not yet exist at
+                  AI security tooling. It is a distinct infrastructure layer that does not yet exist at
                   the enterprise level, in the same way identity and access management did not exist
                   before enterprises needed to authenticate machines as well as people.{" "}
                   <a href="/why-we-exist" style={{ color: "#a78bfa" }}>
@@ -141,7 +141,7 @@ export default function SeanChihwendu() {
                   collaboration became AI Securewatch.
                 </p>
                 <p>
-                  The company's first working system targeted payment execution specifically — the
+                  The company's first working system targeted payment execution specifically: the
                   environment where an unauthorized action has the most immediate, measurable cost, and
                   therefore the fastest environment in which to prove the model. Payments were the
                   proving ground, not the destination.
@@ -169,7 +169,7 @@ export default function SeanChihwendu() {
                 Sean views delegated authority as a universal enterprise problem, not a payments problem
                 or a procurement problem. His long-term view is that Enterprise AI Authority
                 Infrastructure becomes standard architecture underneath any consequential action an
-                autonomous AI system takes — procurement, claims, treasury, HR, and beyond — the same way
+                autonomous AI system takes, from procurement and claims to treasury and HR, the same way
                 identity and access management became standard architecture underneath every human
                 action inside an enterprise system.{" "}
                 <a href="/why-we-exist" style={{ color: "#a78bfa" }}>

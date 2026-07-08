@@ -8,7 +8,7 @@ const LEADERS = [
     title: "Founder & CEO",
     slug: "sean-chihwendu",
     summary:
-      "Leads vision, sales, and fundraising. Background in procurement and tender management — the experience that surfaced the delegated-authority gap PayReality closes.",
+      "Leads vision, sales, and fundraising. Background in procurement and tender management, the experience that surfaced the delegated-authority gap PayReality closes.",
     accent: "#7c6fff",
   },
   {
@@ -60,7 +60,7 @@ export default function Leadership() {
           </h1>
           <p className="text-muted-foreground leading-relaxed mb-16" style={{ fontSize: "1.125rem", maxWidth: 640 }}>
             Every line of PayReality's code is written by a founder. No outsourced development, no
-            contractors — just the two people who lead{" "}
+            contractors, just the two people who lead{" "}
             <a href="/about" style={{ color: "#a78bfa" }}>
               AI Securewatch
             </a>

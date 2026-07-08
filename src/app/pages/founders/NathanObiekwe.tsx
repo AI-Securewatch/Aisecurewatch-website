@@ -4,8 +4,8 @@ import { CONTACT_EMAIL, SITE_URL, mailto } from "../../lib/site";
 
 const EXPERTISE = [
   "Distributed systems & high-performance runtime engineering",
-  "Rust — memory-safe, deterministic execution",
-  "gRPC — low-latency service architecture",
+  "Rust: memory-safe, deterministic execution",
+  "gRPC: low-latency service architecture",
   "Open Policy Agent & Rego policy compilation",
   "Enterprise AI infrastructure & runtime enforcement",
 ];
@@ -14,7 +14,7 @@ const RESPONSIBILITIES = [
   "Architects PayReality's deterministic authority runtime end to end",
   "Built the policy compiler and the core evaluation engine that intercepts agent intents",
   "Designed the evidence and audit pipeline behind every enforcement decision",
-  "Leads the Verifiable Intent Certificate system — PayReality's cryptographic evidence layer",
+  "Leads the Verifiable Intent Certificate system: PayReality's cryptographic evidence layer",
 ];
 
 const sectionHeadingStyle = {
@@ -80,7 +80,7 @@ export default function NathanObiekwe() {
                   PayReality's
                 </a>{" "}
                 authority runtime. Where Sean defines what enterprises need authority infrastructure to
-                do, Nathan defines how a system enforces it — deterministically, at machine speed, under
+                do, Nathan defines how a system enforces it, deterministically, at machine speed, under
                 enterprise-grade reliability constraints. He is not a generalist software engineer; his
                 work is systems engineering for a runtime that a business's execution boundary depends
                 on.
@@ -95,7 +95,7 @@ export default function NathanObiekwe() {
                 authority rules into executable policy, the evaluation engine that intercepts an agent's
                 intended action before it reaches a production system, and the evidence pipeline that
                 seals every decision into a cryptographically verifiable record. This is distributed
-                systems and runtime engineering applied to a single, unforgiving requirement — a decision
+                systems and runtime engineering applied to a single, unforgiving requirement: a decision
                 that blocks or allows a real business action cannot be slow, and it cannot be wrong.
               </p>
             </section>
@@ -106,7 +106,7 @@ export default function NathanObiekwe() {
               <div className="flex flex-col gap-4 text-muted-foreground leading-relaxed">
                 <p>
                   Nathan's engineering position is that most of the industry checks whether an AI agent
-                  is behaving using another, probabilistic AI model — which is not a reliable way to
+                  is behaving using another, probabilistic AI model, which is not a reliable way to
                   guard a consequential action. PayReality's runtime takes the opposite approach:
                   enforcement has to be deterministic, meaning the same policy and the same input always
                   produce the same decision, with no dependence on a model's judgment at the moment it
@@ -114,7 +114,7 @@ export default function NathanObiekwe() {
                 </p>
                 <p>
                   That philosophy shapes every layer of the stack he has built. The core runtime is
-                  written in Rust, chosen for memory safety and zero-cost abstractions — in a
+                  written in Rust, chosen for memory safety and zero-cost abstractions. In a
                   pre-execution environment, a garbage-collection pause or a memory leak is not an
                   acceptable source of latency for a decision that blocks or allows a real action.
                   Agent-to-runtime communication runs over gRPC for low-latency evaluation at the volumes
@@ -134,7 +134,7 @@ export default function NathanObiekwe() {
                 building a deterministic enforcement layer for a problem the rest of the industry was
                 solving probabilistically. He worked part-time while the runtime architecture took shape,
                 moving to full-time in April 2026 after the company secured its first paid pilot
-                engagement. His focus today is the Verifiable Intent Certificate system — the evidence
+                engagement. His focus today is the Verifiable Intent Certificate system: the evidence
                 layer that gives every PayReality decision an independently verifiable record.
               </p>
             </section>

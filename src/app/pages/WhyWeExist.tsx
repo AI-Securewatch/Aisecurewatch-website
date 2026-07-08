@@ -10,7 +10,7 @@ export default function WhyWeExist() {
     <>
       <SEO
         title="Why We Exist | AI Securewatch"
-        description="Enterprises already have delegated authority. The problem was never governance — it was translating existing authority into controls autonomous AI can obey."
+        description="Enterprises already have delegated authority. The problem was never governance. It was translating existing authority into controls autonomous AI can obey."
         path="/why-we-exist"
         jsonLd={{
           "@context": "https://schema.org",
@@ -48,7 +48,7 @@ export default function WhyWeExist() {
             <p>
               Every large enterprise already knows how to delegate authority. Procurement policy.
               Treasury policy. Approval matrices. Spending limits. Governance frameworks. Risk
-              frameworks. These are not new ideas — they are some of the most mature, most
+              frameworks. These are not new ideas. They are some of the most mature, most
               thoroughly-documented systems inside any large organization, built over decades and
               understood by finance, legal, risk, procurement, and audit alike.
             </p>
@@ -65,7 +65,7 @@ export default function WhyWeExist() {
               policy simply does not apply.
             </p>
             <p>
-              The instinct across the industry has been to treat this as a governance problem — write
+              The instinct across the industry has been to treat this as a governance problem: write
               more policy, convene more committees, publish more principles. That instinct is
               understandable, and it is misdirected. Enterprises do not lack policy. Most already have
               more delegated authority written down than they can operationalize. What they lack is a
@@ -76,8 +76,8 @@ export default function WhyWeExist() {
               <a href="/resources/the-missing-iam-layer-for-ai-authority" style={{ color: "#a78bfa" }}>
                 translation, not authorship
               </a>
-              . Turning delegated authority that already exists — already written, already approved,
-              already understood by the humans who operate under it — into a form a machine can evaluate
+              . Turning delegated authority that already exists (already written, already approved,
+              already understood by the humans who operate under it) into a form a machine can evaluate
               and obey, at the moment an action is about to happen. Not earlier, in a training document
               no runtime ever reads. Not later, in an audit log that only proves something already went
               wrong.
@@ -93,7 +93,7 @@ export default function WhyWeExist() {
             </p>
             <p>
               We think every enterprise that delegates real authority to autonomous AI will eventually
-              need an answer to that question — the same way every enterprise that connected a computer
+              need an answer to that question, the same way every enterprise that connected a computer
               to a network eventually needed identity and access management, whether or not it felt
               urgent on day one. We built{" "}
               <a href="/" style={{ color: "#a78bfa" }}>
