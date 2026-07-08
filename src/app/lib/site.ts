@@ -4,6 +4,7 @@ export const PLATFORM = "https://pay-reality-demo.vercel.app";
 export const CONTACT_EMAIL = "sean@aisecurewatch.com";
 export const CAREERS_EMAIL = "sean@aisecurewatch.com";
 export const LEGAL_EMAIL = "sean@aisecurewatch.com";
+export const NATHAN_EMAIL = "nathan@aisecurewatch.com";
 
 export function mailto(to: string, subject: string, body?: string) {
   const params = new URLSearchParams({ subject });

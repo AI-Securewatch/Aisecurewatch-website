@@ -1,6 +1,6 @@
 import { ArrowRight, Mail } from "lucide-react";
 import SEO from "../../components/SEO";
-import { CONTACT_EMAIL, SITE_URL, mailto } from "../../lib/site";
+import { NATHAN_EMAIL, SITE_URL, mailto } from "../../lib/site";
 
 const EXPERTISE = [
   "Distributed systems & high-performance runtime engineering",
@@ -196,7 +196,7 @@ export default function NathanObiekwe() {
               <ArrowRight size={16} />
             </a>
             <a
-              href={mailto(CONTACT_EMAIL, "Technical Inquiry: Nathan Obiekwe")}
+              href={mailto(NATHAN_EMAIL, "Technical Inquiry: Nathan Obiekwe")}
               className="btn-ghost px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center gap-2"
             >
               Contact Nathan
