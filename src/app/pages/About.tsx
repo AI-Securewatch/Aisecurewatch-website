@@ -128,34 +128,20 @@ export default function About() {
             </h2>
             <div className="flex flex-col gap-5 text-muted-foreground leading-relaxed">
               <p>
-                Our founder spent years in procurement and tender management, watching how difficult
-                it is for an organization to be certain that an approved payment actually reaches the
-                correct, authorized party, under the correct policy. That gap — between a policy that
-                exists on paper and a system that actually enforces it — turned out not to be specific
-                to payments at all.
+                Every enterprise already knows how to delegate authority to people: procurement policy,
+                treasury policy, approval matrices, governance frameworks. Autonomous AI breaks that
+                model, because nothing forces an AI agent to check a policy before it acts. The gap is
+                not governance — it's translating authority that already exists into a form a machine
+                can actually obey, before it executes, not after.
               </p>
-              <p>
-                Every enterprise already has a mature way of delegating authority to people: procurement
-                policies, treasury policies, financial delegations, approval matrices, governance
-                frameworks. Humans understand these boundaries naturally, because they were built for
-                humans. Autonomous AI does not understand them at all, because nothing forces an AI
-                agent to check a policy before it acts.
-              </p>
-              <p>
-                We started by solving this in the environment where it was most obvious: payment
-                execution, where an unauthorized action has an immediate, measurable cost. That was the
-                first proving ground, not the destination. The same architecture — a deterministic
-                policy engine sitting between an agent and the systems it can act on — generalizes to
-                any consequential business action an autonomous AI system might take.
-              </p>
-              <p>
-                That is the infrastructure gap PayReality closes:{" "}
-                <a href="/resources/the-missing-iam-layer-for-ai-authority" style={{ color: "#a78bfa" }}>
-                  enterprise IAM answers who an identity is
-                </a>
-                , but nothing today answers whether a specific action, with these specific parameters,
-                was actually authorized — before it happens, not after.
-              </p>
+              <a
+                href="/why-we-exist"
+                className="inline-flex items-center gap-2 font-medium"
+                style={{ color: "#a78bfa" }}
+              >
+                Read the full case for why this category exists
+                <ArrowRight size={16} />
+              </a>
             </div>
           </div>
 

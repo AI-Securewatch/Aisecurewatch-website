@@ -41,7 +41,7 @@ export default function Careers() {
 
           <div className="flex flex-col gap-5 text-muted-foreground leading-relaxed mb-12" style={{ fontSize: "1.0625rem" }}>
             <p>
-              AI Securewatch intends to build world-class infrastructure for autonomous AI — the
+              AI Securewatch is building Enterprise AI Authority Infrastructure for autonomous AI — the
               deterministic runtime, evidence architecture, and enterprise tooling that let organizations
               delegate authority to AI with the same confidence they delegate it to people.
             </p>

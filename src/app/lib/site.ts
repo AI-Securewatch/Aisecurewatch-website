@@ -35,6 +35,7 @@ export const FOOTER_COLUMNS = [
     heading: "Company",
     links: [
       { label: "About", href: "/about" },
+      { label: "Why We Exist", href: "/why-we-exist" },
       { label: "Leadership", href: "/leadership" },
       { label: "Careers", href: "/careers" },
       { label: "Contact", href: "/contact" },

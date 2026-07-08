@@ -300,9 +300,9 @@ export default function TheMissingIamLayer() {
               The enterprises that solve this well will be the ones that maintain control, visibility,
               and accountability as they scale autonomous agent deployment. The ones that don't will
               accumulate unauditable agent decisions and unquantifiable risk. This is a governance
-              problem in its consequences, but it is an infrastructure problem in its solution —{" "}
-              <a href="/about" style={{ color: "#a78bfa" }}>
-                which is the problem AI Securewatch built PayReality to solve
+              problem in its consequences, but it is an infrastructure problem in its solution — read{" "}
+              <a href="/why-we-exist" style={{ color: "#a78bfa" }}>
+                why AI Securewatch built PayReality to solve it
               </a>
               .
             </p>
