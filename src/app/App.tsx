@@ -525,6 +525,7 @@ export default function App() {
         )}
       </nav>
 
+      <main>
       {/* ── Hero ── */}
       <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-24 pb-32 overflow-hidden">
         {/* Animated orbs */}
@@ -1038,7 +1039,7 @@ export default function App() {
                   </div>
                 </div>
 
-                <div
+                <h3
                   className="mb-3"
                   style={{
                     fontFamily: "'Onest', system-ui, sans-serif",
@@ -1049,7 +1050,7 @@ export default function App() {
                   }}
                 >
                   {mod.name}
-                </div>
+                </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed flex-1">{mod.desc}</p>
 
                 <div className="mt-6 flex items-center gap-2 text-xs font-medium transition-colors group-hover:opacity-100" style={{ color: mod.accent }}>
@@ -1180,7 +1181,7 @@ export default function App() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {PERSONAS.map((p) => (
               <div key={p.role} className="glass-card rounded-2xl p-7">
-                <div
+                <h3
                   className="mb-4"
                   style={{
                     fontFamily: "'Onest', system-ui, sans-serif",
@@ -1191,7 +1192,7 @@ export default function App() {
                   }}
                 >
                   {p.role}
-                </div>
+                </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
               </div>
             ))}
@@ -1370,6 +1371,7 @@ export default function App() {
           </div>
         </div>
       </section>
+      </main>
 
       {/* ── Footer ── */}
       <footer id="resources" className="border-t border-border py-16 px-6">
