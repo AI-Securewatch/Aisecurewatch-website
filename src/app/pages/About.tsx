@@ -160,8 +160,8 @@ export default function About() {
                   lineHeight: 1.4,
                 }}
               >
-                Build the infrastructure that allows organizations to safely delegate authority to
-                autonomous AI.
+                Build the infrastructure that makes autonomous AI obedient to the authority
+                organizations already delegate. Not smarter AI. Obedient AI.
               </p>
             </div>
             <div

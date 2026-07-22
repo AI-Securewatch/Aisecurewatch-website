@@ -26,7 +26,7 @@ export const FOOTER_COLUMNS = [
     heading: "Platform",
     links: [
       "Command Center",
-      "Policy Studio",
+      "Authority Modelling Studio",
       "Intent API",
       "Authority Engine",
       "Human Review Console",
