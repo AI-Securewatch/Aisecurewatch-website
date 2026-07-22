@@ -9,6 +9,7 @@ import NathanObiekwe from "./pages/founders/NathanObiekwe";
 import Careers from "./pages/Careers";
 import Resources from "./pages/Resources";
 import TheMissingIamLayer from "./pages/resources/TheMissingIamLayer";
+import Manifesto from "./pages/Manifesto";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
@@ -27,6 +28,7 @@ export default function AppRoutes() {
       <Route path="/careers" element={<Layout><Careers /></Layout>} />
       <Route path="/resources" element={<Layout><Resources /></Layout>} />
       <Route path="/resources/the-missing-iam-layer-for-ai-authority" element={<Layout><TheMissingIamLayer /></Layout>} />
+      <Route path="/manifesto" element={<Layout><Manifesto /></Layout>} />
       <Route path="/contact" element={<Layout><Contact /></Layout>} />
       <Route path="*" element={<Layout><NotFound /></Layout>} />
     </Routes>

@@ -49,6 +49,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://aisecurewatch.com/manifesto</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://aisecurewatch.com/careers</loc>
     <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>

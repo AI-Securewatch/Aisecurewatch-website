@@ -111,6 +111,22 @@ export const ROUTE_META = {
       "mainEntityOfPage": `${SITE_URL}/resources/the-missing-iam-layer-for-ai-authority`,
     },
   },
+  "/manifesto": {
+    title: "The Enterprise Authority Manifesto | AI Securewatch",
+    description: "Why every autonomous enterprise will require authority infrastructure. The founding manifesto for Enterprise Authority Infrastructure, from AI Securewatch.",
+    type: "article",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "The Enterprise Authority Manifesto",
+      "description": "Why every autonomous enterprise will require authority infrastructure.",
+      "url": `${SITE_URL}/manifesto`,
+      "author": { "@id": `${SITE_URL}/#organization` },
+      "publisher": { "@id": `${SITE_URL}/#organization` },
+      "about": { "@id": `${SITE_URL}/#software` },
+      "mainEntityOfPage": `${SITE_URL}/manifesto`,
+    },
+  },
   "/contact": {
     title: "Contact AI Securewatch",
     description: "Get in touch with AI Securewatch, developer of PayReality, Enterprise AI Authority Infrastructure. Sales, leadership, and careers contacts.",

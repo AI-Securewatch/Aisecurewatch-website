@@ -47,6 +47,7 @@ export const FOOTER_COLUMNS = [
     heading: "Resources",
     links: [
       { label: "Resources", href: "/resources" },
+      { label: "The Enterprise Authority Manifesto", href: "/manifesto" },
       { label: "The Missing IAM Layer for AI Authority", href: "/resources/the-missing-iam-layer-for-ai-authority" },
       { label: "Evidence", href: "/#evidence" },
     ],
