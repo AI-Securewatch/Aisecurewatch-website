@@ -117,14 +117,26 @@ export const ROUTE_META = {
     type: "article",
     jsonLd: {
       "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "The Enterprise Authority Manifesto",
-      "description": "Why every autonomous enterprise will require authority infrastructure.",
-      "url": `${SITE_URL}/manifesto`,
-      "author": { "@id": `${SITE_URL}/#organization` },
-      "publisher": { "@id": `${SITE_URL}/#organization` },
-      "about": { "@id": `${SITE_URL}/#software` },
-      "mainEntityOfPage": `${SITE_URL}/manifesto`,
+      "@graph": [
+        {
+          "@type": "Article",
+          "headline": "The Enterprise Authority Manifesto",
+          "description": "Why every autonomous enterprise will require authority infrastructure.",
+          "url": `${SITE_URL}/manifesto`,
+          "author": { "@id": `${SITE_URL}/#person-sean` },
+          "publisher": { "@id": `${SITE_URL}/#organization` },
+          "about": { "@id": `${SITE_URL}/#software` },
+          "mainEntityOfPage": `${SITE_URL}/manifesto`,
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+            { "@type": "ListItem", "position": 2, "name": "Resources", "item": `${SITE_URL}/resources` },
+            { "@type": "ListItem", "position": 3, "name": "The Enterprise Authority Manifesto", "item": `${SITE_URL}/manifesto` },
+          ],
+        },
+      ],
     },
   },
   "/contact": {

@@ -482,7 +482,7 @@ export default function Home() {
       </section>
 
       {/* ── Delegated Authority Gap ── */}
-      <section className="py-32 px-6 relative" style={{ background: "rgba(124,111,255,0.025)" }}>
+      <section id="runtime-authority" className="py-32 px-6 relative" style={{ background: "rgba(124,111,255,0.025)" }}>
         <div className="absolute inset-0 pointer-events-none">
           <div
             className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px]"
