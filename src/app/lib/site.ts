@@ -40,7 +40,7 @@ export const FOOTER_COLUMNS = [
       { label: "Leadership", href: "/leadership" },
       { label: "Careers", href: "/careers" },
       { label: "Contact", href: "/contact" },
-      { label: "Request Demo", action: "demo" as const },
+      { label: "Book a Demo", action: "demo" as const },
     ],
   },
   {

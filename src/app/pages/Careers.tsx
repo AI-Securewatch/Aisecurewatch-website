@@ -86,7 +86,7 @@ export default function Careers() {
               onClick={openDemo}
               className="btn-ghost px-8 py-4 rounded-xl text-base inline-flex items-center justify-center gap-3"
             >
-              See the platform in action
+              Book a Demo
             </button>
           </div>
         </div>
