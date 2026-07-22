@@ -10,6 +10,8 @@ import Careers from "./pages/Careers";
 import Resources from "./pages/Resources";
 import TheMissingIamLayer from "./pages/resources/TheMissingIamLayer";
 import Manifesto from "./pages/Manifesto";
+import PolicyEngine from "./pages/PolicyEngine";
+import InsurancePortal from "./pages/InsurancePortal";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
@@ -29,6 +31,8 @@ export default function AppRoutes() {
       <Route path="/resources" element={<Layout><Resources /></Layout>} />
       <Route path="/resources/the-missing-iam-layer-for-ai-authority" element={<Layout><TheMissingIamLayer /></Layout>} />
       <Route path="/manifesto" element={<Layout><Manifesto /></Layout>} />
+      <Route path="/policy-engine" element={<Layout><PolicyEngine /></Layout>} />
+      <Route path="/insurance-portal" element={<Layout><InsurancePortal /></Layout>} />
       <Route path="/contact" element={<Layout><Contact /></Layout>} />
       <Route path="*" element={<Layout><NotFound /></Layout>} />
     </Routes>

@@ -139,6 +139,30 @@ export const ROUTE_META = {
       ],
     },
   },
+  "/policy-engine": {
+    title: "Policy Engine | PayReality",
+    description: "The Policy Engine compiles delegated authority into deterministic, machine-enforceable rules using Open Policy Agent, then evaluates every AI agent intent against them before execution.",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "url": `${SITE_URL}/policy-engine`,
+      "name": "Policy Engine | PayReality",
+      "about": { "@id": `${SITE_URL}/#software` },
+      "isPartOf": { "@id": `${SITE_URL}/#website` },
+    },
+  },
+  "/insurance-portal": {
+    title: "Insurance Portal | PayReality",
+    description: "How PayReality's cryptographic evidence supports underwriting, claims, and continuous risk assurance for insurers covering autonomous AI deployments.",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "url": `${SITE_URL}/insurance-portal`,
+      "name": "Insurance Portal | PayReality",
+      "about": { "@id": `${SITE_URL}/#software` },
+      "isPartOf": { "@id": `${SITE_URL}/#website` },
+    },
+  },
   "/contact": {
     title: "Contact AI Securewatch",
     description: "Get in touch with AI Securewatch, developer of PayReality, Enterprise AI Authority Infrastructure. Sales, leadership, and careers contacts.",

@@ -92,15 +92,15 @@ const RELATED = [
     icon: Cpu,
   },
   {
-    title: "Insurance & Evidence",
-    desc: "Insurance is not the primary customer. Cryptographic evidence is what makes it an ecosystem partner.",
-    href: "/#use-cases",
+    title: "Insurance Portal",
+    desc: "How cryptographic evidence supports underwriting, claims, and continuous risk assurance for insurance ecosystem partners.",
+    href: "/insurance-portal",
     icon: Fingerprint,
   },
   {
-    title: "The Missing IAM Layer for AI Authority",
-    desc: "Enterprise IAM answers who an identity is. It was never built to ask whether an action was authorized.",
-    href: "/resources/the-missing-iam-layer-for-ai-authority",
+    title: "Policy Engine",
+    desc: "Runtime policy evaluation, OPA integration, and deterministic enforcement, explained end to end.",
+    href: "/policy-engine",
     icon: FileText,
   },
 ];
