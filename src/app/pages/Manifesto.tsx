@@ -235,7 +235,7 @@ function RuntimeDecisionDiagram() {
       <div className="flex items-center justify-center gap-3 mt-5 pt-5" style={{ borderTop: "1px dashed rgba(255,255,255,0.1)" }}>
         <Users size={14} style={{ color: "#f59e0b" }} />
         <span className="text-xs text-muted-foreground">
-          Runtime Validation escalates to <span style={{ color: "#e8ecf4" }}>Human Review</span> — resolved, back to
+          Runtime Validation escalates to <span style={{ color: "#e8ecf4" }}>Human Review</span>, resolved, back to
           Execution
         </span>
       </div>
@@ -549,8 +549,8 @@ export default function Manifesto() {
 
                 <PartHeading id="part-1" n={1} title="The Enterprise Already Solved Authority" />
                 <p className="mb-6">
-                  No enterprise gives any one employee the run of the business — not the most senior, not the most
-                  trusted — and yet the business runs: payments go out, contracts get signed, claims get settled,
+                  No enterprise gives any one employee the run of the business, not the most senior, not the most
+                  trusted, and yet the business runs: payments go out, contracts get signed, claims get settled,
                   thousands of times a day, without a single person personally approving each one. The enterprise
                   depends completely on people it does not fully trust. That this is not a problem is worth pausing
                   on.
@@ -563,21 +563,21 @@ export default function Manifesto() {
                 <p className="mb-6">
                   A junior buyer can raise a purchase order up to a defined limit. A regional manager can approve
                   discounts within a band. A claims handler can settle a claim below a threshold. A treasury analyst
-                  can release a payment within an approved mandate. Above those limits, the request routes upward — a
+                  can release a payment within an approved mandate. Above those limits, the request routes upward: a
                   manager, a committee, a second signatory. This is not bureaucracy. It is a control system, extending
                   the organisation's reach through many hands while keeping the risk of any single action bounded and
                   known in advance. It is old enough, and familiar enough, to have become invisible.
                 </p>
                 <p className="mb-6">
                   One detail is easy to miss: no employee owns the authority they exercise. A treasury analyst has no
-                  personal right to release a payment. The enterprise lends a defined slice of its own authority — for
+                  personal right to release a payment. The enterprise lends a defined slice of its own authority, for
                   a defined purpose, within a defined limit, revocable at will. Resignation, role change, or policy
                   update, and the loan is called in. The analyst never owned it. The analyst borrowed it.
                 </p>
                 <PullQuote lines={["Trust is a vulnerability.", "Authority is the fix."]} />
                 <p className="mb-6">
                   The enterprise does not need to trust the analyst completely. It only needs the analyst's authority
-                  to be bounded, revocable, and checked — a lower bar than trust, and a far more reliable one.
+                  to be bounded, revocable, and checked: a lower bar than trust, and a far more reliable one.
                 </p>
                 <PullQuote lines={["Authority belongs to the organisation.", "Never the individual."]} />
                 <p className="mb-6">
@@ -588,7 +588,7 @@ export default function Manifesto() {
                 <p className="mb-6">
                   If a human employee can be lent a bounded, revocable, auditable slice of the enterprise's authority,
                   there is no structural reason an autonomous system cannot be lent the same thing, under the same
-                  terms. Delegation does not require a human delegate — only one that is bounded, identifiable, and
+                  terms. Delegation does not require a human delegate, only one that is bounded, identifiable, and
                   accountable to the same policy every other delegate answers to. What changes when the borrower is a
                   machine is not the mechanics of delegation. It is the speed at which the delegate can act.
                 </p>
@@ -605,13 +605,13 @@ export default function Manifesto() {
                 </p>
                 <p className="mb-6">
                   <strong style={{ color: "#e8ecf4" }}>Authority produces a trail.</strong> When a payment clears,
-                  there is a record of who approved it, under which policy, at what limit — not a reconstruction from
+                  there is a record of who approved it, under which policy, at what limit, not a reconstruction from
                   memory when a regulator asks.
                 </p>
                 <p className="mb-6">
                   This is an operating system for organisational trust, built by separating two questions that are
                   easy to conflate: who is this, and what is this allowed to do. Enterprises have always answered the
-                  second with policy — borrowed and bounded, not judgement applied case by case.
+                  second with policy: borrowed and bounded, not judgement applied case by case.
                 </p>
                 <p className="mb-6">
                   It was built for humans borrowing authority from other humans, enforced by paper, signatures, and
@@ -626,7 +626,7 @@ export default function Manifesto() {
                 <PartHeading id="part-2" n={2} title="The History of Enterprise Infrastructure" />
                 <p className="mb-6">
                   Why hasn't a machine-readable version of delegated authority been built already? Because every
-                  prior enterprise capability made the same journey — from something each application solved for
+                  prior enterprise capability made the same journey: from something each application solved for
                   itself, to something the enterprise solved once, centrally, for everyone.
                 </p>
                 <p className="mb-6">
@@ -641,7 +641,7 @@ export default function Manifesto() {
                   for seventy years.
                 </p>
                 <p className="mb-6">
-                  <strong style={{ color: "#e8ecf4" }}>The 1950s.</strong> Computers calculate — payroll, actuarial
+                  <strong style={{ color: "#e8ecf4" }}>The 1950s.</strong> Computers calculate: payroll, actuarial
                   tables, ledger totals. Narrow and mechanical: the computer calculates what a human already decided
                   to calculate.
                 </p>
@@ -656,7 +656,7 @@ export default function Manifesto() {
                 </p>
                 <p className="mb-6">
                   <strong style={{ color: "#e8ecf4" }}>The 2000s.</strong> Identity becomes infrastructure. Each
-                  application had built its own login, its own password rules — solved independently, everywhere.
+                  application had built its own login, its own password rules, solved independently, everywhere.
                   Every new application multiplied the number of places a person's identity had to be established and
                   kept consistent. A thousand applications did not mean a thousand small identity problems. It meant
                   one identity problem, repeated a thousand times. Identity and access management consolidated into a
@@ -670,7 +670,7 @@ export default function Manifesto() {
                 <p className="mb-6">
                   <strong style={{ color: "#e8ecf4" }}>The 2020s.</strong> Autonomous systems execute. Language models
                   and agent frameworks give software the capacity to decide, not just to carry out a decision already
-                  made. An agent can read a request, form an intent, and act on it — in some workflows without a human
+                  made. An agent can read a request, form an intent, and act on it, in some workflows without a human
                   in the loop at all. This is the decade the execution boundary, described in Part 4, is crossed at
                   scale.
                 </p>
@@ -679,7 +679,7 @@ export default function Manifesto() {
                   Authority Infrastructure. The pattern that carried identity through its steps is already running for
                   authority. Every autonomous agent, built by a different team for a different workflow, must answer
                   the same question: is this action within delegated scope. Left alone, each team answers it
-                  differently — a hundred agents will not produce a hundred small authority problems, but one
+                  differently. A hundred agents will not produce a hundred small authority problems, but one
                   authority problem, repeated a hundred times. No enterprise can sensibly rebuild an authority check
                   inside every agent and every workflow. Consolidation is the only step left to happen.
                 </p>
@@ -710,15 +710,15 @@ export default function Manifesto() {
                   delegation, is not a safer agent. It is a more competent one.
                 </p>
                 <p className="mb-6">
-                  <strong style={{ color: "#e8ecf4" }}>Better reasoning</strong> — chain of thought, self-critique,
-                  multi-agent review — improves the recommendation by stacking more probabilistic steps. Stacking
+                  <strong style={{ color: "#e8ecf4" }}>Better reasoning</strong> (chain of thought, self-critique,
+                  multi-agent review) improves the recommendation by stacking more probabilistic steps. Stacking
                   probability on probability does not produce a deterministic outcome. It produces a more elaborate
                   probabilistic one.
                 </p>
                 <p className="mb-6">
                   <strong style={{ color: "#e8ecf4" }}>Governance and monitoring</strong> are addressed fully in Part
                   5. In short: both operate before the system is built or after it has acted. Neither operates at the
-                  one moment that matters — the instant between an AI system deciding what it wants to do and that
+                  one moment that matters: the instant between an AI system deciding what it wants to do and that
                   action taking effect.
                 </p>
                 <p className="mb-6">
@@ -760,21 +760,21 @@ export default function Manifesto() {
                 </ul>
                 <p className="mb-6">
                   None of this is hypothetical. Each is in production or active pilot today, in a growing number of
-                  cases with human confirmation removed below a size or risk threshold — because removing that
+                  cases with human confirmation removed below a size or risk threshold, because removing that
                   friction was the entire commercial argument for deploying the agent.
                 </p>
                 <PullQuote lines={["Recommendation is advice.", "Execution is a fact."]} />
                 <p className="mb-6">
                   This is the execution boundary: the line between an AI system that informs a decision and one that
                   is the decision. Once an agent's output is a transaction rather than a suggestion, the enterprise is
-                  managing the same delegation problem from Part 1 — except the borrower is software that can act in
+                  managing the same delegation problem from Part 1, except the borrower is software that can act in
                   milliseconds, without hesitation, and without the judgement a human brings to a borderline case.
                 </p>
                 <p className="mb-6">
                   Crossing this boundary does not require the AI to be more capable or more agentic. It only requires
                   that its output now closes a loop that used to require a human hand. Every question the enterprise
-                  answers for human delegates — who may act, to what limit, under what conditions, with what evidence
-                  — becomes a question it must answer for the agent too.
+                  answers for human delegates (who may act, to what limit, under what conditions, with what evidence)
+                  becomes a question it must answer for the agent too.
                 </p>
                 <p className="mb-6">
                   The boundary is easy to miss because nothing about the agent's architecture announces when it has
@@ -804,7 +804,7 @@ export default function Manifesto() {
                 <p className="mb-6">
                   Governance, compliance, monitoring, audit, and observability are, without exception,{" "}
                   <strong style={{ color: "#e8ecf4" }}>detective controls</strong>. A detective control asks whether
-                  something happened and whether it was acceptable. It examines a completed event — necessary, and by
+                  something happened and whether it was acceptable. It examines a completed event: necessary, and by
                   definition too late to stop the event it examines. A better dashboard still only shows the payment
                   after it has left the account.
                 </p>
@@ -818,7 +818,7 @@ export default function Manifesto() {
                 <PullQuote lines={["Governance tells you what happened.", "Authority decides what is allowed to happen."]} />
                 <p className="mb-6">
                   The cost of an authority failure is not evenly distributed across time. A payment released outside a
-                  delegation, a contract executed outside mandate, a claim settled above an approved limit — these
+                  delegation, a contract executed outside mandate, a claim settled above an approved limit: these
                   carry consequences that do not wait for the next audit. Detective controls can catch the second
                   occurrence. They cannot prevent the first, and an agent can execute thousands of actions between
                   review cycles.
@@ -834,7 +834,7 @@ export default function Manifesto() {
                 <p className="mb-6">
                   It is tempting to assume the risk in this paper requires something to go wrong with the AI itself.
                   That assumption understates the risk. None of the following require a malicious agent, a broken
-                  model, or an attack — only a correctly functioning AI system acting on a correctly formed intent,
+                  model, or an attack, only a correctly functioning AI system acting on a correctly formed intent,
                   with no deterministic check on whether it was entitled to act on it at all.
                 </p>
                 <p className="mb-6">
@@ -855,7 +855,7 @@ export default function Manifesto() {
                 </p>
                 <p className="mb-6">
                   <strong style={{ color: "#e8ecf4" }}>Contract signing.</strong> A procurement agent finalises terms
-                  within its price authority but outside its authority to bind the enterprise to a multi-year term —
+                  within its price authority but outside its authority to bind the enterprise to a multi-year term:
                   a distinction the organisation had reserved for one role, and had never told the agent existed.
                 </p>
                 <p className="mb-6">
@@ -893,7 +893,7 @@ export default function Manifesto() {
                   a regulator or a board. Neither is the moment the enterprise actually decides.
                 </p>
                 <p className="mb-6">
-                  That moment is runtime — the instant an autonomous system has formed an intent (an amount, a
+                  That moment is runtime: the instant an autonomous system has formed an intent (an amount, a
                   counterparty, a signature) and is about to convert it into a consequence the enterprise cannot take
                   back.
                 </p>
@@ -910,7 +910,7 @@ export default function Manifesto() {
                 </p>
                 <p className="mb-6">
                   Runtime Authority is not access control, which answers a coarse question at session or resource
-                  level — can this identity reach this system. Runtime Authority answers a finer question at the level
+                  level: can this identity reach this system. Runtime Authority answers a finer question at the level
                   of the individual transaction: given this agent's identity, its delegation, and the specifics of
                   this request, is this exact action, right now, within the{" "}
                   <strong style={{ color: "#e8ecf4" }}>authority envelope</strong> it has borrowed.
@@ -943,7 +943,7 @@ export default function Manifesto() {
                 <p className="mb-6">
                   A probabilistic system produces the most likely correct answer given its training and inputs. It
                   carries an irreducible chance of being wrong, one that does not fall to zero with more reasoning
-                  steps — each additional step is itself probabilistic, and stacking probabilistic operations
+                  steps: each additional step is itself probabilistic, and stacking probabilistic operations
                   converges to a different probability distribution, not to certainty.
                 </p>
                 <p className="mb-6">
@@ -956,7 +956,7 @@ export default function Manifesto() {
                   Consider an agent requesting a payment of ninety-eight thousand against a delegation capped at one
                   hundred thousand. A probabilistic system asked whether this complies is estimating a likelihood,
                   however confident it sounds. A deterministic system is comparing two numbers and returning true. Its
-                  only failure mode is a wrongly stated rule — a policy error the enterprise can inspect and fix.
+                  only failure mode is a wrongly stated rule: a policy error the enterprise can inspect and fix.
                 </p>
                 <PullQuote lines={["Authority is not inference.", "Authority is evaluation."]} />
                 <p className="mb-6">
@@ -966,8 +966,8 @@ export default function Manifesto() {
                 </p>
                 <p className="mb-6">
                   AI has a real role here: interpretation. It is well suited to reading an unstructured request and
-                  extracting the structured claim it implies — a payment of this amount, to this counterparty, under
-                  this contract — and presenting that claim for evaluation. What AI should not do is decide, by its
+                  extracting the structured claim it implies (a payment of this amount, to this counterparty, under
+                  this contract) and presenting that claim for evaluation. What AI should not do is decide, by its
                   own probabilistic judgement, whether the claim is authorised.
                 </p>
                 <PullQuote lines={["Intelligence recommends.", "Authority decides."]} />
@@ -980,7 +980,7 @@ export default function Manifesto() {
                   This is why authority functions as the missing operating system for autonomous work. An operating
                   system enforces boundaries the applications on top of it cannot override by being clever, however
                   good those applications get. An authority layer must do the same for an agent, however good the
-                  agent gets — not a more convincing argument, but a boundary its own reasoning cannot talk its way
+                  agent gets: not a more convincing argument, but a boundary its own reasoning cannot talk its way
                   past.
                 </p>
                 <PartFooterNav index={7} />
@@ -988,7 +988,7 @@ export default function Manifesto() {
                 <PartHeading id="part-9" n={9} title="The Runtime Decision" />
                 <p className="mb-6">
                   The architecture separates into two planes: a control plane, where policy is authored and
-                  published, and a runtime plane — the authority plane — where individual intents are evaluated
+                  published, and a runtime plane (the authority plane) where individual intents are evaluated
                   against it.
                 </p>
                 <RuntimeDecisionDiagram />
@@ -1001,15 +1001,15 @@ export default function Manifesto() {
                   <strong style={{ color: "#e8ecf4" }}>Authority Model.</strong> Written policy, however clear to a
                   person, is not directly executable. This stage compiles it into an explicit, machine-evaluable
                   model: who, or what, may take which action, up to what limit, under what conditions, with what
-                  escalation path. Ambiguity in the original policy surfaces here and must be resolved — a valuable
+                  escalation path. Ambiguity in the original policy surfaces here and must be resolved, a valuable
                   exercise whether or not a machine is involved.
                 </p>
                 <p className="mb-6">
                   <strong style={{ color: "#e8ecf4" }}>Runtime Validation.</strong> An autonomous agent forms an
                   intent, expressed as a structured claim, evaluated against the authority model before the action
-                  proceeds. The outcome is one of three: <em>approve</em> — within the authority the agent has
-                  borrowed; <em>escalate</em> — human review, exactly as a human delegate's request would route to a
-                  manager above a threshold; or <em>reject</em> — outside any authority the agent holds.
+                  proceeds. The outcome is one of three: <em>approve</em>: within the authority the agent has
+                  borrowed; <em>escalate</em>: human review, exactly as a human delegate's request would route to a
+                  manager above a threshold; or <em>reject</em>: outside any authority the agent holds.
                 </p>
                 <p className="mb-6">
                   <strong style={{ color: "#e8ecf4" }}>Execution.</strong> Only after a positive determination does
@@ -1024,13 +1024,13 @@ export default function Manifesto() {
                 </p>
                 <p className="mb-6">
                   <strong style={{ color: "#e8ecf4" }}>Cryptographic Evidence.</strong> Every decision generates an
-                  immutable record — an authority certificate: what was requested, by which agent, under which policy
+                  immutable record, an authority certificate: what was requested, by which agent, under which policy
                   version, with what outcome, at what time. This is the stage most enterprises assume they already
                   have.
                 </p>
                 <p className="mb-6">
                   Most believe they have evidence because they have logs. Logs are records a system writes about
-                  itself, after the fact, in a format built for debugging — incomplete or alterable, never designed
+                  itself, after the fact, in a format built for debugging, incomplete or alterable, never designed
                   to withstand an adversarial challenge. Telemetry goes further, but it is still descriptive: it does
                   not prove the story is accurate and unaltered. Both describe a system's own account of itself,
                   produced by the system whose behaviour is in question.
@@ -1052,7 +1052,7 @@ export default function Manifesto() {
                   The distinction between a log and an authority certificate is, in practice, the distinction between
                   a control an enterprise believes it has and one it can actually produce on demand. Multiply that
                   across every agent and every workflow, and the case for a shared layer stops being architectural
-                  preference and starts being arithmetic — the same arithmetic that shaped every layer before it.
+                  preference and starts being arithmetic: the same arithmetic that shaped every layer before it.
                 </p>
                 <PartFooterNav index={8} />
 
@@ -1075,7 +1075,7 @@ export default function Manifesto() {
                 <p className="mb-6">
                   A detective control, however well designed, requires proportional review: more agent actions mean
                   more audits, more monitoring capacity, more staff hours reconstructing what happened after the fact.
-                  Its cost grows with volume — precisely what autonomous agents are built to increase.
+                  Its cost grows with volume: precisely what autonomous agents are built to increase.
                 </p>
                 <p className="mb-6">
                   A preventive control does not share this curve. A deterministic policy engine evaluates one action
@@ -1084,7 +1084,7 @@ export default function Manifesto() {
                 </p>
                 <PullQuote lines={["A preventive control is built once.", "A detective control is repeated forever."]} />
                 <p className="mb-6">
-                  Past a certain transaction volume — and autonomous agents reach that volume quickly — a preventive,
+                  Past a certain transaction volume (and autonomous agents reach that volume quickly), a preventive,
                   automated check costs less per action than continuing to add human reviewers to keep pace. Runtime
                   Authority does not merely reduce risk. It becomes the cheaper way to operate, faster than most
                   enterprises currently budget for.
@@ -1106,7 +1106,7 @@ export default function Manifesto() {
                 <p className="mb-6">
                   Identity followed this arc in the 2000s, for the reason set out in Part 2. Networking followed the
                   same arc in a different shape: a point-to-point connection between every pair of systems grows
-                  faster than the number of systems itself — add a tenth application and you add nine connections,
+                  faster than the number of systems itself: add a tenth application and you add nine connections,
                   not one. No enterprise could sustain that growth, so connections gave way to a shared substrate
                   every application could plug into once. Payments followed it too: every business settling and
                   reconciling its own transactions was solving the same clearing and trust problem, independently, at
@@ -1145,7 +1145,7 @@ export default function Manifesto() {
                 <PartHeading id="part-12" n={12} title="The Autonomous Enterprise" />
                 <p className="mb-6">
                   Extend this reasoning and a picture emerges of the enterprise once autonomous agents are a normal
-                  part of its operating model — a standard participant alongside humans and existing automation, not
+                  part of its operating model: a standard participant alongside humans and existing automation, not
                   an exception.
                 </p>
                 <p className="mb-6">
@@ -1170,8 +1170,8 @@ export default function Manifesto() {
                 </p>
                 <p className="mb-6">
                   The autonomous enterprise is not defined by how many agents it has deployed. It is defined by
-                  whether it has one coherent answer to the question every stakeholder — board, regulator, insurer,
-                  customer — will eventually ask: across every actor, human or machine, who is entitled to do what,
+                  whether it has one coherent answer to the question every stakeholder (board, regulator, insurer,
+                  customer) will eventually ask: across every actor, human or machine, who is entitled to do what,
                   and can you prove it.
                 </p>
                 <p className="mb-6">
@@ -1219,7 +1219,7 @@ export default function Manifesto() {
                   does not change. An enterprise that deploys autonomous agents into consequential workflows will
                   need a runtime layer that checks delegated authority before execution and produces evidence a
                   sceptical outside party can verify. Enterprise Authority Infrastructure will exist. The only
-                  uncertainty left to settle is who builds it — and how soon the enterprises reading this paper decide
+                  uncertainty left to settle is who builds it, and how soon the enterprises reading this paper decide
                   they can no longer wait to find out.
                 </p>
                 <PartFooterNav index={12} />
@@ -1235,9 +1235,9 @@ export default function Manifesto() {
                     <li>Autonomous systems borrow authority the same way humans do, under the same terms.</li>
                     <li>Intelligence does not determine authority. It only recommends what authority should decide.</li>
                     <li>Authority must remain deterministic. A rule that can be estimated is not a rule that can be trusted.</li>
-                    <li>Authority must be evaluated before execution. Evaluated after, it is no longer authority — it is a record.</li>
+                    <li>Authority must be evaluated before execution. Evaluated after, it is no longer authority: it is a record.</li>
                     <li>Governance must become executable. Written policy that cannot be checked automatically is not yet a control.</li>
-                    <li>Evidence must be cryptographically verifiable, or it is not evidence — only a description.</li>
+                    <li>Evidence must be cryptographically verifiable, or it is not evidence: only a description.</li>
                     <li>Runtime is where authority exists. Before it, there is only planning. After it, only consequence.</li>
                     <li>Enterprise Authority Infrastructure becomes foundational, for the same reason identity, networking, and payments did before it.</li>
                   </ol>
@@ -1320,7 +1320,7 @@ export default function Manifesto() {
                     Sean Chihwendu
                   </a>
                   <div className="text-sm mb-3" style={{ color: "#a78bfa" }}>
-                    Founder &amp; CEO, AI Securewatch — Enterprise Authority Infrastructure
+                    Founder &amp; CEO, AI Securewatch · Enterprise Authority Infrastructure
                   </div>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     Sean founded AI Securewatch after years in procurement and tender management, where he saw

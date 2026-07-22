@@ -104,7 +104,7 @@ export default function InsurancePortal() {
             style={{ background: "rgba(124,111,255,0.06)", border: "1px solid rgba(124,111,255,0.18)" }}
           >
             <p className="text-sm text-muted-foreground" style={{ maxWidth: 560 }}>
-              Insurance is not PayReality's primary customer — it's an ecosystem partner. This page exists for the
+              Insurance is not PayReality's primary customer. It's an ecosystem partner. This page exists for the
               underwriters and claims teams who rely on our evidence, not as a direct purchase path.
             </p>
           </div>
@@ -185,7 +185,7 @@ export default function InsurancePortal() {
               </div>
               <p className="text-xs text-muted-foreground text-center mt-6">
                 The certificate produced at the final stage is independently verifiable using a public cryptographic
-                key — by an auditor, regulator, or insurer, with no access to PayReality itself.
+                key, verifiable by an auditor, regulator, or insurer, with no access to PayReality itself.
               </p>
             </div>
           </div>
@@ -226,7 +226,7 @@ export default function InsurancePortal() {
               Underwriting or evaluating AI liability risk?
             </h2>
             <p className="text-muted-foreground mb-8 max-w-lg mx-auto">
-              Talk to us about what evidence looks like from the outside — as an insurer, auditor, or regulator.
+              Talk to us about what evidence looks like from the outside, as an insurer, auditor, or regulator.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
