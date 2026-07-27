@@ -1,5 +1,5 @@
 export const SITE_URL = "https://aisecurewatch.com";
-export const PLATFORM = "https://pay-reality-demo.vercel.app";
+export const PLATFORM = "https://payreality.aisecurewatch.com";
 export const API_URL = "https://api.aisecurewatch.com";
 
 export const CONTACT_EMAIL = "sean@aisecurewatch.com";
