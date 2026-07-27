@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ExternalLink, Menu, Shield, X } from "lucide-react";
+import { ExternalLink, Menu, X } from "lucide-react";
 import { NAV_LINKS, PLATFORM } from "../lib/site";
 import { useDemoModal } from "../context/DemoModalContext";
 
@@ -13,12 +13,7 @@ export default function SiteNav() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a href="/" className="flex items-center gap-3 group">
-            <div
-              className="w-8 h-8 rounded-lg flex items-center justify-center"
-              style={{ background: "linear-gradient(135deg, #7c6fff, #3b8cf8)" }}
-            >
-              <Shield size={16} className="text-white" />
-            </div>
+            <img src="/payreality-logo.png" alt="" className="w-8 h-8 rounded-lg" />
             <div>
               <span
                 style={{

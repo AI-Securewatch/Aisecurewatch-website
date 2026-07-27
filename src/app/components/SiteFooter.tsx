@@ -1,4 +1,3 @@
-import { Shield } from "lucide-react";
 import { FOOTER_COLUMNS, LEGAL_LINKS } from "../lib/site";
 import { useDemoModal } from "../context/DemoModalContext";
 
@@ -11,12 +10,7 @@ export default function SiteFooter() {
         <div className="grid lg:grid-cols-6 gap-12 mb-16">
           <div id="company" className="lg:col-span-2">
             <a href="/" className="flex items-center gap-3 mb-4">
-              <div
-                className="w-8 h-8 rounded-lg flex items-center justify-center"
-                style={{ background: "linear-gradient(135deg, #7c6fff, #3b8cf8)" }}
-              >
-                <Shield size={16} className="text-white" />
-              </div>
+              <img src="/payreality-logo.png" alt="" className="w-8 h-8 rounded-lg" />
               <span
                 style={{
                   fontFamily: "'Onest', system-ui, sans-serif",

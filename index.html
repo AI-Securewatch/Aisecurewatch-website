@@ -34,10 +34,18 @@
       <meta name="twitter:image" content="https://aisecurewatch.com/og-image.png" />
       <meta name="twitter:image:alt" content="PayReality | The Authority Layer for Autonomous AI" />
 
-      <link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="any" />
+      <!-- Two variants of the same mark, swapped by the browser/OS's own
+           color scheme so the tab icon always sits on a tile that
+           matches: white tile for a light browser theme, black tile for
+           dark. Plain (no media query) links are the fallback for
+           browsers that don't support prefers-color-scheme on <link>. -->
+      <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" media="(prefers-color-scheme: light)" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" media="(prefers-color-scheme: light)" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" media="(prefers-color-scheme: light)" />
+      <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48-dark.png" media="(prefers-color-scheme: dark)" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32-dark.png" media="(prefers-color-scheme: dark)" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16-dark.png" media="(prefers-color-scheme: dark)" />
       <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
-      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
       <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
       <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
       <link rel="manifest" href="/site.webmanifest" />

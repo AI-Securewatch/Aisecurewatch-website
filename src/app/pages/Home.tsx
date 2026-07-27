@@ -864,12 +864,7 @@ export default function Home() {
                   boxShadow: "0 0 48px rgba(124,111,255,0.12)",
                 }}
               >
-                <div
-                  className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4"
-                  style={{ background: "linear-gradient(135deg, #7c6fff, #3b8cf8)" }}
-                >
-                  <Shield size={28} className="text-white" />
-                </div>
+                <img src="/payreality-logo.png" alt="" className="w-16 h-16 rounded-2xl mx-auto mb-4" />
                 <div
                   style={{
                     fontFamily: "'Onest', system-ui, sans-serif",
