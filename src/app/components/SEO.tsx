@@ -8,6 +8,10 @@ type SEOProps = {
   image?: string;
   type?: "website" | "article";
   jsonLd?: object;
+  // Pages with nothing to index (404, and any future utility page) --
+  // "follow" rather than "nofollow" so a real link elsewhere on the page
+  // (e.g. NotFound's link back to home) still passes crawl equity.
+  noindex?: boolean;
 };
 
 function upsertMeta(attr: "name" | "property", key: string, content: string) {
@@ -32,7 +36,7 @@ function upsertLink(rel: string, href: string) {
 
 const PAGE_JSONLD_ID = "page-jsonld";
 
-export default function SEO({ title, description, path, image, type = "website", jsonLd }: SEOProps) {
+export default function SEO({ title, description, path, image, type = "website", jsonLd, noindex }: SEOProps) {
   useEffect(() => {
     const url = `${SITE_URL}${path}`;
     const ogImage = image ? `${SITE_URL}${image}` : `${SITE_URL}/og-image.png`;
@@ -40,6 +44,12 @@ export default function SEO({ title, description, path, image, type = "website",
     document.title = title;
     upsertMeta("name", "description", description);
     upsertLink("canonical", url);
+
+    if (noindex) {
+      upsertMeta("name", "robots", "noindex, follow");
+    } else {
+      document.head.querySelector('meta[name="robots"]')?.remove();
+    }
 
     upsertMeta("property", "og:type", type);
     upsertMeta("property", "og:url", url);
@@ -65,7 +75,7 @@ export default function SEO({ title, description, path, image, type = "website",
       const el = document.getElementById(PAGE_JSONLD_ID);
       if (el) el.remove();
     };
-  }, [title, description, path, image, type, jsonLd]);
+  }, [title, description, path, image, type, jsonLd, noindex]);
 
   return null;
 }

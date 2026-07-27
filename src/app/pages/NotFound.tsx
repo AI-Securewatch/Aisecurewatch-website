@@ -8,6 +8,7 @@ export default function NotFound() {
         title="Page Not Found | PayReality"
         description="This page doesn't exist. Return to PayReality, the enterprise authority layer for autonomous AI."
         path="/404"
+        noindex
       />
       <main className="pt-40 pb-32 px-6 min-h-[60vh] flex items-center">
         <div className="max-w-lg mx-auto text-center">

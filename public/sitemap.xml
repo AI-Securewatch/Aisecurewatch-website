@@ -67,6 +67,36 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://aisecurewatch.com/docs</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aisecurewatch.com/docs/sdk</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aisecurewatch.com/docs/integration-examples</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aisecurewatch.com/docs/authentication</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aisecurewatch.com/docs/agent-registration</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://aisecurewatch.com/careers</loc>
     <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
