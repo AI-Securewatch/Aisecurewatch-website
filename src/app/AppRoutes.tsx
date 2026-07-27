@@ -13,6 +13,11 @@ import Manifesto from "./pages/Manifesto";
 import PolicyEngine from "./pages/PolicyEngine";
 import InsurancePortal from "./pages/InsurancePortal";
 import Contact from "./pages/Contact";
+import Documentation from "./pages/Documentation";
+import Sdk from "./pages/docs/Sdk";
+import IntegrationExamples from "./pages/docs/IntegrationExamples";
+import Authentication from "./pages/docs/Authentication";
+import AgentRegistration from "./pages/docs/AgentRegistration";
 import NotFound from "./pages/NotFound";
 
 // Shared between the client entry (App.tsx, wrapped in BrowserRouter) and the
@@ -34,6 +39,11 @@ export default function AppRoutes() {
       <Route path="/policy-engine" element={<Layout><PolicyEngine /></Layout>} />
       <Route path="/insurance-portal" element={<Layout><InsurancePortal /></Layout>} />
       <Route path="/contact" element={<Layout><Contact /></Layout>} />
+      <Route path="/docs" element={<Layout><Documentation /></Layout>} />
+      <Route path="/docs/sdk" element={<Layout><Sdk /></Layout>} />
+      <Route path="/docs/integration-examples" element={<Layout><IntegrationExamples /></Layout>} />
+      <Route path="/docs/authentication" element={<Layout><Authentication /></Layout>} />
+      <Route path="/docs/agent-registration" element={<Layout><AgentRegistration /></Layout>} />
       <Route path="*" element={<Layout><NotFound /></Layout>} />
     </Routes>
   );

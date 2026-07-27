@@ -1,5 +1,6 @@
 export const SITE_URL = "https://aisecurewatch.com";
 export const PLATFORM = "https://pay-reality-demo.vercel.app";
+export const API_URL = "https://api.aisecurewatch.com";
 
 export const CONTACT_EMAIL = "sean@aisecurewatch.com";
 export const CAREERS_EMAIL = "sean@aisecurewatch.com";
@@ -25,14 +26,13 @@ export const FOOTER_COLUMNS = [
   {
     heading: "Platform",
     links: [
-      "Command Center",
-      "Authority Modelling Studio",
-      "Intent API",
-      "Authority Engine",
-      "Human Review Console",
-      "Agent Lifecycle Management",
-      "Developer SDK",
-    ].map((label) => ({ label, href: PLATFORM, external: true })),
+      { label: "Command Center", href: PLATFORM, external: true },
+      { label: "Authority Modelling Studio", href: PLATFORM, external: true },
+      { label: "Intent API", href: PLATFORM, external: true },
+      { label: "Authority Engine", href: PLATFORM, external: true },
+      { label: "Human Review Console", href: PLATFORM, external: true },
+      { label: "Agent Lifecycle Management", href: PLATFORM, external: true },
+    ],
   },
   {
     heading: "Company",
@@ -54,6 +54,17 @@ export const FOOTER_COLUMNS = [
       { label: "Policy Engine", href: "/policy-engine" },
       { label: "Insurance Portal", href: "/insurance-portal" },
       { label: "Evidence", href: "/#evidence" },
+    ],
+  },
+  {
+    heading: "Developer",
+    links: [
+      { label: "Documentation", href: "/docs" },
+      { label: "Developer SDK", href: "/docs/sdk" },
+      { label: "Integration Examples", href: "/docs/integration-examples" },
+      { label: "Authentication", href: "/docs/authentication" },
+      { label: "Agent Registration", href: "/docs/agent-registration" },
+      { label: "API Reference", href: `${API_URL}/docs`, external: true },
     ],
   },
 ];

@@ -8,7 +8,7 @@ export default function SiteFooter() {
   return (
     <footer id="resources" className="border-t border-border py-16 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-5 gap-12 mb-16">
+        <div className="grid lg:grid-cols-6 gap-12 mb-16">
           <div id="company" className="lg:col-span-2">
             <a href="/" className="flex items-center gap-3 mb-4">
               <div

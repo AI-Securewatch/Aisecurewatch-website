@@ -159,6 +159,10 @@ export default function Resources() {
 
           {/* Cross-links */}
           <div className="mt-20 pt-10 border-t border-border flex flex-col sm:flex-row gap-4">
+            <a href="/docs" className="btn-ghost px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center gap-2">
+              Developer documentation
+              <ArrowRight size={16} />
+            </a>
             <a href="/leadership" className="btn-ghost px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center gap-2">
               Meet the people behind this research
               <ArrowRight size={16} />
