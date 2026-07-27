@@ -242,6 +242,14 @@ export default function TheMissingIamLayer() {
               to express and enforce authority boundaries that account for stochasticity and
               hallucination risk, and that standard is still early.
             </p>
+            <p>
+              A concrete version of this pattern already exists in production: every agent PayReality
+              governs is provisioned, activated, suspended, credential-rotated, and eventually retired
+              or revoked, the same lifecycle an identity team already runs for a human hire, with a
+              signed record of every transition. It doesn't settle what the industry standard for
+              agentic IAM will look like. It's evidence that the pattern is buildable now, not a
+              multi-year standards effort away.
+            </p>
 
             {/* VII */}
             <h2 style={sectionHeadingStyle}>Regulatory requirements are creating urgency</h2>

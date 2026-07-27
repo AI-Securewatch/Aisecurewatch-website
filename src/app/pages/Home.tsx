@@ -23,6 +23,7 @@ import {
   GitBranch,
   FileSignature,
   Fingerprint,
+  Code2,
 } from "lucide-react";
 import { PLATFORM } from "../lib/site";
 import { useDemoModal } from "../context/DemoModalContext";
@@ -39,7 +40,7 @@ const MODULES = [
     name: "Authority Modelling Studio",
     slug: "authority-modelling-studio",
     icon: FileText,
-    desc: "Upload Delegation of Authority documents and compile them into versioned, deterministic authority models using Open Policy Agent.",
+    desc: "Upload Delegation of Authority documents and AI extracts the principals, resources, and rules inside them automatically, ready for human review; or author a policy directly. Both compile into the same versioned, deterministic model using Open Policy Agent.",
     accent: "#22d3ee",
   },
   {
@@ -85,16 +86,23 @@ const MODULES = [
     accent: "#2dd4bf",
   },
   {
-    name: "Agent Directory",
-    slug: "agent-directory",
+    name: "Agent Lifecycle Management",
+    slug: "agent-lifecycle",
     icon: Cpu,
-    desc: "The record of which AI systems are permitted to submit intents, and under which policy scope.",
+    desc: "Every AI agent managed the same way an enterprise manages a human workforce identity: registered, activated, suspended, credential-rotated, and retired or revoked, with a signed audit trail for every transition.",
     accent: "#6366f1",
+  },
+  {
+    name: "Developer SDK",
+    slug: "developer-sdk",
+    icon: Code2,
+    desc: "A Python SDK that authorizes an agent's action in one call. No manual signing, no cryptography, no request headers: agent.authorize() handles all of it.",
+    accent: "#f472b6",
   },
 ];
 
 const HOW_IT_WORKS = [
-  { step: "01", label: "Policy", sub: "Enterprise uploads existing Delegation of Authority policies", icon: FileText, color: "#7c6fff" },
+  { step: "01", label: "Policy", sub: "Enterprise uploads existing Delegation of Authority policies; AI extracts the rules inside them", icon: FileText, color: "#7c6fff" },
   { step: "02", label: "Compile", sub: "Policies are compiled into deterministic rules using Open Policy Agent", icon: GitBranch, color: "#6366f1" },
   { step: "03", label: "Review", sub: "A human reviews and signs the compiled policy", icon: FileSignature, color: "#3b8cf8" },
   { step: "04", label: "Publish", sub: "The signed policy is published to the runtime", icon: CheckCircle2, color: "#22d3ee" },
@@ -743,7 +751,7 @@ export default function Home() {
                 color: "#e8ecf4",
               }}
             >
-              Nine modules. One authority runtime.
+              Ten modules. One authority runtime.
             </h2>
             <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
               Every component of PayReality works together to compile policy, evaluate intent, and

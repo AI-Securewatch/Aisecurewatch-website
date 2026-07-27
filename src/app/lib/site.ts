@@ -30,6 +30,8 @@ export const FOOTER_COLUMNS = [
       "Intent API",
       "Authority Engine",
       "Human Review Console",
+      "Agent Lifecycle Management",
+      "Developer SDK",
     ].map((label) => ({ label, href: PLATFORM, external: true })),
   },
   {
