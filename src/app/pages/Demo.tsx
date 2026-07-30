@@ -73,7 +73,7 @@ export default function Demo() {
               "thumbnailUrl": "https://img.youtube.com/vi/DooDB4F2cqc/maxresdefault.jpg",
               "embedUrl": "https://www.youtube.com/embed/DooDB4F2cqc",
               "contentUrl": "https://youtu.be/DooDB4F2cqc",
-              "duration": "PT4M",
+              "duration": "PT7M",
               "publisher": { "@id": `${SITE_URL}/#organization` },
             },
           ],
@@ -132,7 +132,7 @@ export default function Demo() {
             >
               Executive Demo
             </h2>
-            <VideoCard videoId="DooDB4F2cqc" title="PayReality Executive Demo" durationLabel="4 min" className="mb-10" />
+            <VideoCard videoId="DooDB4F2cqc" title="PayReality Executive Demo" durationLabel="7 min" className="mb-10" />
 
             <div className="max-w-2xl">
               <h3

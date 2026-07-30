@@ -367,7 +367,7 @@ export default function Home() {
           </div>
 
           <div className="grid lg:grid-cols-[1.3fr_1fr] gap-8 lg:gap-12 items-center">
-            <VideoCard videoId="DooDB4F2cqc" title="PayReality Executive Demo" durationLabel="4 min" />
+            <VideoCard videoId="DooDB4F2cqc" title="PayReality Executive Demo" durationLabel="7 min" />
 
             <div>
               <div className="section-label mb-3">EXECUTIVE DEMO</div>
@@ -378,7 +378,7 @@ export default function Home() {
                 Executive Demo
               </h3>
               <p className="mono text-xs mb-6" style={{ color: "#6b7280", letterSpacing: "0.06em" }}>
-                RUNTIME: 4 MINUTES
+                RUNTIME: 7 MINUTES
               </p>
               <p className="text-muted-foreground leading-relaxed mb-5">
                 Watch an end-to-end demonstration covering:

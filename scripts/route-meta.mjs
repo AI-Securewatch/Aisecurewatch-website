@@ -159,7 +159,7 @@ export const ROUTE_META = {
           "thumbnailUrl": "https://img.youtube.com/vi/DooDB4F2cqc/maxresdefault.jpg",
           "embedUrl": "https://www.youtube.com/embed/DooDB4F2cqc",
           "contentUrl": "https://youtu.be/DooDB4F2cqc",
-          "duration": "PT4M",
+          "duration": "PT7M",
           "publisher": { "@id": `${SITE_URL}/#organization` },
         },
       ],
