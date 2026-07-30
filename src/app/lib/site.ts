@@ -27,14 +27,10 @@ export const FOOTER_COLUMNS = [
   {
     heading: "Platform",
     links: [
-      { label: "Command Center", href: PLATFORM, external: true },
-      { label: "Authority Modelling Studio", href: PLATFORM, external: true },
-      { label: "Intent API", href: PLATFORM, external: true },
-      { label: "Authority Engine", href: PLATFORM, external: true },
-      { label: "Human Review Console", href: PLATFORM, external: true },
-      { label: "Authority Simulation", href: PLATFORM, external: true },
-      { label: "Agent Lifecycle Management", href: PLATFORM, external: true },
-      { label: "Assurance Dashboard", href: PLATFORM, external: true },
+      { label: "Agents", href: `${PLATFORM}/agents`, external: true },
+      { label: "Governance", href: `${PLATFORM}/governance`, external: true },
+      { label: "Decisions", href: `${PLATFORM}/decisions`, external: true },
+      { label: "Assurance", href: `${PLATFORM}/assurance`, external: true },
     ],
   },
   {
