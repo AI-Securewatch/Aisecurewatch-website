@@ -14,7 +14,7 @@ const RESPONSIBILITIES = [
   "Architects PayReality's deterministic authority runtime end to end",
   "Built the policy compiler and the core evaluation engine that intercepts agent intents",
   "Designed the evidence and audit pipeline behind every enforcement decision",
-  "Leads the Verifiable Intent Certificate system: PayReality's cryptographic evidence layer",
+  "Leads the authority certificate system: PayReality's cryptographic evidence layer",
 ];
 
 const sectionHeadingStyle = {
@@ -134,7 +134,7 @@ export default function NathanObiekwe() {
                 building a deterministic enforcement layer for a problem the rest of the industry was
                 solving probabilistically. He worked part-time while the runtime architecture took shape,
                 moving to full-time in April 2026 after the company secured its first paid pilot
-                engagement. His focus today is the Verifiable Intent Certificate system: the evidence
+                engagement. His focus today is the authority certificate system: the evidence
                 layer that gives every PayReality decision an independently verifiable record.
               </p>
             </section>

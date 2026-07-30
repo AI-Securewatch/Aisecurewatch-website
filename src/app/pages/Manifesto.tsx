@@ -87,7 +87,7 @@ const RELATED = [
   },
   {
     title: "Platform Overview",
-    desc: "The nine modules that compile policy, evaluate intent, and record evidence for autonomous AI.",
+    desc: "The ten modules that compile policy, evaluate intent, and record evidence for autonomous AI.",
     href: "/#platform",
     icon: Cpu,
   },

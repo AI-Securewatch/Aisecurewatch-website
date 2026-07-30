@@ -49,7 +49,7 @@ const TIMELINE = [
   {
     year: "PayReality v2",
     title: "A deterministic API for AI-executed actions",
-    desc: "The architecture generalizes into an API: AI agents submit an intended action, and PayReality evaluates it against a signed policy in real time. Every decision produces a Verifiable Intent Certificate, a cryptographically signed record of what was authorized and what happened.",
+    desc: "The architecture generalizes into an API: AI agents submit an intended action, and PayReality evaluates it against a signed policy in real time. Every decision produces an authority certificate, a cryptographically signed record of what was authorized and what happened.",
   },
   {
     year: "January 2026",

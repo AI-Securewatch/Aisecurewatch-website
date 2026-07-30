@@ -139,6 +139,32 @@ export const ROUTE_META = {
       ],
     },
   },
+  "/demo": {
+    title: "Executive Product Demonstrations | PayReality",
+    description: "Watch PayReality operate in a real enterprise workflow: governance documents become Runtime Policies, AI agents receive cryptographic identities, and every decision is evaluated and evidenced before execution.",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "url": `${SITE_URL}/demo`,
+          "name": "Executive Product Demonstrations | PayReality",
+          "about": { "@id": `${SITE_URL}/#software` },
+          "isPartOf": { "@id": `${SITE_URL}/#website` },
+        },
+        {
+          "@type": "VideoObject",
+          "name": "PayReality Executive Demo",
+          "description": "An end-to-end demonstration of PayReality's Runtime Authority: AI Authority Builder, Runtime Policies, Agent Identity, the Runtime Decision Engine, cryptographic evidence, and the human review workflow.",
+          "thumbnailUrl": "https://img.youtube.com/vi/DooDB4F2cqc/maxresdefault.jpg",
+          "embedUrl": "https://www.youtube.com/embed/DooDB4F2cqc",
+          "contentUrl": "https://youtu.be/DooDB4F2cqc",
+          "duration": "PT4M",
+          "publisher": { "@id": `${SITE_URL}/#organization` },
+        },
+      ],
+    },
+  },
   "/policy-engine": {
     title: "Policy Engine | PayReality",
     description: "The Policy Engine compiles delegated authority into deterministic, machine-enforceable rules using Open Policy Agent, then evaluates every AI agent intent against them before execution.",

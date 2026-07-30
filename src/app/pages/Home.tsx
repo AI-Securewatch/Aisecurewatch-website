@@ -27,6 +27,16 @@ import {
 } from "lucide-react";
 import { PLATFORM } from "../lib/site";
 import { useDemoModal } from "../context/DemoModalContext";
+import VideoCard from "../components/VideoCard";
+
+const DEMO_COVERAGE = [
+  "AI Authority Builder",
+  "Runtime Policies",
+  "Agent Identity",
+  "Runtime Decision Engine",
+  "Cryptographic Evidence",
+  "Human Review workflow",
+];
 
 const MODULES = [
   {
@@ -329,6 +339,74 @@ export default function Home() {
               className="scroll-dot w-px h-4 rounded-full absolute top-0 left-0"
               style={{ background: "linear-gradient(to bottom, #7c6fff, transparent)" }}
             />
+          </div>
+        </div>
+      </section>
+
+      {/* ── Demo Center Preview ── */}
+      <section className="pt-8 pb-32 px-6 relative overflow-hidden">
+        <div className="max-w-6xl mx-auto">
+          <div className="max-w-2xl mx-auto text-center mb-16">
+            <div className="section-label mb-4">SEE IT WORK</div>
+            <h2
+              style={{
+                fontFamily: "'Onest', system-ui, sans-serif",
+                fontWeight: 700,
+                fontSize: "clamp(1.75rem, 4vw, 2.5rem)",
+                letterSpacing: "-0.025em",
+                color: "#e8ecf4",
+              }}
+            >
+              See <span className="grad-text">Runtime Authority</span> in Action
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mt-4" style={{ fontSize: "1.05rem" }}>
+              Watch how PayReality translates enterprise governance into machine-enforceable Runtime
+              Authority, authorizes AI actions before execution, and generates cryptographically
+              verifiable evidence for every decision.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-[1.3fr_1fr] gap-8 lg:gap-12 items-center">
+            <VideoCard videoId="DooDB4F2cqc" title="PayReality Executive Demo" durationLabel="4 min" />
+
+            <div>
+              <div className="section-label mb-3">EXECUTIVE DEMO</div>
+              <h3
+                className="mb-1"
+                style={{ fontFamily: "'Onest', system-ui, sans-serif", fontWeight: 700, fontSize: "1.4rem", color: "#e8ecf4", letterSpacing: "-0.02em" }}
+              >
+                Executive Demo
+              </h3>
+              <p className="mono text-xs mb-6" style={{ color: "#6b7280", letterSpacing: "0.06em" }}>
+                RUNTIME: 4 MINUTES
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-5">
+                Watch an end-to-end demonstration covering:
+              </p>
+              <ul className="space-y-3 mb-8">
+                {DEMO_COVERAGE.map((item) => (
+                  <li key={item} className="flex items-center gap-3 text-sm" style={{ color: "#e8ecf4" }}>
+                    <CheckCircle2 size={15} style={{ color: "#7c6fff", flexShrink: 0 }} />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="/demo"
+                  className="btn-primary px-7 py-3.5 rounded-xl text-sm inline-flex items-center justify-center gap-2"
+                >
+                  Watch Full Demo
+                  <ArrowRight size={15} />
+                </a>
+                <button
+                  onClick={openDemo}
+                  className="btn-ghost px-7 py-3.5 rounded-xl text-sm inline-flex items-center justify-center gap-2"
+                >
+                  Book a Meeting
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>

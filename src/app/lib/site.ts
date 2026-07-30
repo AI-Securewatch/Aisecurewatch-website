@@ -16,6 +16,7 @@ export function mailto(to: string, subject: string, body?: string) {
 export const NAV_LINKS = [
   { label: "How It Works", href: "/#how-it-works" },
   { label: "Platform", href: "/#platform" },
+  { label: "Demo", href: "/demo" },
   { label: "Use Cases", href: "/#use-cases" },
   { label: "Architecture", href: "/#architecture" },
   { label: "Evidence", href: "/#evidence" },
@@ -31,7 +32,9 @@ export const FOOTER_COLUMNS = [
       { label: "Intent API", href: PLATFORM, external: true },
       { label: "Authority Engine", href: PLATFORM, external: true },
       { label: "Human Review Console", href: PLATFORM, external: true },
+      { label: "Authority Simulation", href: PLATFORM, external: true },
       { label: "Agent Lifecycle Management", href: PLATFORM, external: true },
+      { label: "Assurance Dashboard", href: PLATFORM, external: true },
     ],
   },
   {
@@ -49,6 +52,7 @@ export const FOOTER_COLUMNS = [
     heading: "Resources",
     links: [
       { label: "Resources", href: "/resources" },
+      { label: "Demo Center", href: "/demo" },
       { label: "The Enterprise Authority Manifesto", href: "/manifesto" },
       { label: "The Missing IAM Layer for AI Authority", href: "/resources/the-missing-iam-layer-for-ai-authority" },
       { label: "Policy Engine", href: "/policy-engine" },
