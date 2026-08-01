@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Play } from "lucide-react";
+import { track } from "../services/analytics";
 
 interface VideoCardProps {
   videoId: string;
@@ -36,7 +37,16 @@ export default function VideoCard({ videoId, title, durationLabel, className = "
         ) : (
           <button
             type="button"
-            onClick={() => setPlaying(true)}
+            onClick={() => {
+              setPlaying(true);
+              // Both fire at the click moment: YouTube's embedded iframe is
+              // cross-origin, so this app has no way to observe the actual
+              // player's play/pause state without integrating the YouTube
+              // IFrame API -- "clicked play" is the best available proxy for
+              // "played" without that added complexity.
+              track("YouTube Clicked", { video_id: videoId, page: window.location.pathname });
+              track("Demo Video Played", { video_id: videoId, page: window.location.pathname });
+            }}
             aria-label={`Play video: ${title}`}
             className="absolute inset-0 w-full h-full group cursor-pointer"
             style={{ background: "#0d1020" }}

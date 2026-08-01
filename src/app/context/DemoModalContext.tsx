@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useState, type ChangeEvent, type FormEvent, type ReactNode } from "react";
 import { CheckCircle2, Mail, Send, Shield, X } from "lucide-react";
 import { CONTACT_EMAIL, mailto } from "../lib/site";
+import { track } from "../services/analytics";
 
 type DemoModalContextValue = {
   openDemo: () => void;
@@ -26,6 +27,10 @@ export function DemoModalProvider({ children }: { children: ReactNode }) {
     setDemoSubmitted(false);
     setDemoForm({ name: "", email: "", company: "", message: "" });
     setDemoOpen(true);
+    // Single hook point for every "Book a Demo" button in the app (nav,
+    // footer, hero, page CTAs) -- covers all of them without an onClick
+    // handler scattered across each one.
+    track("Book Demo Clicked", { page: window.location.pathname });
   };
 
   const openPaperRequest = (topic: string) => {
@@ -57,6 +62,12 @@ export function DemoModalProvider({ children }: { children: ReactNode }) {
     ].join("\n");
     window.location.href = mailto(CONTACT_EMAIL, subject, body);
     setDemoSubmitted(true);
+    // Never includes name/email/message -- just which variant of the form
+    // this was and what page it was submitted from.
+    track("Contact Form Submitted", {
+      page: window.location.pathname,
+      variant: paperTopic ? "paper_request" : "demo_request",
+    });
   };
 
   useEffect(() => {
