@@ -39,14 +39,54 @@ const PAGE_EVENTS: Record<string, string> = {
   "/contact": "Contact Viewed",
 };
 
-function campaignProperties(): Record<string, string> {
+// Captured exactly once per browser via Mixpanel's own register_once() --
+// the correct primitive for "first touch, never overwritten." The
+// previous version of this function was called fresh on every
+// initAnalytics() (i.e. every page load), which meant `referrer` was
+// recomputed from document.referrer each time and silently overwrote the
+// true original acquisition referrer the moment a visitor navigated to a
+// second page in the same session. register_once() fixes this: only the
+// very first call's values are ever persisted.
+function captureAcquisitionOnce(): void {
+  if (!mixpanel) return;
   const params = new URLSearchParams(window.location.search);
-  const props: Record<string, string> = { referrer: document.referrer || "direct" };
-  for (const key of ["utm_source", "utm_medium", "utm_campaign"]) {
+  const props: Record<string, string> = {
+    referrer: document.referrer || "direct",
+    landing_page: window.location.pathname,
+    first_touch_timestamp: new Date().toISOString(),
+  };
+  for (const key of ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"]) {
     const value = params.get(key);
     if (value) props[key] = value;
   }
-  return props;
+  mixpanel.register_once(props);
+}
+
+// Understanding Score (analytics-only, never rendered in the UI). Applied
+// automatically inside track() so no call site needs to know it exists.
+// Only the two website-side milestones from the requested scale apply
+// here; the rest (Platform Opened onward) are scored in the platform
+// repo's own analytics.ts, since Mixpanel identities aren't currently
+// stitched across the two origins -- see this file's own notes on that
+// gap where acquisition properties are captured.
+const UNDERSTANDING_POINTS: Record<string, number> = {
+  "Website Opened": 5,
+  "Manifesto Viewed": 10,
+};
+
+function getScoreNumber(key: string): number {
+  const raw = localStorage.getItem(key);
+  return raw ? Number(raw) || 0 : 0;
+}
+
+function applyUnderstandingScore(event: string): void {
+  const points = UNDERSTANDING_POINTS[event];
+  if (points === undefined || !mixpanel) return;
+  const score = getScoreNumber("payreality_analytics_understanding_score") + points;
+  const highest = Math.max(score, getScoreNumber("payreality_analytics_highest_understanding_score"));
+  localStorage.setItem("payreality_analytics_understanding_score", String(score));
+  localStorage.setItem("payreality_analytics_highest_understanding_score", String(highest));
+  mixpanel.people.set({ understanding_score: score, highest_understanding_score: highest });
 }
 
 // One delegated listener for the whole document, instead of an onClick
@@ -87,7 +127,8 @@ export async function initAnalytics(): Promise<void> {
   });
   mixpanel = mp;
 
-  mixpanel.register({ application: "website", ...campaignProperties() });
+  mixpanel.register({ application: "website" });
+  captureAcquisitionOnce();
   bindLinkTracking();
   track("Website Opened", { page: window.location.pathname });
 }
@@ -95,6 +136,7 @@ export async function initAnalytics(): Promise<void> {
 export function track(event: string, properties?: Record<string, unknown>): void {
   if (!mixpanel) return;
   mixpanel.track(event, properties);
+  applyUnderstandingScore(event);
 }
 
 // Called on every route change (see App.tsx's AnalyticsPageTracker). Fires
