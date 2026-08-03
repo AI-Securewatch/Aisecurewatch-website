@@ -53,7 +53,7 @@ export default function Demo() {
     <>
       <SEO
         title="Executive Product Demonstrations | PayReality"
-        description="Watch PayReality operate in a real enterprise workflow: governance documents become Runtime Policies, AI agents receive cryptographic identities, and every decision is evaluated and evidenced before execution."
+        description="Watch PayReality operate: governance becomes Runtime Policies, agents receive identities, and every decision is evaluated and evidenced before execution."
         path="/demo"
         jsonLd={{
           "@context": "https://schema.org",
@@ -258,7 +258,7 @@ export default function Demo() {
                 Understand why enterprises need Runtime Authority.
               </p>
               <a href="/manifesto" className="btn-ghost px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center gap-2">
-                Read Manifesto
+                Read the Manifesto
                 <ArrowRight size={15} />
               </a>
             </div>

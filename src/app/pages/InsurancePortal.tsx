@@ -77,6 +77,10 @@ export default function InsurancePortal() {
               Home
             </a>
             <span aria-hidden="true">/</span>
+            <a href="/solutions" className="hover:text-foreground transition-colors">
+              Solutions
+            </a>
+            <span aria-hidden="true">/</span>
             <span className="text-foreground">Insurance Portal</span>
           </nav>
 

@@ -87,8 +87,8 @@ const RELATED = [
   },
   {
     title: "Platform Overview",
-    desc: "The ten modules that compile policy, evaluate intent, and record evidence for autonomous AI.",
-    href: "/#platform",
+    desc: "How Runtime Authority, the Authority Graph, Runtime Policies, and the Evidence Portal compile policy, evaluate intent, and record evidence.",
+    href: "/platform",
     icon: Cpu,
   },
   {
@@ -98,9 +98,9 @@ const RELATED = [
     icon: Fingerprint,
   },
   {
-    title: "Policy Engine",
+    title: "Runtime Policies",
     desc: "Runtime policy evaluation, OPA integration, and deterministic enforcement, explained end to end.",
-    href: "/policy-engine",
+    href: "/products/runtime-policies",
     icon: FileText,
   },
 ];

@@ -1,35 +1,39 @@
 import SEO from "../../components/SEO";
 import { SITE_URL } from "../../lib/site";
-import DocLayout, { sectionHeadingStyle } from "./DocLayout";
-import CodeBlock from "./CodeBlock";
+import DocLayout, { sectionHeadingStyle } from "../docs/DocLayout";
+import CodeBlock from "../docs/CodeBlock";
 
 export default function Authentication() {
   return (
     <>
       <SEO
-        title="Authentication | PayReality"
-        description="How PayReality authenticates requests: the Operator Key, per-user roles and permissions, per-developer API keys, and agent certificates, and how they layer together."
-        path="/docs/authentication"
+        title="Authentication | PayReality Developers"
+        description="How PayReality authenticates requests: the Operator Key, per-user roles and permissions, per-developer API keys, and agent certificates, layered together."
+        path="/developers/authentication"
         type="article"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "TechArticle",
           "headline": "Authentication",
-          "url": `${SITE_URL}/docs/authentication`,
+          "url": `${SITE_URL}/developers/authentication`,
           "publisher": { "@id": `${SITE_URL}/#organization` },
           "about": { "@id": `${SITE_URL}/#software` },
         }}
       />
       <DocLayout
+        eyebrow="DEVELOPERS"
         title="Authentication"
         subtitle="Four distinct credentials, each authenticating a different kind of caller: an agent, an administrator, a specific human, or a specific integration."
-        currentPath="/docs/authentication"
+        currentPath="/developers/authentication"
       >
         <p>
           PayReality never checks a role directly to decide whether a request is allowed. Every
           administrative endpoint checks a specific <em>permission</em>, and a permission is granted
           by exactly one of four credentials, layered so the simplest one (a single shared key) never
-          has to be replaced before a real multi-user rollout needs the others.
+          has to be replaced before a real multi-user rollout needs the others. This is a practical
+          instance of a broader Zero Trust principle the runtime follows throughout: no caller, agent
+          or human, is trusted by network position or prior request -- every request authenticates on
+          its own merits, every time.
         </p>
 
         <h2 style={{ ...sectionHeadingStyle, marginTop: 0 }}>Agent certificates</h2>
@@ -44,7 +48,9 @@ X-PayReality-Signature: <ed25519 signature over the raw request body>`}</CodeBlo
         <p>
           If an agent is compromised or decommissioned, its certificate is rotated or revoked,
           immediately cutting off its ability to act, the same way deactivating an employee's badge
-          does.
+          does. Key rotation never invalidates history -- decisions made under a previous certificate
+          remain exactly as valid as they were, since the certificate that was active at the time is
+          what's recorded, not the agent's current one.
         </p>
 
         <h2 style={sectionHeadingStyle}>The Operator Key</h2>

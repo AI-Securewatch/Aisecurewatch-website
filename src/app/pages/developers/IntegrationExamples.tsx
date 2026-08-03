@@ -1,29 +1,30 @@
 import SEO from "../../components/SEO";
 import { SITE_URL } from "../../lib/site";
-import DocLayout, { sectionHeadingStyle } from "./DocLayout";
-import CodeBlock from "./CodeBlock";
+import DocLayout, { sectionHeadingStyle } from "../docs/DocLayout";
+import CodeBlock from "../docs/CodeBlock";
 
 export default function IntegrationExamples() {
   return (
     <>
       <SEO
-        title="Integration Examples | PayReality"
+        title="Integration Examples | PayReality Developers"
         description="Worked examples for the full agent lifecycle: registering, rotating keys, sending a heartbeat, and retiring an agent, with the PayReality Python SDK."
-        path="/docs/integration-examples"
+        path="/developers/integration-examples"
         type="article"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "TechArticle",
           "headline": "Integration Examples",
-          "url": `${SITE_URL}/docs/integration-examples`,
+          "url": `${SITE_URL}/developers/integration-examples`,
           "publisher": { "@id": `${SITE_URL}/#organization` },
           "about": { "@id": `${SITE_URL}/#software` },
         }}
       />
       <DocLayout
+        eyebrow="DEVELOPERS"
         title="Integration Examples"
         subtitle="Every lifecycle method an integration actually needs, none of them exposing ED25519 keys, certificates, or HTTP headers to your code."
-        currentPath="/docs/integration-examples"
+        currentPath="/developers/integration-examples"
       >
         <h2 style={{ ...sectionHeadingStyle, marginTop: 0 }}>Register once, use everywhere</h2>
         <CodeBlock label="register.py">{`from payreality import Agent

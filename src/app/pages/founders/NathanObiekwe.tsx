@@ -175,7 +175,7 @@ export default function NathanObiekwe() {
 
           <div className="flex flex-col sm:flex-row gap-4 mt-16">
             <a
-              href="/#architecture"
+              href="/developers/architecture"
               className="btn-ghost px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center gap-2"
             >
               See the architecture he built

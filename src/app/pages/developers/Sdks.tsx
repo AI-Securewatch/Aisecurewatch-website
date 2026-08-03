@@ -1,30 +1,39 @@
 import SEO from "../../components/SEO";
 import { SITE_URL } from "../../lib/site";
-import DocLayout, { sectionHeadingStyle } from "./DocLayout";
-import CodeBlock from "./CodeBlock";
+import DocLayout, { sectionHeadingStyle } from "../docs/DocLayout";
+import CodeBlock from "../docs/CodeBlock";
+import StatusBadge from "../docs/StatusBadge";
 
-export default function Sdk() {
+const FUTURE_SDKS = ["Node.js", "Go", "Java", ".NET", "Rust"];
+
+export default function Sdks() {
   return (
     <>
       <SEO
-        title="SDK Documentation | PayReality"
-        description="How the PayReality Python SDK wraps the Intent API: signing, retries, the local credential store, and what api_key actually authenticates."
-        path="/docs/sdk"
+        title="SDKs | PayReality Developers"
+        description="How the PayReality Python SDK wraps the Intent API: signing, retries, the local credential store, and what api_key authenticates. Plus the language roadmap."
+        path="/developers/sdks"
         type="article"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "TechArticle",
-          "headline": "SDK Documentation",
-          "url": `${SITE_URL}/docs/sdk`,
+          "headline": "SDKs",
+          "url": `${SITE_URL}/developers/sdks`,
           "publisher": { "@id": `${SITE_URL}/#organization` },
           "about": { "@id": `${SITE_URL}/#software` },
         }}
       />
       <DocLayout
-        title="SDK Documentation"
+        eyebrow="DEVELOPERS"
+        title="SDKs"
         subtitle="A Python package that wraps the Intent API, so integrating an agent never means hand-implementing ED25519 signing, certificate headers, or retry logic."
-        currentPath="/docs/sdk"
+        currentPath="/developers/sdks"
       >
+        <div className="flex items-center gap-3 flex-wrap -mt-2 mb-2">
+          <span className="text-sm" style={{ color: "#e8ecf4", fontWeight: 600 }}>Python</span>
+          <StatusBadge status="Coming First" />
+        </div>
+
         <p>
           The PayReality SDK (<code className="mono">payreality-python</code>) is a client, not a
           platform change: it consumes the same <code className="mono">/v1/principals</code>,{" "}
@@ -76,7 +85,7 @@ elif decision.outcome == "HUMAN_REVIEW":
         <p>
           <code className="mono">Agent(api_key=...)</code> is the Operator Key: the same
           administrative credential every other mutating action on this platform uses (see{" "}
-          <a href="/docs/authentication" style={{ color: "#a78bfa" }}>Authentication</a>). It's
+          <a href="/developers/authentication" style={{ color: "#a78bfa" }}>Authentication</a>). It's
           required for <code className="mono">register()</code>, <code className="mono">
           rotate_keys()</code>, and <code className="mono">retire()</code>, since creating, rotating,
           or retiring an agent identity is an administrative action. It is <em>not</em> required for{" "}
@@ -106,9 +115,28 @@ elif decision.outcome == "HUMAN_REVIEW":
           reaches your code: you never see a raw HTTP client exception or a bare status code.
         </p>
 
+        <h2 style={sectionHeadingStyle}>Language roadmap</h2>
+        <p>
+          Python ships first because it's what most agent frameworks in this space are already
+          written in (LangGraph, CrewAI, AutoGen, the OpenAI and Anthropic SDKs). The following are
+          planned, not started -- there is no partial implementation to preview yet:
+        </p>
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 my-2">
+          {FUTURE_SDKS.map((lang) => (
+            <div
+              key={lang}
+              className="rounded-xl px-4 py-3 flex items-center justify-between gap-2"
+              style={{ border: "1px solid rgba(255,255,255,0.08)", background: "rgba(255,255,255,0.02)" }}
+            >
+              <span className="text-sm" style={{ color: "#e8ecf4" }}>{lang}</span>
+              <StatusBadge status="Planned" />
+            </div>
+          ))}
+        </div>
+
         <p>
           For the full lifecycle methods (rotating keys, heartbeats, retiring an agent), see{" "}
-          <a href="/docs/integration-examples" style={{ color: "#a78bfa" }}>Integration Examples</a>.
+          <a href="/developers/integration-examples" style={{ color: "#a78bfa" }}>Integration Examples</a>.
         </p>
       </DocLayout>
     </>

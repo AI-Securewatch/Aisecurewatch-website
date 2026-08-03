@@ -25,8 +25,8 @@ export default function DocLayout({ eyebrow = "DOCUMENTATION", title, subtitle, 
   return (
     <main className="pt-40 pb-32 px-6">
       <article className="max-w-3xl mx-auto">
-        <a href="/docs" className="text-sm text-muted-foreground hover:text-foreground transition-colors mb-8 inline-block">
-          ← Documentation
+        <a href="/developers" className="text-sm text-muted-foreground hover:text-foreground transition-colors mb-8 inline-block">
+          ← Developers
         </a>
 
         <div className="section-label mb-4">{eyebrow}</div>

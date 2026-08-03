@@ -143,6 +143,7 @@ export function DemoModalProvider({ children }: { children: ReactNode }) {
                     type="text"
                     required
                     placeholder="Full name"
+                    aria-label="Full name"
                     value={demoForm.name}
                     onChange={updateDemoField("name")}
                     className="form-field"
@@ -151,6 +152,7 @@ export function DemoModalProvider({ children }: { children: ReactNode }) {
                     type="email"
                     required
                     placeholder="Work email"
+                    aria-label="Work email"
                     value={demoForm.email}
                     onChange={updateDemoField("email")}
                     className="form-field"
@@ -159,6 +161,7 @@ export function DemoModalProvider({ children }: { children: ReactNode }) {
                     type="text"
                     required={!paperTopic}
                     placeholder={paperTopic ? "Company (optional)" : "Company"}
+                    aria-label={paperTopic ? "Company (optional)" : "Company"}
                     value={demoForm.company}
                     onChange={updateDemoField("company")}
                     className="form-field"
@@ -166,6 +169,7 @@ export function DemoModalProvider({ children }: { children: ReactNode }) {
                   {!paperTopic && (
                     <textarea
                       placeholder="What would you like to see in the demo? (optional)"
+                      aria-label="What would you like to see in the demo? (optional)"
                       value={demoForm.message}
                       onChange={updateDemoField("message")}
                       rows={3}

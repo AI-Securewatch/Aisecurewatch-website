@@ -1,29 +1,30 @@
 import SEO from "../../components/SEO";
 import { SITE_URL } from "../../lib/site";
-import DocLayout, { sectionHeadingStyle } from "./DocLayout";
-import CodeBlock from "./CodeBlock";
+import DocLayout, { sectionHeadingStyle } from "../docs/DocLayout";
+import CodeBlock from "../docs/CodeBlock";
 
 export default function AgentRegistration() {
   return (
     <>
       <SEO
-        title="Agent Registration | PayReality"
+        title="Agent Registration | PayReality Developers"
         description="The full PayReality agent lifecycle: registered, active, suspended, retired, or revoked, what each state can and can't do, and how to register one."
-        path="/docs/agent-registration"
+        path="/developers/agent-registration"
         type="article"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "TechArticle",
           "headline": "Agent Registration",
-          "url": `${SITE_URL}/docs/agent-registration`,
+          "url": `${SITE_URL}/developers/agent-registration`,
           "publisher": { "@id": `${SITE_URL}/#organization` },
           "about": { "@id": `${SITE_URL}/#software` },
         }}
       />
       <DocLayout
+        eyebrow="DEVELOPERS"
         title="Agent Registration"
         subtitle="Every agent is a full enterprise identity with a lifecycle, managed the same way an enterprise manages a human workforce identity."
-        currentPath="/docs/agent-registration"
+        currentPath="/developers/agent-registration"
       >
         <p>
           Registering an agent doesn't just create a database row: it provisions an identity with a
@@ -88,7 +89,7 @@ registered ---------------------------------> revoked`}</CodeBlock>
         <p>
           The Python SDK's <code className="mono">register()</code> chains this activation call
           automatically, so it hands back a ready-to-use, active identity in one call. See{" "}
-          <a href="/docs/sdk" style={{ color: "#a78bfa" }}>SDK Documentation</a>.
+          <a href="/developers/sdks" style={{ color: "#a78bfa" }}>SDKs</a>.
         </p>
 
         <h2 style={sectionHeadingStyle}>What happens in each non-active state</h2>

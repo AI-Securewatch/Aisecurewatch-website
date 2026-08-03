@@ -1,194 +1,19 @@
-import { useState } from "react";
 import {
   ArrowRight,
   ExternalLink,
-  Cpu,
   Shield,
   FileText,
-  Activity,
-  Users,
-  Archive,
-  BarChart3,
   Scale,
   Layers,
   Lock,
   ChevronRight,
-  AlertCircle,
-  Building2,
-  Database,
-  Network,
-  CheckCircle2,
-  Send,
-  Mail,
-  GitBranch,
-  FileSignature,
-  Fingerprint,
+  Archive,
+  Users,
   Code2,
+  Building2,
 } from "lucide-react";
 import { PLATFORM } from "../lib/site";
 import { useDemoModal } from "../context/DemoModalContext";
-import VideoCard from "../components/VideoCard";
-
-const DEMO_COVERAGE = [
-  "AI Authority Builder",
-  "Runtime Policies",
-  "Agent Identity",
-  "Runtime Decision Engine",
-  "Cryptographic Evidence",
-  "Human Review workflow",
-];
-
-const MODULES = [
-  {
-    name: "Command Center",
-    slug: "command-center",
-    icon: Activity,
-    desc: "A live view of every authority decision across every AI agent and business system: approved, rejected, or escalated.",
-    accent: "#7c6fff",
-  },
-  {
-    name: "Authority Modelling Studio",
-    slug: "authority-modelling-studio",
-    icon: FileText,
-    desc: "Upload Delegation of Authority documents and AI extracts the principals, resources, and rules inside them automatically, ready for human review; or author a policy directly. Both compile into the same versioned, deterministic model using Open Policy Agent.",
-    accent: "#22d3ee",
-  },
-  {
-    name: "Intent API",
-    slug: "intent-api",
-    icon: Send,
-    desc: "The interface AI agents call to submit an intended action for authorization before a single side effect occurs.",
-    accent: "#3b8cf8",
-  },
-  {
-    name: "Authority Engine",
-    slug: "authority-engine",
-    icon: Shield,
-    desc: "The deterministic runtime that evaluates each intent against published policy and returns a binding decision.",
-    accent: "#a78bfa",
-  },
-  {
-    name: "Human Review Console",
-    slug: "human-review-console",
-    icon: Users,
-    desc: "A structured queue for the intents your policy routes to a person, with full context and a binding resolution.",
-    accent: "#34d399",
-  },
-  {
-    name: "Authority Simulation",
-    slug: "authority-simulation",
-    icon: Layers,
-    desc: "Run a new or edited authority model against historical and synthetic intents to see its effect before you publish it.",
-    accent: "#60a5fa",
-  },
-  {
-    name: "Evidence Vault",
-    slug: "evidence-vault",
-    icon: Archive,
-    desc: "An immutable, cryptographically signed record of every decision, the policy version behind it, and the intent that triggered it.",
-    accent: "#fb923c",
-  },
-  {
-    name: "Assurance Dashboard",
-    slug: "assurance-dashboard",
-    icon: BarChart3,
-    desc: "Audit-ready reporting on authority outcomes, override rates, and policy coverage across the organization.",
-    accent: "#2dd4bf",
-  },
-  {
-    name: "Agent Lifecycle Management",
-    slug: "agent-lifecycle",
-    icon: Cpu,
-    desc: "Every AI agent managed the same way an enterprise manages a human workforce identity: registered, activated, suspended, credential-rotated, and retired or revoked, with a signed audit trail for every transition.",
-    accent: "#6366f1",
-  },
-  {
-    name: "Developer SDK",
-    slug: "developer-sdk",
-    icon: Code2,
-    desc: "A Python SDK that authorizes an agent's action in one call. No manual signing, no cryptography, no request headers: agent.authorize() handles all of it.",
-    accent: "#f472b6",
-  },
-];
-
-const HOW_IT_WORKS = [
-  { step: "01", label: "Policy", sub: "Enterprise uploads existing Delegation of Authority policies; AI extracts the rules inside them", icon: FileText, color: "#7c6fff" },
-  { step: "02", label: "Compile", sub: "Policies are compiled into deterministic rules using Open Policy Agent", icon: GitBranch, color: "#6366f1" },
-  { step: "03", label: "Review", sub: "A human reviews and signs the compiled policy", icon: FileSignature, color: "#3b8cf8" },
-  { step: "04", label: "Publish", sub: "The signed policy is published to the runtime", icon: CheckCircle2, color: "#22d3ee" },
-  { step: "05", label: "Intent", sub: "An AI agent submits an intent before it executes an action", icon: Send, color: "#2dd4bf" },
-  { step: "06", label: "Authority Engine", sub: "PayReality evaluates the intent against published policy", icon: Shield, color: "#a78bfa" },
-  { step: "07", label: "Decision", sub: "Approve · Reject · Human Review", icon: AlertCircle, color: "#f59e0b" },
-  { step: "08", label: "Evidence Vault", sub: "Immutable, verifiable evidence of the decision is stored", icon: Fingerprint, color: "#fb923c" },
-];
-
-const EVIDENCE_ARTIFACTS = [
-  {
-    tag: "Signed",
-    title: "Every decision is signed",
-    excerpt:
-      "Each Approve, Reject, or Human Review outcome is cryptographically signed at the moment it's made. It is not reconstructed afterward from application logs.",
-    meta: "Per-decision",
-  },
-  {
-    tag: "Traceable",
-    title: "Policy version provenance",
-    excerpt:
-      "Every decision record links to the exact signed policy version that was in force at evaluation time, so you can always answer why an outcome happened.",
-    meta: "Per-policy version",
-  },
-  {
-    tag: "Immutable",
-    title: "Tamper-evident by design",
-    excerpt:
-      "Decision records cannot be edited or deleted after the fact. The Evidence Vault is an append-only ledger, not an editable log table.",
-    meta: "Append-only",
-  },
-  {
-    tag: "Exportable",
-    title: "Built for auditors and regulators",
-    excerpt:
-      "Evidence exports to the format your audit, risk, and compliance teams already use, with no bespoke tooling required to prove authorization.",
-    meta: "Audit-ready",
-  },
-];
-
-const USE_CASES = [
-  { name: "Procurement", icon: Layers },
-  { name: "Insurance Claims", icon: Shield },
-  { name: "Finance", icon: BarChart3 },
-  { name: "ERP", icon: Database },
-  { name: "HR", icon: Users },
-  { name: "Customer Operations", icon: Network },
-  { name: "Manufacturing", icon: Building2 },
-];
-
-const PERSONAS = [
-  {
-    role: "Heads of AI",
-    desc: "Move AI from recommending actions to executing them, backed by a runtime that enforces authorization at every step.",
-  },
-  {
-    role: "Responsible AI & Governance",
-    desc: "Give the AI governance framework you've already written a runtime that actually enforces it, not just documents it.",
-  },
-  {
-    role: "Enterprise & Chief Architects",
-    desc: "Deploy a runtime authority layer between AI agents and systems of record without re-architecting what already works.",
-  },
-  {
-    role: "Chief Risk Officers",
-    desc: "Apply the delegated authority discipline your organization already uses for people to every autonomous AI action.",
-  },
-  {
-    role: "Operational Risk",
-    desc: "Get a definitive, auditable answer to whether an AI agent was authorized before it acted, not a best guess after the fact.",
-  },
-  {
-    role: "AI Platform Teams",
-    desc: "Give every agent your platform runs a built-in authority check, enforced the same way no matter which model is behind it.",
-  },
-];
 
 const EXISTING_FRAMEWORKS = [
   { label: "Delegation of Authority", icon: Scale },
@@ -199,9 +24,21 @@ const EXISTING_FRAMEWORKS = [
   { label: "Audit Processes", icon: Archive },
 ];
 
+// The four pathways every visitor should be able to name after reading this
+// page, matching the site's own top-level information architecture --
+// Platform, Products, Developers, Solutions -- rather than re-explaining any
+// of the four here. There's no dedicated "/products" index page yet (each
+// product page stands alone), so Products points at the flagship until one
+// exists.
+const PATHWAYS = [
+  { label: "Platform", desc: "Learn the Runtime Authority architecture: how the Authority Graph, Runtime Policies, and Evidence Portal fit together.", href: "/platform", icon: Layers, color: "#7c6fff" },
+  { label: "Products", desc: "Explore the components: Runtime Authority, the Authority Graph, Runtime Policies, the Evidence Portal, and Authorization Receipts.", href: "/products", icon: Code2, color: "#3b8cf8" },
+  { label: "Developers", desc: "Integrate Runtime Authority: register an agent, submit a signed intent, and get a decision and evidence back.", href: "/developers", icon: Building2, color: "#22d3ee" },
+  { label: "Solutions", desc: "See how Runtime Authority applies to your industry's own delegated authority and approval workflows.", href: "/solutions", icon: Scale, color: "#a78bfa" },
+];
+
 export default function Home() {
-  const [hoveredModule, setHoveredModule] = useState<number | null>(null);
-  const { openDemo, openPaperRequest } = useDemoModal();
+  const { openDemo } = useDemoModal();
 
   return (
     <main>
@@ -343,75 +180,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Demo Center Preview ── */}
-      <section className="pt-8 pb-32 px-6 relative overflow-hidden">
-        <div className="max-w-6xl mx-auto">
-          <div className="max-w-2xl mx-auto text-center mb-16">
-            <div className="section-label mb-4">SEE IT WORK</div>
-            <h2
-              style={{
-                fontFamily: "'Onest', system-ui, sans-serif",
-                fontWeight: 700,
-                fontSize: "clamp(1.75rem, 4vw, 2.5rem)",
-                letterSpacing: "-0.025em",
-                color: "#e8ecf4",
-              }}
-            >
-              See <span className="grad-text">Runtime Authority</span> in Action
-            </h2>
-            <p className="text-muted-foreground leading-relaxed mt-4" style={{ fontSize: "1.05rem" }}>
-              Watch how PayReality translates enterprise governance into machine-enforceable Runtime
-              Authority, authorizes AI actions before execution, and generates cryptographically
-              verifiable evidence for every decision.
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-[1.3fr_1fr] gap-8 lg:gap-12 items-center">
-            <VideoCard videoId="DooDB4F2cqc" title="PayReality Executive Demo" durationLabel="7 min" />
-
-            <div>
-              <div className="section-label mb-3">EXECUTIVE DEMO</div>
-              <h3
-                className="mb-1"
-                style={{ fontFamily: "'Onest', system-ui, sans-serif", fontWeight: 700, fontSize: "1.4rem", color: "#e8ecf4", letterSpacing: "-0.02em" }}
-              >
-                Executive Demo
-              </h3>
-              <p className="mono text-xs mb-6" style={{ color: "#6b7280", letterSpacing: "0.06em" }}>
-                RUNTIME: 7 MINUTES
-              </p>
-              <p className="text-muted-foreground leading-relaxed mb-5">
-                Watch an end-to-end demonstration covering:
-              </p>
-              <ul className="space-y-3 mb-8">
-                {DEMO_COVERAGE.map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-sm" style={{ color: "#e8ecf4" }}>
-                    <CheckCircle2 size={15} style={{ color: "#7c6fff", flexShrink: 0 }} />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a
-                  href="/demo"
-                  className="btn-primary px-7 py-3.5 rounded-xl text-sm inline-flex items-center justify-center gap-2"
-                >
-                  Watch Full Demo
-                  <ArrowRight size={15} />
-                </a>
-                <button
-                  onClick={openDemo}
-                  className="btn-ghost px-7 py-3.5 rounded-xl text-sm inline-flex items-center justify-center gap-2"
-                >
-                  Book a Meeting
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── The Core Idea ── */}
+      {/* ── The Core Idea (What is Runtime Authority) ── */}
       <section className="pt-8 pb-32 px-6 relative overflow-hidden">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <div className="section-label mb-4">01 / THE CORE IDEA</div>
@@ -484,7 +253,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── The Problem ── */}
+      {/* ── The Problem (Why it matters) ── */}
       <section className="py-32 px-6 relative overflow-hidden">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-20">
@@ -567,7 +336,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Delegated Authority Gap ── */}
+      {/* ── Delegated Authority Gap (Why PayReality) ── */}
       <section id="runtime-authority" className="py-32 px-6 relative" style={{ background: "rgba(124,111,255,0.025)" }}>
         <div className="absolute inset-0 pointer-events-none">
           <div
@@ -578,7 +347,7 @@ export default function Home() {
 
         <div className="max-w-5xl mx-auto relative">
           <div className="text-center mb-20">
-            <div className="section-label mb-4">03 / WHY EXISTING INFRASTRUCTURE FAILS</div>
+            <div className="section-label mb-4">03 / WHY PAYREALITY</div>
             <h2
               style={{
                 fontFamily: "'Onest', system-ui, sans-serif",
@@ -715,7 +484,7 @@ export default function Home() {
                 you to rebuild any of them.
               </p>
               <a
-                href="/#how-it-works"
+                href="/products/runtime-authority"
                 className="btn-ghost px-6 py-3 rounded-xl text-sm flex items-center gap-2 inline-flex"
               >
                 See how it works
@@ -750,12 +519,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── How PayReality Works ── */}
-      <section id="how-it-works" className="py-32 px-6 relative" style={{ background: "rgba(13,16,32,0.6)" }}>
+      {/* ── Explore the Platform ── */}
+      <section className="py-32 px-6 relative" style={{ background: "rgba(13,16,32,0.6)" }}>
         <div className="absolute inset-0 pointer-events-none dot-grid opacity-40" />
-        <div className="max-w-3xl mx-auto relative">
-          <div className="text-center mb-20">
-            <div className="section-label mb-4">04 / HOW PAYREALITY WORKS</div>
+        <div className="max-w-5xl mx-auto relative">
+          <div className="text-center mb-16">
+            <div className="section-label mb-4">04 / EXPLORE THE PLATFORM</div>
             <h2
               style={{
                 fontFamily: "'Onest', system-ui, sans-serif",
@@ -765,392 +534,37 @@ export default function Home() {
                 color: "#e8ecf4",
               }}
             >
-              A deterministic runtime,
-              <br />
-              not a review process
+              Four ways into the same runtime
             </h2>
-            <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
-              Three capabilities, one runtime: authority modelling compiles your policy once; runtime
-              validation evaluates every AI intent against it automatically, before execution; and
-              every decision produces cryptographic evidence.
-            </p>
           </div>
 
-          <div className="flex flex-col items-center">
-            {HOW_IT_WORKS.map((step, i) => (
-              <div key={step.label} className="flex flex-col items-center w-full max-w-sm">
-                <div
-                  className="glass-card rounded-2xl p-5 w-full flex items-center gap-5"
-                  style={{
-                    borderColor: `${step.color}28`,
-                    boxShadow: `0 0 24px ${step.color}0a`,
-                  }}
-                >
-                  <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
-                    style={{ background: `${step.color}18`, border: `1px solid ${step.color}30` }}
-                  >
-                    <step.icon size={20} style={{ color: step.color }} />
-                  </div>
-                  <div>
-                    <div
-                      style={{
-                        fontFamily: "'Onest', system-ui, sans-serif",
-                        fontWeight: 600,
-                        fontSize: "0.95rem",
-                        color: "#e8ecf4",
-                        letterSpacing: "-0.01em",
-                      }}
-                    >
-                      {step.label}
-                    </div>
-                    <div className="text-xs text-muted-foreground mt-0.5">{step.sub}</div>
-                  </div>
-                  <div className="ml-auto mono text-xs text-muted-foreground">{step.step}</div>
-                </div>
-                {i < HOW_IT_WORKS.length - 1 && <div className="arch-connector" />}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Platform Preview ── */}
-      <section id="platform" className="py-32 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <div className="section-label mb-4">05 / THE PLATFORM</div>
-            <h2
-              style={{
-                fontFamily: "'Onest', system-ui, sans-serif",
-                fontWeight: 700,
-                fontSize: "clamp(1.8rem, 4vw, 3rem)",
-                letterSpacing: "-0.025em",
-                color: "#e8ecf4",
-              }}
-            >
-              Ten modules. One authority runtime.
-            </h2>
-            <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
-              Every component of PayReality works together to compile policy, evaluate intent, and
-              record evidence for autonomous AI.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {MODULES.map((mod, i) => (
+          <div className="grid sm:grid-cols-2 gap-5">
+            {PATHWAYS.map((p) => (
               <a
-                key={mod.slug}
-                href={PLATFORM}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="glass-card rounded-2xl p-7 flex flex-col group cursor-pointer"
-                onMouseEnter={() => setHoveredModule(i)}
-                onMouseLeave={() => setHoveredModule(null)}
-                style={{
-                  boxShadow: hoveredModule === i ? `0 0 32px ${mod.accent}18` : "none",
-                  borderColor: hoveredModule === i ? `${mod.accent}30` : "rgba(255,255,255,0.07)",
-                  textDecoration: "none",
-                }}
+                key={p.label}
+                href={p.href}
+                className="glass-card rounded-2xl p-7 flex flex-col group"
+                style={{ textDecoration: "none" }}
               >
-                <div className="flex items-start justify-between mb-6">
-                  <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center"
-                    style={{
-                      background: `${mod.accent}18`,
-                      border: `1px solid ${mod.accent}30`,
-                      transition: "background 0.25s",
-                    }}
-                  >
-                    <mod.icon size={20} style={{ color: mod.accent }} />
-                  </div>
-                  <div
-                    className="opacity-0 group-hover:opacity-100 transition-opacity"
-                    style={{ color: mod.accent }}
-                  >
-                    <ExternalLink size={14} />
-                  </div>
-                </div>
-
-                <h3
-                  className="mb-3"
-                  style={{
-                    fontFamily: "'Onest', system-ui, sans-serif",
-                    fontWeight: 600,
-                    fontSize: "1rem",
-                    color: "#e8ecf4",
-                    letterSpacing: "-0.01em",
-                  }}
+                <div
+                  className="w-11 h-11 rounded-xl flex items-center justify-center mb-5"
+                  style={{ background: `${p.color}18`, border: `1px solid ${p.color}35` }}
                 >
-                  {mod.name}
+                  <p.icon size={19} style={{ color: p.color }} />
+                </div>
+                <h3
+                  className="mb-2"
+                  style={{ fontFamily: "'Onest', system-ui, sans-serif", fontWeight: 700, fontSize: "1.15rem", color: "#e8ecf4", letterSpacing: "-0.015em" }}
+                >
+                  {p.label}
                 </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed flex-1">{mod.desc}</p>
-
-                <div className="mt-6 flex items-center gap-2 text-xs font-medium transition-colors group-hover:opacity-100" style={{ color: mod.accent }}>
-                  Launch module
-                  <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
+                <p className="text-sm text-muted-foreground leading-relaxed flex-1">{p.desc}</p>
+                <div className="mt-5 flex items-center gap-2 text-sm font-medium" style={{ color: p.color }}>
+                  Explore {p.label}
+                  <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                 </div>
               </a>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Architecture ── */}
-      <section id="architecture" className="py-32 px-6" style={{ background: "rgba(13,16,32,0.5)" }}>
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-20">
-            <div className="section-label mb-4">06 / ARCHITECTURE</div>
-            <h2
-              style={{
-                fontFamily: "'Onest', system-ui, sans-serif",
-                fontWeight: 700,
-                fontSize: "clamp(1.8rem, 4vw, 3rem)",
-                letterSpacing: "-0.025em",
-                color: "#e8ecf4",
-              }}
-            >
-              A runtime between AI and
-              <br />
-              your systems of record
-            </h2>
-            <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
-              A policy compiler, a deterministic evaluation engine, and an evidence vault, sitting
-              between every AI agent and the enterprise systems it acts on.
-            </p>
-          </div>
-
-          {/* Architecture diagram */}
-          <div className="grid lg:grid-cols-3 gap-8 items-stretch">
-            {/* Left: Sources */}
-            <div className="flex flex-col gap-3">
-              <div className="mono text-xs text-center mb-2" style={{ color: "#6b7280", letterSpacing: "0.1em" }}>POLICY & IDENTITY SOURCES</div>
-              {["Delegation of Authority Policy", "Approval Matrices", "Enterprise IAM Context", "Risk Frameworks"].map((name) => (
-                <div key={name} className="glass-card rounded-xl px-4 py-3 text-sm text-center text-muted-foreground">
-                  {name}
-                </div>
-              ))}
-            </div>
-
-            {/* Center: PayReality */}
-            <div className="flex flex-col items-center justify-center">
-              <div
-                className="w-full rounded-2xl p-8 text-center"
-                style={{
-                  background: "linear-gradient(135deg, rgba(124,111,255,0.12), rgba(59,140,248,0.12))",
-                  border: "1px solid rgba(124,111,255,0.3)",
-                  boxShadow: "0 0 48px rgba(124,111,255,0.12)",
-                }}
-              >
-                <img src="/payreality-logo.png" alt="" className="w-16 h-16 rounded-2xl mx-auto mb-4" />
-                <div
-                  style={{
-                    fontFamily: "'Onest', system-ui, sans-serif",
-                    fontWeight: 700,
-                    fontSize: "1.1rem",
-                    color: "#e8ecf4",
-                  }}
-                >
-                  PayReality
-                </div>
-                <div className="mono text-xs mt-2" style={{ color: "#a78bfa" }}>
-                  AUTHORITY RUNTIME
-                </div>
-                <div className="text-xs text-muted-foreground mt-3 leading-relaxed mb-4">
-                  Policy Compiler · OPA-based deterministic evaluation · Human sign-off · Evidence Vault
-                </div>
-                <div className="flex flex-wrap gap-2 justify-center">
-                  {["Policy Compiler", "OPA", "Deterministic Evaluation", "Evidence Vault"].map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-2.5 py-1 rounded-full mono"
-                      style={{ fontSize: "10px", background: "rgba(124,111,255,0.12)", border: "1px solid rgba(124,111,255,0.25)", color: "#a78bfa" }}
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Right: Targets */}
-            <div className="flex flex-col gap-3">
-              <div className="mono text-xs text-center mb-2" style={{ color: "#6b7280", letterSpacing: "0.1em" }}>SYSTEMS OF RECORD</div>
-              {["ERP · SAP · Oracle", "Procurement & Finance", "CRM · Customer Ops", "HR & Manufacturing Systems"].map((name) => (
-                <div key={name} className="glass-card rounded-xl px-4 py-3 text-sm text-center text-muted-foreground">
-                  {name}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Built For ── */}
-      <section className="py-32 px-6">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="section-label mb-4">07 / BUILT FOR</div>
-            <h2
-              style={{
-                fontFamily: "'Onest', system-ui, sans-serif",
-                fontWeight: 700,
-                fontSize: "clamp(1.8rem, 4vw, 3rem)",
-                letterSpacing: "-0.025em",
-                color: "#e8ecf4",
-              }}
-            >
-              Built for the people
-              <br />
-              accountable for AI
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {PERSONAS.map((p) => (
-              <div key={p.role} className="glass-card rounded-2xl p-7">
-                <h3
-                  className="mb-4"
-                  style={{
-                    fontFamily: "'Onest', system-ui, sans-serif",
-                    fontWeight: 600,
-                    fontSize: "1rem",
-                    color: "#a78bfa",
-                    letterSpacing: "-0.01em",
-                  }}
-                >
-                  {p.role}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Evidence ── */}
-      <section id="evidence" className="py-32 px-6">
-        <div className="max-w-5xl mx-auto">
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
-            <div>
-              <div className="section-label mb-4">08 / EVIDENCE</div>
-              <h2
-                style={{
-                  fontFamily: "'Onest', system-ui, sans-serif",
-                  fontWeight: 700,
-                  fontSize: "clamp(1.8rem, 4vw, 3rem)",
-                  letterSpacing: "-0.025em",
-                  color: "#e8ecf4",
-                }}
-              >
-                Provable authority,
-                <br />
-                not just a log line
-              </h2>
-              <p className="text-muted-foreground mt-4 max-w-md">
-                Every Approve, Reject, or Human Review decision generates cryptographically verifiable
-                evidence automatically, not on request.
-              </p>
-            </div>
-            <button
-              onClick={() => openPaperRequest("Evidence Vault Technical Overview")}
-              className="btn-ghost px-5 py-2.5 rounded-xl text-sm flex-shrink-0 inline-flex items-center gap-2"
-            >
-              Request technical overview
-              <Mail size={14} />
-            </button>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-5">
-            {EVIDENCE_ARTIFACTS.map((r, i) => (
-              <button
-                key={r.title}
-                onClick={() => openPaperRequest(r.title)}
-                type="button"
-                className="glass-card rounded-2xl p-8 group cursor-pointer flex flex-col text-left w-full"
-                style={i === 0 ? { border: "1px solid rgba(124,111,255,0.22)", boxShadow: "0 0 24px rgba(124,111,255,0.06)" } : {}}
-              >
-                <div className="flex items-center justify-between mb-5">
-                  <span
-                    className="px-3 py-1 rounded-full mono text-xs"
-                    style={{
-                      background: "rgba(124,111,255,0.1)",
-                      border: "1px solid rgba(124,111,255,0.2)",
-                      color: "#a78bfa",
-                      letterSpacing: "0.08em",
-                    }}
-                  >
-                    {r.tag}
-                  </span>
-                  <span className="mono text-xs text-muted-foreground">{r.meta}</span>
-                </div>
-                <h3
-                  className="mb-4"
-                  style={{
-                    fontFamily: "'Onest', system-ui, sans-serif",
-                    fontWeight: 600,
-                    fontSize: "1.1rem",
-                    color: "#e8ecf4",
-                    letterSpacing: "-0.015em",
-                    lineHeight: 1.3,
-                  }}
-                >
-                  {r.title}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed flex-1">{r.excerpt}</p>
-                <div className="mt-6 flex items-center gap-2 text-sm" style={{ color: "#7c6fff" }}>
-                  Request details
-                  <Mail size={14} className="group-hover:translate-x-1 transition-transform" />
-                </div>
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Enterprise Use Cases ── */}
-      <section id="use-cases" className="py-32 px-6" style={{ background: "rgba(13,16,32,0.5)" }}>
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="section-label mb-4">09 / ENTERPRISE USE CASES</div>
-            <h2
-              style={{
-                fontFamily: "'Onest', system-ui, sans-serif",
-                fontWeight: 700,
-                fontSize: "clamp(1.8rem, 4vw, 3rem)",
-                letterSpacing: "-0.025em",
-                color: "#e8ecf4",
-              }}
-            >
-              Wherever AI executes,
-              <br />
-              authority has to travel with it
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {USE_CASES.map((ind) => (
-              <div
-                key={ind.name}
-                className="glass-card rounded-xl p-5 text-center group cursor-default flex flex-col items-center gap-3"
-              >
-                <div
-                  className="w-10 h-10 rounded-xl flex items-center justify-center"
-                  style={{ background: "rgba(124,111,255,0.1)", border: "1px solid rgba(124,111,255,0.18)" }}
-                >
-                  <ind.icon size={18} style={{ color: "#7c6fff" }} />
-                </div>
-                <span className="text-xs text-muted-foreground leading-tight text-center">{ind.name}</span>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-10 max-w-2xl mx-auto text-center">
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              Insurance is not PayReality's primary customer. It's an ecosystem partner. The cryptographic evidence
-              generated by every runtime decision strengthens underwriting, claims validation, and risk assessment
-              for insurers covering autonomous AI deployments.
-            </p>
           </div>
         </div>
       </section>
@@ -1166,7 +580,7 @@ export default function Home() {
         </div>
 
         <div className="max-w-3xl mx-auto text-center relative">
-          <div className="section-label mb-6">10 / GET STARTED</div>
+          <div className="section-label mb-6">05 / GET STARTED</div>
           <h2
             className="mb-6"
             style={{
@@ -1205,6 +619,13 @@ export default function Home() {
               <ExternalLink size={16} />
             </a>
           </div>
+          <a
+            href="/demo"
+            className="mt-8 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Or watch the 7-minute demo
+            <ArrowRight size={14} />
+          </a>
         </div>
       </section>
     </main>

@@ -6,7 +6,7 @@ export default function TheMissingIamLayer() {
     <>
       <SEO
         title="The Missing IAM Layer for AI Authority"
-        description="Enterprise IAM answers who an identity is. It was never built to ask whether a specific AI action was actually authorized. Here's the infrastructure gap that leaves."
+        description="Enterprise IAM answers who an identity is, not whether a specific AI action was actually authorized. Here's the infrastructure gap that leaves behind."
         path="/resources/the-missing-iam-layer-for-ai-authority"
         type="article"
         jsonLd={{
@@ -155,7 +155,7 @@ export default function TheMissingIamLayer() {
                 Compliance and business stakeholders translate organizational mandates (approval limits,
                 vendor restrictions, multi-signature thresholds) into machine-executable rules, compiled
                 into a{" "}
-                <a href="/#architecture" style={{ color: "#a78bfa" }}>
+                <a href="/products/runtime-policies" style={{ color: "#a78bfa" }}>
                   policy language like OPA/Rego
                 </a>{" "}
                 and version-controlled like code.
@@ -186,7 +186,7 @@ export default function TheMissingIamLayer() {
               scale of autonomous agents. Enterprises can delegate authority to agents with the same
               confidence they delegate it to people, because they can prove what was delegated and verify
               that the rules were actually enforced. This is the{" "}
-              <a href="/#how-it-works" style={{ color: "#a78bfa" }}>
+              <a href="/products/runtime-authority" style={{ color: "#a78bfa" }}>
                 runtime enforcement model
               </a>{" "}
               PayReality is built around.

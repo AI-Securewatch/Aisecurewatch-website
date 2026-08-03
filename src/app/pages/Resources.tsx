@@ -1,12 +1,22 @@
-import { ArrowRight, Bell, FileText, Newspaper, Radio, ScrollText, BookOpen, Building2 } from "lucide-react";
+import { ArrowRight, Bell, FileText, Newspaper, Radio, ScrollText, BookOpen, Building2, HelpCircle, BookMarked, GitPullRequestArrow } from "lucide-react";
 import SEO from "../components/SEO";
 import { SITE_URL } from "../lib/site";
 import { useDemoModal } from "../context/DemoModalContext";
+import StatusBadge from "./docs/StatusBadge";
 
-const PLACEHOLDER_CATEGORIES = [
-  { icon: BookOpen, title: "Research", desc: "Original research on delegated authority, AI execution risk, and runtime enforcement." },
-  { icon: FileText, title: "Whitepapers", desc: "Technical deep dives into PayReality's policy compiler, authority runtime, and evidence architecture." },
-  { icon: Building2, title: "Case Studies", desc: "How enterprise teams put Enterprise AI Authority Infrastructure into production." },
+// Categories with their own page (even a thin "Coming Soon" one) link there.
+// The two without a dedicated page yet (News, Press) fall back to the
+// existing "notify me" request flow rather than a page with nothing on it.
+const CATEGORIES = [
+  { icon: BookOpen, title: "Research", desc: "Original research on delegated authority, AI execution risk, and runtime enforcement.", href: "/resources/research" },
+  { icon: FileText, title: "Whitepapers", desc: "Technical deep dives into PayReality's policy compiler, authority runtime, and evidence architecture.", href: "/resources/whitepapers" },
+  { icon: GitPullRequestArrow, title: "RFCs", desc: "How PayReality's own architecture decisions get made, and the RFCs that resulted from that process.", href: "/resources/rfcs" },
+  { icon: Building2, title: "Case Studies", desc: "How enterprise teams put Enterprise AI Authority Infrastructure into production.", href: "/resources/case-studies" },
+  { icon: HelpCircle, title: "FAQ", desc: "Direct answers to the questions we hear most from CTOs, CISOs, and compliance leaders.", href: "/resources/faq" },
+  { icon: BookMarked, title: "Glossary", desc: "Every term used across this site, defined once, consistently.", href: "/resources/glossary" },
+];
+
+const UNPAGED_CATEGORIES = [
   { icon: Newspaper, title: "News", desc: "Company announcements and product milestones." },
   { icon: Radio, title: "Press", desc: "Media coverage and press resources." },
 ];
@@ -115,31 +125,30 @@ export default function Resources() {
             </a>
           </div>
 
-          {/* Placeholder categories */}
-          <div>
+          {/* Categories with a real page */}
+          <div className="mb-14">
             <div className="flex items-baseline justify-between mb-5">
               <h2
                 style={{ fontFamily: "'Onest', system-ui, sans-serif", fontWeight: 700, fontSize: "1.3rem", color: "#e8ecf4", letterSpacing: "-0.02em" }}
               >
                 More from AI Securewatch
               </h2>
-              <span className="mono text-xs" style={{ color: "#6b7280", letterSpacing: "0.1em" }}>
-                COMING SOON
-              </span>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-              {PLACEHOLDER_CATEGORIES.map((c) => (
-                <button
+              {CATEGORIES.map((c) => (
+                <a
                   key={c.title}
-                  type="button"
-                  onClick={() => openPaperRequest(`${c.title} Updates`)}
-                  className="glass-card rounded-2xl p-7 flex flex-col text-left w-full cursor-pointer"
+                  href={c.href}
+                  className="glass-card rounded-2xl p-7 flex flex-col group"
+                  style={{ textDecoration: "none" }}
                 >
-                  <div
-                    className="w-11 h-11 rounded-xl flex items-center justify-center mb-5"
-                    style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
-                  >
-                    <c.icon size={19} style={{ color: "#6b7280" }} />
+                  <div className="flex items-start justify-between mb-5">
+                    <div
+                      className="w-11 h-11 rounded-xl flex items-center justify-center"
+                      style={{ background: "rgba(124,111,255,0.1)", border: "1px solid rgba(124,111,255,0.2)" }}
+                    >
+                      <c.icon size={19} style={{ color: "#7c6fff" }} />
+                    </div>
                   </div>
                   <h3
                     className="mb-2"
@@ -149,6 +158,48 @@ export default function Resources() {
                   </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed flex-1">{c.desc}</p>
                   <div className="mt-5 flex items-center gap-2 text-xs font-medium" style={{ color: "#7c6fff" }}>
+                    Read more
+                    <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Categories with no page yet */}
+          <div>
+            <div className="flex items-baseline justify-between mb-5">
+              <h2
+                style={{ fontFamily: "'Onest', system-ui, sans-serif", fontWeight: 700, fontSize: "1.1rem", color: "#e8ecf4", letterSpacing: "-0.02em" }}
+              >
+                Also planned
+              </h2>
+            </div>
+            <div className="grid md:grid-cols-2 gap-5">
+              {UNPAGED_CATEGORIES.map((c) => (
+                <button
+                  key={c.title}
+                  type="button"
+                  onClick={() => openPaperRequest(`${c.title} Updates`)}
+                  className="glass-card rounded-2xl p-6 flex flex-col text-left w-full cursor-pointer"
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <div
+                      className="w-10 h-10 rounded-xl flex items-center justify-center"
+                      style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
+                    >
+                      <c.icon size={17} style={{ color: "#6b7280" }} />
+                    </div>
+                    <StatusBadge status="Coming Soon" />
+                  </div>
+                  <h3
+                    className="mb-1.5"
+                    style={{ fontFamily: "'Onest', system-ui, sans-serif", fontWeight: 600, fontSize: "0.95rem", color: "#e8ecf4" }}
+                  >
+                    {c.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed flex-1">{c.desc}</p>
+                  <div className="mt-4 flex items-center gap-2 text-xs font-medium" style={{ color: "#7c6fff" }}>
                     <Bell size={13} />
                     Notify me when this launches
                   </div>
@@ -158,17 +209,21 @@ export default function Resources() {
           </div>
 
           {/* Cross-links */}
-          <div className="mt-20 pt-10 border-t border-border flex flex-col sm:flex-row gap-4">
-            <a href="/docs" className="btn-ghost px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center gap-2">
+          <div className="mt-20 pt-10 border-t border-border flex flex-col sm:flex-row gap-4 flex-wrap">
+            <a href="/platform" className="btn-ghost px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center gap-2">
+              Explore the Platform
+              <ArrowRight size={16} />
+            </a>
+            <a href="/products" className="btn-ghost px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center gap-2">
+              View Products
+              <ArrowRight size={16} />
+            </a>
+            <a href="/developers" className="btn-ghost px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center gap-2">
               Developer documentation
               <ArrowRight size={16} />
             </a>
-            <a href="/leadership" className="btn-ghost px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center gap-2">
-              Meet the people behind this research
-              <ArrowRight size={16} />
-            </a>
-            <a href="/about" className="btn-ghost px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center gap-2">
-              About AI Securewatch
+            <a href="/solutions" className="btn-ghost px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center gap-2">
+              Explore Solutions
               <ArrowRight size={16} />
             </a>
           </div>

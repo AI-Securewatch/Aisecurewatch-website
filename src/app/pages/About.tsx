@@ -11,7 +11,7 @@ const VALUES = [
   {
     icon: ShieldCheck,
     title: "Evidence over assertion",
-    desc: "A decision is only as good as the proof behind it. Every Approve, Reject, or Human Review outcome produces a signed record, not a claim that has to be taken on trust.",
+    desc: "A decision is only as good as the proof behind it. Every Allow, Deny, or Human Review outcome produces a signed record, not a claim that has to be taken on trust.",
   },
   {
     icon: Sparkles,
@@ -73,7 +73,7 @@ export default function About() {
     <>
       <SEO
         title="About AI Securewatch | Enterprise AI Authority Infrastructure"
-        description="AI Securewatch develops, owns, and operates PayReality. Learn why we built Enterprise AI Authority Infrastructure, and what we believe about deterministic AI execution."
+        description="AI Securewatch develops, owns, and operates PayReality: Enterprise AI Authority Infrastructure, built on the belief that AI execution must be deterministic."
         path="/about"
         jsonLd={{
           "@context": "https://schema.org",
