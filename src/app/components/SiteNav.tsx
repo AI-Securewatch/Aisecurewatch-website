@@ -99,7 +99,17 @@ export default function SiteNav() {
                   {openDropdown === l.label && (
                     <div
                       className="glass-card absolute top-full left-1/2 -translate-x-1/2 mt-3 rounded-2xl p-2 z-50"
-                      style={{ width: 320 }}
+                      style={{
+                        width: 320,
+                        // .glass-card's default background is ~3% opacity --
+                        // fine for a card sitting on a calm dark background,
+                        // but not enough to fully obscure page content
+                        // (hero headlines, body text) behind a popover menu:
+                        // it ghosts through and reads as the menu and the
+                        // page "overlapping". Near-opaque override here only.
+                        background: "rgba(9,10,18,0.98)",
+                        boxShadow: "0 12px 32px rgba(0,0,0,0.45)",
+                      }}
                     >
                       {l.groups.map((g) => (
                         <a
