@@ -178,7 +178,18 @@ export default function SiteNav() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="lg:hidden border-t border-border">
+        <div
+          className="lg:hidden border-t border-border"
+          style={{
+            // This sits inside <nav>, which is position: fixed -- so when
+            // it opens it overlays page content below rather than pushing
+            // it down. It has no background of its own, so it was showing
+            // whatever page content sat underneath through .glass-nav's
+            // 75%-opacity backdrop. Same near-opaque override as the
+            // desktop dropdown panels, for the same reason.
+            background: "rgba(9,10,18,0.98)",
+          }}
+        >
           <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-1">
             {NAV_LINKS.map((l) =>
               hasGroups(l) ? (
