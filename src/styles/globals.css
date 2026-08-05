@@ -50,6 +50,26 @@
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 }
+/* Themed scrollbar for panels that scroll internally (the nav dropdowns),
+   so a scrolling panel doesn't suddenly show the browser's default light
+   scrollbar against the site's dark glass surfaces. */
+.themed-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(124,111,255,0.45) transparent;
+}
+.themed-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.themed-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.themed-scroll::-webkit-scrollbar-thumb {
+  background: rgba(124,111,255,0.45);
+  border-radius: 999px;
+}
+.themed-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(124,111,255,0.7);
+}
 .btn-primary {
   background: linear-gradient(135deg, #7c6fff, #3b8cf8);
   color: #fff;

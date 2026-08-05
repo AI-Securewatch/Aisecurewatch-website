@@ -98,7 +98,7 @@ export default function SiteNav() {
                   </button>
                   {openDropdown === l.label && (
                     <div
-                      className="glass-card absolute top-full left-1/2 -translate-x-1/2 mt-3 rounded-2xl p-2 z-50"
+                      className="glass-card themed-scroll absolute top-full left-1/2 -translate-x-1/2 mt-3 rounded-2xl p-2 z-50"
                       style={{
                         width: 320,
                         // .glass-card's default background is ~3% opacity.
