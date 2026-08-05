@@ -339,6 +339,39 @@ export const ROUTE_META = {
       "about": { "@id": `${SITE_URL}/#organization` },
     },
   },
+  "/privacy": {
+    title: "Privacy Policy | PayReality",
+    description: "What AI Securewatch collects on the PayReality website and platform, why, and how to exercise your rights over it. No cookies, no fine print games.",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "url": `${SITE_URL}/privacy`,
+      "name": "Privacy Policy | PayReality",
+      "isPartOf": { "@id": `${SITE_URL}/#website` },
+    },
+  },
+  "/terms": {
+    title: "Terms of Service | PayReality",
+    description: "The terms governing use of the PayReality website, demo, and platform, including what's shipped today versus planned, and where liability sits.",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "url": `${SITE_URL}/terms`,
+      "name": "Terms of Service | PayReality",
+      "isPartOf": { "@id": `${SITE_URL}/#website` },
+    },
+  },
+  "/security": {
+    title: "Security | PayReality",
+    description: "What PayReality actually does to secure agent intents, decisions, and evidence -- and, just as importantly, what it doesn't do yet. No certifications claimed.",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "url": `${SITE_URL}/security`,
+      "name": "Security | PayReality",
+      "isPartOf": { "@id": `${SITE_URL}/#website` },
+    },
+  },
   // "/docs" and its four sub-pages intentionally have no entries -- they're
   // client-side <Navigate> redirects to their /developers/* successors now,
   // not real pages, so there's nothing here for prerender.mjs to render

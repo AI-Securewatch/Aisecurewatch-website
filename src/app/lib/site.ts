@@ -148,7 +148,7 @@ export const FOOTER_COLUMNS = [
 ];
 
 export const LEGAL_LINKS = [
-  { label: "Privacy Policy", href: mailto(LEGAL_EMAIL, "Privacy Policy Request") },
-  { label: "Terms of Service", href: mailto(LEGAL_EMAIL, "Terms of Service Request") },
-  { label: "Security", href: mailto(LEGAL_EMAIL, "Security Documentation Request") },
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Terms of Service", href: "/terms" },
+  { label: "Security", href: "/security" },
 ];

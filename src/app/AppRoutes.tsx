@@ -19,6 +19,9 @@ import Manifesto from "./pages/Manifesto";
 import Demo from "./pages/Demo";
 import InsurancePortal from "./pages/InsurancePortal";
 import Contact from "./pages/Contact";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
+import Security from "./pages/Security";
 import Platform from "./pages/Platform";
 import ProductsOverview from "./pages/products/Overview";
 import RuntimeAuthority from "./pages/products/RuntimeAuthority";
@@ -90,6 +93,9 @@ export default function AppRoutes() {
       <Route path="/products/authorization-receipts" element={<Layout><AuthorizationReceipts /></Layout>} />
       <Route path="/insurance-portal" element={<Layout><InsurancePortal /></Layout>} />
       <Route path="/contact" element={<Layout><Contact /></Layout>} />
+      <Route path="/privacy" element={<Layout><Privacy /></Layout>} />
+      <Route path="/terms" element={<Layout><Terms /></Layout>} />
+      <Route path="/security" element={<Layout><Security /></Layout>} />
 
       {/* Developers -- old /docs/* URLs redirect to their /developers/*
           successors so no existing bookmark or external link breaks. */}
