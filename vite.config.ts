@@ -37,7 +37,7 @@ export default defineConfig(({ isSsrBuild }) => ({
   build: {
     rollupOptions: {
       output: {
-        // Output-level chunking only -- it changes which physical file each
+        // Output-level chunking only: it changes which physical file each
         // module lands in after the bundle is built, not when a component
         // resolves. entry-server.tsx renders with renderToStaticMarkup,
         // which has no Suspense/streaming support, so route-level

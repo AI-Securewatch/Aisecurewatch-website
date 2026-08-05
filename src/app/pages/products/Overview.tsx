@@ -38,7 +38,7 @@ export default function ProductsOverview() {
     <>
       <SEO
         title="Products | PayReality"
-        description="Runtime Authority, the Authority Graph, Runtime Policies, the Evidence Portal, and Authorization Receipts -- five components of one authorization runtime."
+        description="Runtime Authority, the Authority Graph, Runtime Policies, the Evidence Portal, and Authorization Receipts: five components of one authorization runtime."
         path="/products"
         jsonLd={{
           "@context": "https://schema.org",
@@ -64,7 +64,7 @@ export default function ProductsOverview() {
           </h1>
           <p className="text-muted-foreground leading-relaxed mb-10" style={{ fontSize: "1.125rem", maxWidth: 680 }}>
             Runtime Authority is not a bundle of separate tools. It's one deterministic runtime, and each
-            product below is a component of it -- built to be understood individually, but only
+            product below is a component of it, built to be understood individually, but only
             meaningful together.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mb-20">
@@ -191,7 +191,7 @@ export default function ProductsOverview() {
               Start with the flagship product
             </h2>
             <p className="text-muted-foreground mb-8 max-w-lg mx-auto">
-              Runtime Authority is where every intent is actually evaluated -- the best place to start.
+              Runtime Authority is where every intent is actually evaluated: the best place to start.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="/products/runtime-authority" className="btn-primary px-8 py-3.5 rounded-xl text-sm inline-flex items-center justify-center gap-2">

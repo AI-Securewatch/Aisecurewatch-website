@@ -1,18 +1,18 @@
 // The ONLY file in this app that ever imports mixpanel-browser. Every call
 // site elsewhere imports from this module, never from "mixpanel-browser"
-// itself -- swapping providers later (PostHog, Amplitude, Azure Application
+// itself. Swapping providers later (PostHog, Amplitude, Azure Application
 // Insights) means rewriting the functions below, not touching any page or
 // component.
 //
 // mixpanel-browser is a genuinely large dependency (its default build added
 // ~500KB minified to the entry bundle when imported statically, since
-// App.tsx -- unlike the lazy-loaded pages -- is always in the initial
+// App.tsx, unlike the lazy-loaded pages, is always in the initial
 // chunk). It's imported dynamically inside initAnalytics() instead, so it
 // becomes its own lazily-fetched chunk that only downloads after first
 // paint, and never downloads at all when no token is configured.
 //
 // Silently does nothing if VITE_MIXPANEL_TOKEN is unset, or if running on
-// localhost without VITE_MIXPANEL_DEBUG=true -- every exported function is
+// localhost without VITE_MIXPANEL_DEBUG=true. Every exported function is
 // always safe to call regardless of whether analytics is actually active.
 
 type Mixpanel = typeof import("mixpanel-browser").default;
@@ -39,7 +39,7 @@ const PAGE_EVENTS: Record<string, string> = {
   "/contact": "Contact Viewed",
 };
 
-// Captured exactly once per browser via Mixpanel's own register_once() --
+// Captured exactly once per browser via Mixpanel's own register_once():
 // the correct primitive for "first touch, never overwritten." The
 // previous version of this function was called fresh on every
 // initAnalytics() (i.e. every page load), which meant `referrer` was
@@ -67,7 +67,7 @@ function captureAcquisitionOnce(): void {
 // Only the two website-side milestones from the requested scale apply
 // here; the rest (Platform Opened onward) are scored in the platform
 // repo's own analytics.ts, since Mixpanel identities aren't currently
-// stitched across the two origins -- see this file's own notes on that
+// stitched across the two origins. See this file's own notes on that
 // gap where acquisition properties are captured.
 const UNDERSTANDING_POINTS: Record<string, number> = {
   "Website Opened": 5,
@@ -116,7 +116,7 @@ function bindLinkTracking(): void {
 }
 
 export async function initAnalytics(): Promise<void> {
-  if (typeof window === "undefined") return; // SSR prerender guard -- entry-server.tsx has no window/document
+  if (typeof window === "undefined") return; // SSR prerender guard (entry-server.tsx has no window/document)
   if (!TOKEN) return;
   if (isLocalhost() && !DEBUG_LOCAL) return;
 
@@ -141,7 +141,7 @@ export function track(event: string, properties?: Record<string, unknown>): void
 
 // Called on every route change (see App.tsx's AnalyticsPageTracker). Fires
 // the specific named event for pages the master prompt called out, or a
-// generic "Page Viewed" for everything else -- both still carry the
+// generic "Page Viewed" for everything else. Both still carry the
 // application/campaign super properties registered in initAnalytics.
 export function page(pathname: string): void {
   const eventName = PAGE_EVENTS[pathname];

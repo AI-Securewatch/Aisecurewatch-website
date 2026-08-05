@@ -1,5 +1,5 @@
 // Runs after `vite build` and `vite build --ssr src/entry-server.tsx`. Pure
-// Node -- no browser, no native binary -- so it can't fail the way a
+// Node (no browser, no native binary), so it can't fail the way a
 // headless-Chromium build step can (see git history: the first attempt at
 // this used Playwright and broke every Vercel deploy because the build
 // container was missing libnspr4.so with no root access to install it).

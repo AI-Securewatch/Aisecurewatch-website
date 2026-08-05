@@ -8,7 +8,7 @@ export default function RuntimeApi() {
     <>
       <SEO
         title="Runtime API | PayReality Developers"
-        description="The Intent API: POST /v1/intents, its three possible outcomes -- Allow, Deny, and Human Review -- and the request and response lifecycle."
+        description="The Intent API: POST /v1/intents, its three possible outcomes (Allow, Deny, and Human Review), and the request and response lifecycle."
         path="/developers/runtime-api"
         type="article"
         jsonLd={{
@@ -30,7 +30,7 @@ export default function RuntimeApi() {
           Every real-world action an agent wants to take is expressed as a signed <strong style={{ color: "#e8ecf4" }}>Intent</strong>,
           submitted to a single endpoint. This page covers that endpoint directly; if you're using the Python
           SDK, <code className="mono">agent.authorize(...)</code> is this same call with signing handled for
-          you -- see <a href="/developers/sdks" style={{ color: "#a78bfa" }}>SDKs</a>. For the product-level
+          you, see <a href="/developers/sdks" style={{ color: "#a78bfa" }}>SDKs</a>. For the product-level
           explanation of what this endpoint is evaluating against, see{" "}
           <a href="/products/runtime-authority" style={{ color: "#a78bfa" }}>Runtime Authority</a>.
         </p>
@@ -60,7 +60,7 @@ Content-Type: application/json
         <h2 style={sectionHeadingStyle}>The three outcomes</h2>
         <p>Every Intent resolves to exactly one of three <code className="mono">outcome</code> values. There is no fourth path, and no partial success.</p>
 
-        <CodeBlock label="200 OK -- ALLOW">{`{
+        <CodeBlock label="200 OK: ALLOW">{`{
   "decision_id": "dec_3a91f0",
   "outcome": "ALLOW",
   "reason": "within_delegated_authority",
@@ -68,7 +68,7 @@ Content-Type: application/json
   "evaluated_at": "2026-08-03T09:14:02.118Z"
 }`}</CodeBlock>
 
-        <CodeBlock label="200 OK -- DENY">{`{
+        <CodeBlock label="200 OK: DENY">{`{
   "decision_id": "dec_3a91f1",
   "outcome": "DENY",
   "reason": "exceeds_approval_limit",
@@ -76,7 +76,7 @@ Content-Type: application/json
   "evaluated_at": "2026-08-03T09:14:02.093Z"
 }`}</CodeBlock>
 
-        <CodeBlock label="200 OK -- HUMAN_REVIEW">{`{
+        <CodeBlock label="200 OK: HUMAN_REVIEW">{`{
   "decision_id": "dec_3a91f2",
   "outcome": "HUMAN_REVIEW",
   "reason": "requires_dual_approval",
@@ -87,7 +87,7 @@ Content-Type: application/json
 
         <p>
           <code className="mono">reason</code> is a stable, machine-readable code naming the specific policy
-          or authority-graph condition that produced the outcome -- not a free-text explanation that can
+          or authority-graph condition that produced the outcome, not a free-text explanation that can
           change wording between requests.
         </p>
 
@@ -111,7 +111,7 @@ Content-Type: application/json
         <p>
           Poll <code className="mono">GET /v1/decisions/{"{decision_id}"}</code> until{" "}
           <code className="mono">status</code> flips from <code className="mono">PENDING</code> to{" "}
-          <code className="mono">RESOLVED</code>, or use the webhook events covering this transition -- see{" "}
+          <code className="mono">RESOLVED</code>, or use the webhook events covering this transition, see{" "}
           <a href="/developers/webhooks" style={{ color: "#a78bfa" }}>Webhooks</a>.
         </p>
 
@@ -125,7 +125,7 @@ Content-Type: application/json
         <h2 style={sectionHeadingStyle}>Response flow</h2>
         <p>
           A successful evaluation is always <code className="mono">200 OK</code>, whether the outcome is
-          Allow, Deny, or Human Review -- the HTTP status describes whether the platform successfully
+          Allow, Deny, or Human Review: the HTTP status describes whether the platform successfully
           evaluated the request, not whether the action was approved. A <code className="mono">4xx</code> or{" "}
           <code className="mono">5xx</code> means evaluation itself didn't complete; see{" "}
           <a href="/developers/api-reference" style={{ color: "#a78bfa" }}>API Reference</a> for the full

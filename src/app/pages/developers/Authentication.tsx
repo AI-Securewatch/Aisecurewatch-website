@@ -32,7 +32,7 @@ export default function Authentication() {
           by exactly one of four credentials, layered so the simplest one (a single shared key) never
           has to be replaced before a real multi-user rollout needs the others. This is a practical
           instance of a broader Zero Trust principle the runtime follows throughout: no caller, agent
-          or human, is trusted by network position or prior request -- every request authenticates on
+          or human, is trusted by network position or prior request: every request authenticates on
           its own merits, every time.
         </p>
 
@@ -48,7 +48,7 @@ X-PayReality-Signature: <ed25519 signature over the raw request body>`}</CodeBlo
         <p>
           If an agent is compromised or decommissioned, its certificate is rotated or revoked,
           immediately cutting off its ability to act, the same way deactivating an employee's badge
-          does. Key rotation never invalidates history -- decisions made under a previous certificate
+          does. Key rotation never invalidates history: decisions made under a previous certificate
           remain exactly as valid as they were, since the certificate that was active at the time is
           what's recorded, not the agent's current one.
         </p>

@@ -6,7 +6,7 @@ import StatusBadge from "../docs/StatusBadge";
 const GROUPS = [
   {
     heading: "Agent frameworks and protocols",
-    note: "Any Python process can call the SDK's authorize() before taking an action -- these frameworks are all Python-native, so the integration pattern works today even without a dedicated connector.",
+    note: "Any Python process can call the SDK's authorize() before taking an action: these frameworks are all Python-native, so the integration pattern works today even without a dedicated connector.",
     items: [
       { name: "OpenAI Agents SDK", status: "Early Access" as const },
       { name: "Anthropic Claude (tool use / Agent SDK)", status: "Early Access" as const },
@@ -18,7 +18,7 @@ const GROUPS = [
   },
   {
     heading: "Cloud AI platforms",
-    note: "These require a dedicated connector to bridge the platform's own agent runtime to the Intent API -- not yet built.",
+    note: "These require a dedicated connector to bridge the platform's own agent runtime to the Intent API, not yet built.",
     items: [
       { name: "Microsoft Copilot", status: "Coming Soon" as const },
       { name: "Azure AI Foundry", status: "Coming Soon" as const },
@@ -28,7 +28,7 @@ const GROUPS = [
   },
   {
     heading: "Enterprise systems",
-    note: "The system of record an agent's action ultimately reaches, after a decision allows it -- connector work not yet started.",
+    note: "The system of record an agent's action ultimately reaches, after a decision allows it, connector work not yet started.",
     items: [
       { name: "SAP", status: "Coming Soon" as const },
       { name: "Oracle", status: "Coming Soon" as const },
@@ -63,7 +63,7 @@ export default function IntegrationGuides() {
       <DocLayout
         eyebrow="DEVELOPERS"
         title="Integration Guides"
-        subtitle="Where Runtime Authority connects to the rest of your stack -- and an honest split between what works today and what's a dedicated connector we haven't built yet."
+        subtitle="Where Runtime Authority connects to the rest of your stack, and an honest split between what works today and what's a dedicated connector we haven't built yet."
         currentPath="/developers/integration-guides"
       >
         <p>
@@ -94,7 +94,7 @@ export default function IntegrationGuides() {
 
         <h2 style={sectionHeadingStyle}>What "Early Access" means here</h2>
         <p>
-          There's no PayReality-published package for any of the frameworks above -- "Early Access" means the
+          There's no PayReality-published package for any of the frameworks above: "Early Access" means the
           existing Python SDK already gives you what you need to wire it in yourself (call{" "}
           <code className="mono">authorize()</code> at the point your agent would otherwise act), not that a
           named integration package exists. See{" "}

@@ -33,14 +33,14 @@ export default function Webhooks() {
       <DocLayout
         eyebrow="DEVELOPERS"
         title="Webhooks"
-        subtitle="Enterprise event notifications for Runtime Authority -- the planned shape, not a live subscription API yet."
+        subtitle="Enterprise event notifications for Runtime Authority: the planned shape, not a live subscription API yet."
         currentPath="/developers/webhooks"
       >
         <div className="flex items-center gap-3 -mt-2 mb-2">
           <StatusBadge status="Planned" />
           <span className="text-sm text-muted-foreground">
             Today, decisions are retrieved by polling <code className="mono">GET /v1/decisions/{"{id}"}</code>{" "}
-            -- see <a href="/developers/runtime-api" style={{ color: "#a78bfa" }}>Runtime API</a>.
+            (see <a href="/developers/runtime-api" style={{ color: "#a78bfa" }}>Runtime API</a>).
           </span>
         </div>
 
@@ -85,7 +85,7 @@ export default function Webhooks() {
 
         <h2 style={sectionHeadingStyle}>Why polling works today regardless</h2>
         <p>
-          Nothing about the current Runtime API depends on webhooks existing -- <code className="mono">ALLOW</code>{" "}
+          Nothing about the current Runtime API depends on webhooks existing: <code className="mono">ALLOW</code>{" "}
           and <code className="mono">DENY</code> are terminal in the same response you already receive, and
           Human Review can be tracked by polling the decision until its status resolves. Webhooks remove the
           need to poll; they don't unlock a capability that's otherwise unavailable.

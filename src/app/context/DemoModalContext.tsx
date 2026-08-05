@@ -28,7 +28,7 @@ export function DemoModalProvider({ children }: { children: ReactNode }) {
     setDemoForm({ name: "", email: "", company: "", message: "" });
     setDemoOpen(true);
     // Single hook point for every "Book a Demo" button in the app (nav,
-    // footer, hero, page CTAs) -- covers all of them without an onClick
+    // footer, hero, page CTAs): covers all of them without an onClick
     // handler scattered across each one.
     track("Book Demo Clicked", { page: window.location.pathname });
   };
@@ -62,7 +62,7 @@ export function DemoModalProvider({ children }: { children: ReactNode }) {
     ].join("\n");
     window.location.href = mailto(CONTACT_EMAIL, subject, body);
     setDemoSubmitted(true);
-    // Never includes name/email/message -- just which variant of the form
+    // Never includes name/email/message, just which variant of the form
     // this was and what page it was submitted from.
     track("Contact Form Submitted", {
       page: window.location.pathname,

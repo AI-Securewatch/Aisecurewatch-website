@@ -14,7 +14,7 @@ export function mailto(to: string, subject: string, body?: string) {
 }
 
 // Flat links render directly in the nav bar. Grouped links render as a
-// dropdown panel (SiteNav.tsx) -- this is additive to the existing nav
+// dropdown panel (SiteNav.tsx). This is additive to the existing nav
 // component, not a replacement of it: a link with no `groups` is unchanged
 // from before this file's IA update.
 export const NAV_LINKS = [
@@ -22,7 +22,7 @@ export const NAV_LINKS = [
   {
     label: "Products",
     groups: [
-      { label: "Overview", href: "/products", desc: "Start here -- how the five products fit together" },
+      { label: "Overview", href: "/products", desc: "Start here: how the five products fit together" },
       { label: "Runtime Authority", href: "/products/runtime-authority", desc: "The flagship pre-execution authorization runtime" },
       { label: "Authority Graph", href: "/products/authority-graph", desc: "Delegated authority, modeled and machine-readable" },
       { label: "Runtime Policies", href: "/products/runtime-policies", desc: "Deterministic policy compilation and enforcement" },
@@ -46,7 +46,7 @@ export const NAV_LINKS = [
   {
     label: "Developers",
     groups: [
-      { label: "Overview", href: "/developers", desc: "Start here -- the full Developers index" },
+      { label: "Overview", href: "/developers", desc: "Start here: the full Developers index" },
       { label: "Getting Started", href: "/developers/getting-started", desc: "From empty organization to first decision" },
       { label: "Architecture", href: "/developers/architecture", desc: "Agent to Intent to Decision to Evidence" },
       { label: "Runtime API", href: "/developers/runtime-api", desc: "POST /v1/intents and its three outcomes" },

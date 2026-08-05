@@ -4,7 +4,7 @@
 // browser-only useEffect that never runs during a Node-side render. Kept
 // separate on purpose so scripts/prerender.mjs (pure Node) never needs to
 // import a .tsx file. NOTE: if you change a page's <SEO> props, update the
-// matching entry here too -- there's no automatic sync between them.
+// matching entry here too, since there's no automatic sync between them.
 const SITE_URL = "https://aisecurewatch.com";
 
 export const ROUTE_META = {
@@ -156,7 +156,7 @@ export const ROUTE_META = {
   },
   "/resources/glossary": {
     title: "Glossary | PayReality Resources",
-    description: "Every term used on the PayReality site -- Runtime Authority, Authority Graph, Runtime Policies, Evidence Portal, and Authorization Receipts -- defined once.",
+    description: "Every term used on the PayReality site (Runtime Authority, Authority Graph, Runtime Policies, Evidence Portal, and Authorization Receipts), defined once.",
     jsonLd: {
       "@context": "https://schema.org",
       "@type": "DefinedTermSet",
@@ -229,7 +229,7 @@ export const ROUTE_META = {
       ],
     },
   },
-  // "/policy-engine" intentionally has no entry -- it's a client-side
+  // "/policy-engine" intentionally has no entry: it's a client-side
   // <Navigate> redirect to "/products/runtime-policies" now, not a real
   // page, so there's nothing here for prerender.mjs to render statically.
   // The existing SPA-fallback rewrite (same one NotFound relies on) serves
@@ -248,7 +248,7 @@ export const ROUTE_META = {
   },
   "/products": {
     title: "Products | PayReality",
-    description: "Runtime Authority, the Authority Graph, Runtime Policies, the Evidence Portal, and Authorization Receipts -- five components of one authorization runtime.",
+    description: "Runtime Authority, the Authority Graph, Runtime Policies, the Evidence Portal, and Authorization Receipts: five components of one authorization runtime.",
     jsonLd: {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
@@ -363,7 +363,7 @@ export const ROUTE_META = {
   },
   "/security": {
     title: "Security | PayReality",
-    description: "What PayReality actually does to secure agent intents, decisions, and evidence -- and, just as importantly, what it doesn't do yet. No certifications claimed.",
+    description: "What PayReality actually does to secure agent intents, decisions, and evidence, and just as importantly, what it doesn't do yet. No certifications claimed.",
     jsonLd: {
       "@context": "https://schema.org",
       "@type": "WebPage",
@@ -372,7 +372,7 @@ export const ROUTE_META = {
       "isPartOf": { "@id": `${SITE_URL}/#website` },
     },
   },
-  // "/docs" and its four sub-pages intentionally have no entries -- they're
+  // "/docs" and its four sub-pages intentionally have no entries: they're
   // client-side <Navigate> redirects to their /developers/* successors now,
   // not real pages, so there's nothing here for prerender.mjs to render
   // statically. The existing SPA-fallback rewrite serves them.
@@ -415,7 +415,7 @@ export const ROUTE_META = {
   },
   "/developers/runtime-api": {
     title: "Runtime API | PayReality Developers",
-    description: "The Intent API: POST /v1/intents, its three possible outcomes -- Allow, Deny, and Human Review -- and the request and response lifecycle.",
+    description: "The Intent API: POST /v1/intents, its three possible outcomes (Allow, Deny, and Human Review), and the request and response lifecycle.",
     type: "article",
     jsonLd: {
       "@context": "https://schema.org",
@@ -454,7 +454,7 @@ export const ROUTE_META = {
   },
   "/developers/runtime-policies": {
     title: "Runtime Policies | PayReality Developers",
-    description: "How a policy is compiled, evaluated deterministically, versioned, and deployed -- and why a Runtime Policy differs from the governance document it came from.",
+    description: "How a policy is compiled, evaluated deterministically, versioned, and deployed, and why a Runtime Policy differs from the governance document it came from.",
     type: "article",
     jsonLd: {
       "@context": "https://schema.org",

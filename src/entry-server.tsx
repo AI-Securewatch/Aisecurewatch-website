@@ -3,8 +3,8 @@ import { StaticRouter } from "react-router";
 import { DemoModalProvider } from "./app/context/DemoModalContext";
 import AppRoutes from "./app/AppRoutes";
 
-// Pure-JS render used by scripts/prerender.mjs at build time -- no browser,
-// no native binary, so it can't fail the way a headless-Chromium build step
+// Pure-JS render used by scripts/prerender.mjs at build time (no browser,
+// no native binary), so it can't fail the way a headless-Chromium build step
 // can. useEffect (and therefore the client-only SEO component's DOM
 // mutations) never runs here; that's fine, because prerender.mjs patches the
 // <head> tags itself from a separate metadata manifest. This function only

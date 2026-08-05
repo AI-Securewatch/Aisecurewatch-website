@@ -70,8 +70,8 @@ export default function Privacy() {
             </p>
             <ul className="flex flex-col gap-2.5 mt-1">
               {[
-                "Analytics: we use Mixpanel to record page views, referring source and campaign parameters (utm_source, utm_medium, etc.), and which links you click -- stored in your browser's localStorage and on Mixpanel's servers. This is aggregate usage data, not tied to your name or email unless you separately give those to us.",
-                "Contact and demo requests: submitting the \"Book a Demo\" form or any contact link on this site opens a pre-filled email in your own email client. Nothing you type is sent to or stored on our servers -- the email only sends if you personally choose to send it.",
+                "Analytics: we use Mixpanel to record page views, referring source and campaign parameters (utm_source, utm_medium, etc.), and which links you click. This is stored in your browser's localStorage and on Mixpanel's servers, as aggregate usage data, not tied to your name or email unless you separately give those to us.",
+                "Contact and demo requests: submitting the \"Book a Demo\" form or any contact link on this site opens a pre-filled email in your own email client. Nothing you type is sent to or stored on our servers; the email only sends if you personally choose to send it.",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-2.5">
                   <span className="mt-2 w-1 h-1 rounded-full flex-shrink-0" style={{ background: "#7c6fff" }} />

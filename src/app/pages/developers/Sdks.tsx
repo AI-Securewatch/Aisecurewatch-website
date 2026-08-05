@@ -119,7 +119,7 @@ elif decision.outcome == "HUMAN_REVIEW":
         <p>
           Python ships first because it's what most agent frameworks in this space are already
           written in (LangGraph, CrewAI, AutoGen, the OpenAI and Anthropic SDKs). The following are
-          planned, not started -- there is no partial implementation to preview yet:
+          planned, not started: there is no partial implementation to preview yet:
         </p>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 my-2">
           {FUTURE_SDKS.map((lang) => (

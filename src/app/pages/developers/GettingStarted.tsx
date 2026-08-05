@@ -4,14 +4,14 @@ import DocLayout, { sectionHeadingStyle } from "../docs/DocLayout";
 import CodeBlock from "../docs/CodeBlock";
 
 const STEPS = [
-  { n: 1, title: "Create an organization", body: "Everything below -- agents, policies, evidence -- is scoped to one organization. This is done once, from Organisation Settings, not the API." },
+  { n: 1, title: "Create an organization", body: "Everything below (agents, policies, evidence) is scoped to one organization. This is done once, from Organisation Settings, not the API." },
   { n: 2, title: "Register an agent", body: "Give the agent an identity and a Principal it acts on behalf of. It starts registered, not active." },
-  { n: 3, title: "Upload governance", body: "Bring an existing Delegation of Authority document, approval matrix, or signing schedule -- the AI Authority Builder reads it directly." },
+  { n: 3, title: "Upload governance", body: "Bring an existing Delegation of Authority document, approval matrix, or signing schedule: the AI Authority Builder reads it directly." },
   { n: 4, title: "Generate the Authority Graph", body: "The uploaded governance is modeled as a graph: principals, delegates, limits, and role hierarchy, ready for the runtime to query." },
   { n: 5, title: "Publish Runtime Policies", body: "Draft, review, and compile the conditions under which an action is permitted. A policy has to be active before any Intent can be evaluated against it." },
-  { n: 6, title: "Connect the Runtime API", body: "Point your agent at the Intent API, or install the SDK -- see SDKs for the one-call version of steps 6 and 7 together." },
+  { n: 6, title: "Connect the Runtime API", body: "Point your agent at the Intent API, or install the SDK (see SDKs for the one-call version of steps 6 and 7 together)." },
   { n: 7, title: "Execute your first Intent", body: "Submit a signed action. It's evaluated against the Authority Graph and active Runtime Policies in sub-millisecond time." },
-  { n: 8, title: "Receive your Authorization Receipt", body: "The decision -- Allow, Deny, or Human Review -- comes back immediately, along with the signed evidence record for it." },
+  { n: 8, title: "Receive your Authorization Receipt", body: "The decision (Allow, Deny, or Human Review) comes back immediately, along with the signed evidence record for it." },
 ];
 
 export default function GettingStarted() {
@@ -79,8 +79,8 @@ decision = agent.authorize(
 print(decision.outcome)      # ALLOW, DENY, or HUMAN_REVIEW
 print(decision.evidence_id)  # step 8: the signed evidence record for this decision`}</CodeBlock>
         <p>
-          Steps 1, 3, 4, and 5 -- creating the organization, uploading governance, generating the Authority
-          Graph, and publishing Runtime Policies -- happen in the platform UI today, not through this SDK call.
+          Steps 1, 3, 4, and 5 (creating the organization, uploading governance, generating the Authority
+          Graph, and publishing Runtime Policies) happen in the platform UI today, not through this SDK call.
           See <a href="/developers/authority-graph" style={{ color: "#a78bfa" }}>Authority Graph</a> and{" "}
           <a href="/developers/runtime-policies" style={{ color: "#a78bfa" }}>Runtime Policies</a> for what each
           one actually produces.

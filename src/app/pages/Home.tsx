@@ -25,8 +25,8 @@ const EXISTING_FRAMEWORKS = [
 ];
 
 // The four pathways every visitor should be able to name after reading this
-// page, matching the site's own top-level information architecture --
-// Platform, Products, Developers, Solutions -- rather than re-explaining any
+// page, matching the site's own top-level information architecture
+// (Platform, Products, Developers, Solutions), rather than re-explaining any
 // of the four here. There's no dedicated "/products" index page yet (each
 // product page stands alone), so Products points at the flagship until one
 // exists.

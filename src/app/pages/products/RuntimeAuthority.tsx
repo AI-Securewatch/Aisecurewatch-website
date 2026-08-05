@@ -31,7 +31,7 @@ const OUTCOMES = [
 const BENEFITS = [
   { icon: ShieldAlert, title: "Deterministic, fail-closed", desc: "The same intent, evaluated against the same policy, produces the same decision. When evaluation cannot complete, the default is deny, not allow." },
   { icon: GitBranch, title: "Your governance, not a new one", desc: "Delegation of Authority, approval matrices, and role hierarchies you already operate become the evaluated policy. Nothing is invented on your behalf." },
-  { icon: Clock, title: "Before execution, not after", desc: "Evaluation happens at the moment the agent forms an intent, ahead of any real-world effect -- not as a downstream audit of what already happened." },
+  { icon: Clock, title: "Before execution, not after", desc: "Evaluation happens at the moment the agent forms an intent, ahead of any real-world effect, not as a downstream audit of what already happened." },
   { icon: Fingerprint, title: "Every decision is evidence", desc: "Allow, Deny, and Human Review all produce a signed record. There is no path from agent intent to action that bypasses evaluation or leaves nothing behind." },
 ];
 
@@ -95,7 +95,7 @@ export default function RuntimeAuthority() {
               An agent that drafts an email carries limited downside if it's wrong. An agent that initiates a
               payment, submits a procurement order, modifies a contract, updates an ERP record, changes
               infrastructure configuration, or makes a healthcare-adjacent recommendation carries the same
-              consequences a human employee acting outside their authority would carry -- except it can act at
+              consequences a human employee acting outside their authority would carry, except it can act at
               machine speed, at machine scale, and without the institutional friction that normally slows a person
               down long enough for someone to notice.
             </p>
@@ -118,7 +118,7 @@ export default function RuntimeAuthority() {
               doing the wrong thing first. Runtime authorization moves the check to before execution: the agent's
               intent is evaluated against the organization's actual authority structure, and the action only
               proceeds if that structure permits it. This is the same principle every mature access-control system
-              already applies to people and services -- extended to autonomous agents, at the speed they operate.
+              already applies to people and services, extended to autonomous agents, at the speed they operate.
             </p>
           </div>
 
@@ -150,8 +150,8 @@ export default function RuntimeAuthority() {
             </div>
             <p className="text-muted-foreground leading-relaxed mt-6" style={{ maxWidth: 680 }}>
               An agent submits a cryptographically signed intent. Runtime Authority evaluates it against the{" "}
-              <a href="/products/authority-graph" style={{ color: "#a78bfa" }}>Authority Graph</a> -- who this agent
-              is acting on behalf of, and what that principal is entitled to delegate -- and the active{" "}
+              <a href="/products/authority-graph" style={{ color: "#a78bfa" }}>Authority Graph</a> (who this agent
+              is acting on behalf of, and what that principal is entitled to delegate) and the active{" "}
               <a href="/products/runtime-policies" style={{ color: "#a78bfa" }}>Runtime Policies</a> compiled from
               your governance documents. Evaluation is sub-millisecond and deterministic: no model makes a
               judgment call at this stage. For the exact request and response shape, see{" "}

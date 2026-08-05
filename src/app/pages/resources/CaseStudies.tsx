@@ -39,15 +39,15 @@ export default function CaseStudies() {
             Case Studies
           </h1>
           <p className="text-muted-foreground leading-relaxed mb-10" style={{ fontSize: "1.125rem", maxWidth: 620 }}>
-            How enterprise teams put Runtime Authority into production -- the real workflow, the policy
+            How enterprise teams put Runtime Authority into production: the real workflow, the policy
             they started from, and what changed. None are published yet.
           </p>
 
           <div className="glass-card rounded-2xl p-8" style={{ border: "1px solid rgba(124,111,255,0.22)" }}>
             <p className="text-muted-foreground leading-relaxed mb-6">
               In the meantime, <a href="/solutions" style={{ color: "#a78bfa" }}>Solutions</a> covers the same
-              workflows a case study would document -- payment approvals, procurement, contract signing
-              authority, and more -- described generally rather than tied to a specific deployment.
+              workflows a case study would document (payment approvals, procurement, contract signing
+              authority, and more), described generally rather than tied to a specific deployment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="/solutions" className="btn-ghost px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center gap-2">

@@ -31,7 +31,7 @@ export default function AuthorityGraph() {
           <strong style={{ color: "#e8ecf4" }}>principals</strong> (who holds authority),{" "}
           <strong style={{ color: "#e8ecf4" }}>delegates</strong> (who it's been extended to, including AI
           agents), <strong style={{ color: "#e8ecf4" }}>resources</strong> (what's being acted on), and the{" "}
-          <strong style={{ color: "#e8ecf4" }}>constraints</strong> attached to each delegation -- modeled
+          <strong style={{ color: "#e8ecf4" }}>constraints</strong> attached to each delegation, modeled
           this way because a flat table can't represent "the Finance Manager may delegate payment approval up
           to $10,000 to a specific agent, who may act on the AP Vendor Payments resource only." For the
           product-level explanation of why this exists, see{" "}
@@ -61,7 +61,7 @@ export default function AuthorityGraph() {
 
         <h2 style={sectionHeadingStyle}>Resources</h2>
         <p>
-          A resource is whatever the delegated authority is scoped to -- a payment type, a procurement
+          A resource is whatever the delegated authority is scoped to: a payment type, a procurement
           category, an infrastructure system, a contract class. Scoping a delegation to a specific resource is
           what stops "may approve vendor payments up to $10,000" from being read as "may approve anything up
           to $10,000."
@@ -85,8 +85,8 @@ export default function AuthorityGraph() {
 
         <h2 style={sectionHeadingStyle}>How governance becomes machine-readable</h2>
         <p>
-          The AI Authority Builder reads governance documents you already have -- a Delegation of Authority
-          policy, an approval matrix, a signing schedule -- and proposes the graph structure above as
+          The AI Authority Builder reads governance documents you already have (a Delegation of Authority
+          policy, an approval matrix, a signing schedule) and proposes the graph structure above as
           candidates for human review. Nothing is published automatically: a person confirms the extracted
           principals, delegations, and limits actually match the source document before the graph goes live.
         </p>

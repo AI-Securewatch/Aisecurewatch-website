@@ -6,7 +6,7 @@ import { useDemoModal } from "../../context/DemoModalContext";
 const SOLUTIONS = [
   { icon: CreditCard, label: "Financial Services", href: "/solutions/financial-services", desc: "Payment approvals, treasury, credit operations, claims, and customer servicing." },
   { icon: FileText, label: "Procurement", href: "/solutions/procurement", desc: "Purchase orders, supplier onboarding, invoice approval, and vendor risk." },
-  { icon: ClipboardCheck, label: "Healthcare", href: "/solutions/healthcare", desc: "Administrative and operational authorization -- not clinical decision-making." },
+  { icon: ClipboardCheck, label: "Healthcare", href: "/solutions/healthcare", desc: "Administrative and operational authorization, not clinical decision-making." },
   { icon: Factory, label: "Manufacturing", href: "/solutions/manufacturing", desc: "Production changes, maintenance sign-off, quality holds, and supply chain exceptions." },
   { icon: Landmark, label: "Public Sector", href: "/solutions/public-sector", desc: "Benefits disbursement, budget authorization, and procurement thresholds." },
   { icon: GitPullRequestArrow, label: "Enterprise IT", href: "/solutions/enterprise-it", desc: "Infrastructure change approval, access provisioning, and incident escalation." },
@@ -38,7 +38,7 @@ export default function SolutionsOverview() {
           </h1>
           <p className="text-muted-foreground leading-relaxed mb-16" style={{ fontSize: "1.125rem", maxWidth: 700 }}>
             Runtime Authority doesn't change by industry. What changes is whose governance it evaluates, and
-            what the workflow on either side of it looks like -- the platform underneath every page below is
+            what the workflow on either side of it looks like: the platform underneath every page below is
             identical.
           </p>
 

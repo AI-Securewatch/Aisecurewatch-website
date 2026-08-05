@@ -3,7 +3,7 @@ import { SITE_URL } from "../../lib/site";
 
 const TERMS = [
   { term: "Runtime Authority", def: "The infrastructure layer that determines whether an autonomous AI agent is authorized to perform a specific action, evaluated immediately before execution. The flagship product; also the name of the overall capability.", href: "/products/runtime-authority" },
-  { term: "Authority Graph", def: "The structure modeling who holds delegated authority, who it's been extended to (including AI agents), and what constraints apply -- built from an organization's existing governance documents.", href: "/products/authority-graph" },
+  { term: "Authority Graph", def: "The structure modeling who holds delegated authority, who it's been extended to (including AI agents), and what constraints apply, built from an organization's existing governance documents.", href: "/products/authority-graph" },
   { term: "Runtime Policies", def: "Deterministic, versioned rules compiled from delegated authority, evaluated against every Intent to determine the specific conditions under which an action is permitted.", href: "/products/runtime-policies" },
   { term: "Intent", def: "A cryptographically signed request an AI agent submits, naming the action it wants to take, before anything executes." },
   { term: "Decision", def: "The result of evaluating an Intent against the Authority Graph and Runtime Policies. Exactly one of three outcomes: Allow, Deny, or Human Review." },
@@ -11,8 +11,8 @@ const TERMS = [
   { term: "Evidence Portal", def: "The enterprise evidence layer for Runtime Authority: where every signed Decision is searched, investigated, audited, and exported.", href: "/products/evidence-portal" },
   { term: "Authorization Receipt", def: "A planned evolution of Evidence Portal records: a portable, independently verifiable artifact that doesn't require access to PayReality's live systems to confirm. Not yet shipped.", href: "/products/authorization-receipts" },
   { term: "Agent", def: "An autonomous AI system registered with its own cryptographic identity, capable of submitting signed Intents on behalf of a Principal." },
-  { term: "Principal", def: "The person or role an agent acts on behalf of for policy-evaluation purposes -- distinct from who owns or operates the agent day to day." },
-  { term: "Delegated Authority", def: "The scope of action an organization has explicitly extended to a person, role, or system -- the concept every enterprise already operationalizes for people, and which Runtime Authority extends to AI agents." },
+  { term: "Principal", def: "The person or role an agent acts on behalf of for policy-evaluation purposes, distinct from who owns or operates the agent day to day." },
+  { term: "Delegated Authority", def: "The scope of action an organization has explicitly extended to a person, role, or system: the concept every enterprise already operationalizes for people, and which Runtime Authority extends to AI agents." },
   { term: "Decision Engine", def: "The deterministic evaluation logic that combines the Authority Graph and Runtime Policies into a single Decision. The same Intent, Graph, and Policy always produce the same outcome." },
   { term: "Operator Key", def: "A shared administrative credential that authenticates trusted administrative actions on the platform, such as registering an agent or publishing a policy." },
   { term: "Certificate / Key rotation", def: "The process of replacing an agent's signing key. Rotation cuts off the old key's ability to sign new Intents immediately, without invalidating decisions made under it historically." },
@@ -24,7 +24,7 @@ export default function Glossary() {
     <>
       <SEO
         title="Glossary | PayReality Resources"
-        description="Every term used on the PayReality site -- Runtime Authority, Authority Graph, Runtime Policies, Evidence Portal, and Authorization Receipts -- defined once."
+        description="Every term used on the PayReality site (Runtime Authority, Authority Graph, Runtime Policies, Evidence Portal, and Authorization Receipts), defined once."
         path="/resources/glossary"
         jsonLd={{
           "@context": "https://schema.org",

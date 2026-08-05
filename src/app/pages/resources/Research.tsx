@@ -39,7 +39,7 @@ export default function Research() {
             Research
           </h1>
           <p className="text-muted-foreground leading-relaxed mb-10" style={{ fontSize: "1.125rem", maxWidth: 620 }}>
-            Original research on delegated authority, AI execution risk, and runtime enforcement --
+            Original research on delegated authority, AI execution risk, and runtime enforcement:
             structured studies, not just product writing. Nothing under that heading is published yet.
           </p>
 

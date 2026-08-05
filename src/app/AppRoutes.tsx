@@ -31,7 +31,7 @@ import EvidencePortal from "./pages/products/EvidencePortal";
 import AuthorizationReceipts from "./pages/products/AuthorizationReceipts";
 // "Developers" pages reuse a few of the same product names (AuthorityGraph,
 // RuntimePolicies, AuthorizationReceipts) for a technical/API-level angle on
-// the same concept the marketing product page covers -- aliased on import so
+// the same concept the marketing product page covers, aliased on import so
 // both can live in this one route table without colliding.
 import DevOverview from "./pages/developers/Overview";
 import GettingStarted from "./pages/developers/GettingStarted";
@@ -81,7 +81,7 @@ export default function AppRoutes() {
       <Route path="/resources/research" element={<Layout><Research /></Layout>} />
       <Route path="/manifesto" element={<Layout><Manifesto /></Layout>} />
       <Route path="/demo" element={<Layout><Demo /></Layout>} />
-      {/* Superseded by /products/runtime-policies -- kept as a redirect so no
+      {/* Superseded by /products/runtime-policies. Kept as a redirect so no
           existing external link or bookmark to /policy-engine breaks. */}
       <Route path="/policy-engine" element={<Navigate to="/products/runtime-policies" replace />} />
       <Route path="/platform" element={<Layout><Platform /></Layout>} />
@@ -97,7 +97,7 @@ export default function AppRoutes() {
       <Route path="/terms" element={<Layout><Terms /></Layout>} />
       <Route path="/security" element={<Layout><Security /></Layout>} />
 
-      {/* Developers -- old /docs/* URLs redirect to their /developers/*
+      {/* Developers: old /docs/* URLs redirect to their /developers/*
           successors so no existing bookmark or external link breaks. */}
       <Route path="/docs" element={<Navigate to="/developers" replace />} />
       <Route path="/docs/sdk" element={<Navigate to="/developers/sdks" replace />} />

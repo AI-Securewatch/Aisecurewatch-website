@@ -8,7 +8,7 @@ type SEOProps = {
   image?: string;
   type?: "website" | "article";
   jsonLd?: object;
-  // Pages with nothing to index (404, and any future utility page) --
+  // Pages with nothing to index (404, and any future utility page):
   // "follow" rather than "nofollow" so a real link elsewhere on the page
   // (e.g. NotFound's link back to home) still passes crawl equity.
   noindex?: boolean;

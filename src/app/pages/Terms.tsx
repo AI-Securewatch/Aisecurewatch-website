@@ -62,7 +62,7 @@ export default function Terms() {
             <p>
               PayReality is Enterprise AI Authority Infrastructure: it evaluates whether an AI agent's requested
               action is within its delegated authority, before that action executes. Some capabilities described on
-              this site are marked "Coming Soon," "Planned," or "Roadmap" -- those are not currently available, carry
+              this site are marked "Coming Soon," "Planned," or "Roadmap." Those are not currently available, carry
               no availability date or warranty, and using this site does not entitle you to them.
             </p>
 
@@ -78,14 +78,14 @@ export default function Terms() {
             <p>
               AI Securewatch owns the PayReality name, software, website content, and branding. You retain
               ownership of the governance documents, policies, and other data your organization uploads to the
-              platform -- using the platform doesn't transfer that ownership to us.
+              platform. Using the platform doesn't transfer that ownership to us.
             </p>
 
             <h2 style={clauseHeadingStyle}>Disclaimers</h2>
             <p>
               The website, demo, and platform are provided "as is," without warranty of any kind, express or
               implied, including merchantability or fitness for a particular purpose. PayReality automates
-              evaluation of delegated authority against the policy you give it -- it is not a substitute for your
+              evaluation of delegated authority against the policy you give it. It is not a substitute for your
               organization's own legal, compliance, or risk judgment, and using it does not itself constitute
               compliance with any regulation.
             </p>

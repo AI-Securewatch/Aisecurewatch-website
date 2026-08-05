@@ -13,12 +13,12 @@ import { PLATFORM, SITE_URL } from "../../lib/site";
 import { useDemoModal } from "../../context/DemoModalContext";
 
 const CAPABILITIES = [
-  { icon: FileSearch, title: "Governance ingestion", desc: "Existing Delegation of Authority documents, approval matrices, and signing schedules are read directly -- as source documents, not as a template to fill in from scratch." },
+  { icon: FileSearch, title: "Governance ingestion", desc: "Existing Delegation of Authority documents, approval matrices, and signing schedules are read directly, as source documents, not as a template to fill in from scratch." },
   { icon: GitBranch, title: "Delegated authority", desc: "Who may act on whose behalf, and how far that delegation extends, is modeled explicitly, including chains of delegation rather than a single flat permission." },
   { icon: Layers, title: "Role hierarchy", desc: "Reporting lines and organizational structure become part of the graph, so authority evaluation reflects how the organization is actually structured, not a simplified approximation of it." },
   { icon: Scale, title: "Approval limits", desc: "Monetary thresholds, transaction types, and category-specific limits are captured as constraints on delegation, not as a separate system that has to be kept in sync." },
   { icon: Users, title: "Organizational modeling", desc: "Business units, cost centers, and principal-to-agent relationships are represented as first-class entities the runtime can evaluate against." },
-  { icon: Network, title: "Machine-readable authority", desc: "The output is a graph a deterministic runtime can query in sub-millisecond time -- the same governance structure, in a form software can actually evaluate." },
+  { icon: Network, title: "Machine-readable authority", desc: "The output is a graph a deterministic runtime can query in sub-millisecond time: the same governance structure, in a form software can actually evaluate." },
 ];
 
 export default function AuthorityGraph() {
@@ -54,7 +54,7 @@ export default function AuthorityGraph() {
             <span className="grad-text">Authority Graph</span>
           </h1>
           <p className="text-muted-foreground leading-relaxed mb-10" style={{ fontSize: "1.125rem", maxWidth: 680 }}>
-            Your organization's delegated authority, modeled as a structure a runtime can evaluate -- not
+            Your organization's delegated authority, modeled as a structure a runtime can evaluate, not
             rebuilt, just made machine-readable.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mb-20">
@@ -77,7 +77,7 @@ export default function AuthorityGraph() {
               A Delegation of Authority policy is written for humans to read and interpret. It answers "who can
               approve what" in prose, cross-referenced against an org chart that lives somewhere else, and an
               approval matrix that lives somewhere else again. None of that is queryable by a system that needs
-              an answer in milliseconds, for an actor -- an AI agent -- that has no judgment to apply to an
+              an answer in milliseconds, for an actor (an AI agent) that has no judgment to apply to an
               ambiguous case.
             </p>
           </div>
@@ -94,7 +94,7 @@ export default function AuthorityGraph() {
               every intent; it is the "who is allowed to delegate what, to whom" half of every decision, alongside
               the "under what conditions" half supplied by{" "}
               <a href="/products/runtime-policies" style={{ color: "#a78bfa" }}>Runtime Policies</a>. For the
-              schema-level detail -- what a delegation record actually contains -- see{" "}
+              schema-level detail (what a delegation record actually contains), see{" "}
               <a href="/developers/authority-graph" style={{ color: "#a78bfa" }}>Authority Graph</a> in the
               Developers section.
             </p>

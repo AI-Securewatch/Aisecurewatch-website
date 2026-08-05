@@ -38,20 +38,20 @@ export default function EvidenceVerification() {
         <CodeBlock label="response">{`{ "valid": true }`}</CodeBlock>
         <p>
           A tampered or corrupted record returns <code className="mono">{`{ "valid": false }`}</code> rather
-          than an error -- verification is a check, not an operation that can fail for unrelated reasons.
+          than an error: verification is a check, not an operation that can fail for unrelated reasons.
         </p>
 
         <h2 style={sectionHeadingStyle}>Evidence export (live)</h2>
         <p>
           Search and export evidence from the Evidence Portal scoped to exactly what a specific review needs
-          -- by agent, outcome, policy, or time range -- rather than granting an auditor broad access to the
+          (by agent, outcome, policy, or time range), rather than granting an auditor broad access to the
           underlying platform.
         </p>
 
         <h2 style={sectionHeadingStyle}>Audit workflows (live)</h2>
         <p>
-          Every field an audit typically needs -- the agent, the Principal it acted for, the policy version
-          evaluated, the outcome, and the timestamp -- is present on the record itself and searchable in the
+          Every field an audit typically needs (the agent, the Principal it acted for, the policy version
+          evaluated, the outcome, and the timestamp) is present on the record itself and searchable in the
           portal, so an audit doesn't require reconstructing context from application logs elsewhere.
         </p>
 
@@ -60,13 +60,13 @@ export default function EvidenceVerification() {
         </h2>
         <p>
           Today, verifying a record means calling PayReality's own <code className="mono">/verify</code>{" "}
-          endpoint -- accurate, but it means the verifier is trusting PayReality's systems to be reachable and
-          honest at the moment they check. The planned evolution is an exportable bundle -- a receipt plus its
+          endpoint: accurate, but it means the verifier is trusting PayReality's systems to be reachable and
+          honest at the moment they check. The planned evolution is an exportable bundle: a receipt plus its
           Merkle inclusion proof plus enough of the key-transparency record to verify entirely offline,
           without a network call back to PayReality at all. See{" "}
           <a href="/developers/authorization-receipts" style={{ color: "#a78bfa" }}>Authorization Receipts</a>{" "}
           for the receipt format this depends on, and a{" "}
-          <strong style={{ color: "#e8ecf4" }}>verification SDK</strong> is the natural companion to that --
+          <strong style={{ color: "#e8ecf4" }}>verification SDK</strong> is the natural companion to that,
           also planned, not started.
         </p>
       </DocLayout>

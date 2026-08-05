@@ -27,11 +27,11 @@ function renderAnswer(text: string) {
 const FAQS = [
   {
     q: "What is Runtime Authority?",
-    a: "The capability of determining whether an autonomous AI agent has delegated authority to perform a specific action, evaluated immediately before that action executes. Not a policy on file, not a log entry after the fact -- a decision, made at the moment it matters. See {{Platform}} for the full picture.",
+    a: "The capability of determining whether an autonomous AI agent has delegated authority to perform a specific action, evaluated immediately before that action executes. Not a policy on file, not a log entry after the fact, but a decision, made at the moment it matters. See {{Platform}} for the full picture.",
   },
   {
     q: "How is this different from IAM or access control?",
-    a: "Identity and access management answers who someone (or something) is, and what systems it can reach. It doesn't evaluate whether a specific action, right now, is actually within that identity's delegated authority. Runtime Authority sits on top of identity, not in place of it -- it answers the second question, not the first.",
+    a: "Identity and access management answers who someone (or something) is, and what systems it can reach. It doesn't evaluate whether a specific action, right now, is actually within that identity's delegated authority. Runtime Authority sits on top of identity, not in place of it: it answers the second question, not the first.",
   },
   {
     q: "Does PayReality use an AI model to decide whether an action is authorized?",
@@ -39,19 +39,19 @@ const FAQS = [
   },
   {
     q: "Does this replace human review and approval?",
-    a: "No -- it routes to it. Human Review is one of the three possible outcomes of every evaluation (alongside Allow and Deny), for exactly the actions your policy says need a person. What changes is that the routing decision itself is enforced automatically, not left to whether anyone remembered to check.",
+    a: "No, it routes to it. Human Review is one of the three possible outcomes of every evaluation (alongside Allow and Deny), for exactly the actions your policy says need a person. What changes is that the routing decision itself is enforced automatically, not left to whether anyone remembered to check.",
   },
   {
     q: "Do we have to rebuild our existing approval matrices and Delegation of Authority documents?",
-    a: "No. The Authority Graph and Runtime Policies are built from the governance you already have -- your existing Delegation of Authority policy, approval matrix, and risk frameworks -- compiled into a form a runtime can evaluate. Nothing about your actual governance changes.",
+    a: "No. The Authority Graph and Runtime Policies are built from the governance you already have (your existing Delegation of Authority policy, approval matrix, and risk frameworks), compiled into a form a runtime can evaluate. Nothing about your actual governance changes.",
   },
   {
     q: "What happens if an agent's signing key is compromised?",
-    a: "Its certificate is rotated or revoked, which immediately cuts off its ability to sign new Intents -- the same way disabling a compromised employee credential does. Rotation never invalidates historical decisions: what was evaluated under the previous key remains exactly as valid as it was.",
+    a: "Its certificate is rotated or revoked, which immediately cuts off its ability to sign new Intents, the same way disabling a compromised employee credential does. Rotation never invalidates historical decisions: what was evaluated under the previous key remains exactly as valid as it was.",
   },
   {
     q: "Are Authorization Receipts available today?",
-    a: "Not yet. What's live today is signed evidence in the {{Evidence Portal}}. {{Authorization Receipts}} -- a portable, independently verifiable evolution of that evidence -- are planned architecture, not a shipped capability. See {{Authorization Receipts}} for exactly what exists now versus what's direction.",
+    a: "Not yet. What's live today is signed evidence in the {{Evidence Portal}}. {{Authorization Receipts}}, a portable, independently verifiable evolution of that evidence, are planned architecture, not a shipped capability. See {{Authorization Receipts}} for exactly what exists now versus what's direction.",
   },
   {
     q: "What language is the SDK available in?",
@@ -59,11 +59,11 @@ const FAQS = [
   },
   {
     q: "Does using PayReality mean we're compliant with [a specific regulation]?",
-    a: "No, and we wouldn't want you to read it that way. Runtime Authority operationalizes the governance your organization has already defined and produces evidence of how it was enforced -- that's useful input to a compliance program, not a substitute for your own legal or compliance sign-off, and not a claimed certification of any kind.",
+    a: "No, and we wouldn't want you to read it that way. Runtime Authority operationalizes the governance your organization has already defined and produces evidence of how it was enforced. That's useful input to a compliance program, not a substitute for your own legal or compliance sign-off, and not a claimed certification of any kind.",
   },
   {
     q: "Who is PayReality for?",
-    a: "Enterprises deploying AI agents that take real-world actions -- payments, procurement, contracts, ERP changes, infrastructure changes -- where an unauthorized action has real consequences. See {{Solutions}} for how this applies across specific industries.",
+    a: "Enterprises deploying AI agents that take real-world actions (payments, procurement, contracts, ERP changes, infrastructure changes) where an unauthorized action has real consequences. See {{Solutions}} for how this applies across specific industries.",
   },
 ];
 

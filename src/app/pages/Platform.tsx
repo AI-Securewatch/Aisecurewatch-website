@@ -18,7 +18,7 @@ const LAYERS = [
     icon: GitBranch,
     color: "#6366f1",
     title: "Authority Graph",
-    desc: "Who holds authority, who it's delegated to, and what constraints apply -- modeled from your existing governance documents.",
+    desc: "Who holds authority, who it's delegated to, and what constraints apply, modeled from your existing governance documents.",
     href: "/products/authority-graph",
   },
   {
@@ -35,13 +35,13 @@ const OUTPUTS = [
     icon: ShieldAlert,
     color: "#22d3ee",
     title: "Authorization Decision",
-    desc: "Allow, Deny, or Human Review -- deterministic, sub-millisecond, produced before execution.",
+    desc: "Allow, Deny, or Human Review: deterministic, sub-millisecond, produced before execution.",
   },
   {
     icon: Database,
     color: "#a78bfa",
     title: "Evidence Portal",
-    desc: "Every decision becomes signed, searchable evidence -- investigated, audited, and exported today.",
+    desc: "Every decision becomes signed, searchable evidence: investigated, audited, and exported today.",
     href: "/products/evidence-portal",
   },
   {
@@ -56,7 +56,7 @@ const OUTPUTS = [
     icon: Link2,
     color: "#22c55e",
     title: "Verification",
-    desc: "Confirmed independently -- by an auditor, insurer, or regulator -- without depending on PayReality's live systems.",
+    desc: "Confirmed independently (by an auditor, insurer, or regulator) without depending on PayReality's live systems.",
     badge: "Coming Soon",
   },
 ];
@@ -92,7 +92,7 @@ export default function PlatformPage() {
             One runtime. <span className="grad-text">Every AI agent action, evaluated before it executes.</span>
           </h1>
           <p className="text-muted-foreground leading-relaxed mb-10" style={{ fontSize: "1.125rem", maxWidth: 700 }}>
-            Runtime Authority is not a single feature -- it's the runtime that connects your delegated authority,
+            Runtime Authority is not a single feature. It's the runtime that connects your delegated authority,
             your policy, and every AI agent's intent into one deterministic decision, with evidence behind it.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mb-24">
@@ -207,7 +207,7 @@ export default function PlatformPage() {
             <p className="text-muted-foreground leading-relaxed" style={{ maxWidth: 700 }}>
               The Authority Graph answers "who is entitled to delegate what, to whom." Runtime Policies answer
               "under what conditions is a given action permitted." Runtime Authority doesn't collapse these into
-              one system, because your organization doesn't either -- your org chart and your approval matrix are
+              one system, because your organization doesn't either: your org chart and your approval matrix are
               already two different documents, maintained by different people, on different cadences. The
               runtime respects that separation and evaluates both, together, for every intent.
             </p>

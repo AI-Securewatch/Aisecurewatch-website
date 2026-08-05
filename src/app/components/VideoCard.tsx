@@ -13,7 +13,7 @@ interface VideoCardProps {
 // media-box convention (see the architecture diagram box on Home.tsx and
 // the flow box on PolicyEngine.tsx). The YouTube iframe itself is never
 // mounted until a visitor clicks play, so no YouTube JS or network request
-// happens on page load -- the "lazy-load the embed" requirement is met
+// happens on page load. The "lazy-load the embed" requirement is met
 // structurally, not via a loading="lazy" attribute on an iframe that would
 // still fetch YouTube's player framework immediately.
 export default function VideoCard({ videoId, title, durationLabel, className = "" }: VideoCardProps) {
@@ -42,7 +42,7 @@ export default function VideoCard({ videoId, title, durationLabel, className = "
               // Both fire at the click moment: YouTube's embedded iframe is
               // cross-origin, so this app has no way to observe the actual
               // player's play/pause state without integrating the YouTube
-              // IFrame API -- "clicked play" is the best available proxy for
+              // IFrame API: "clicked play" is the best available proxy for
               // "played" without that added complexity.
               track("YouTube Clicked", { video_id: videoId, page: window.location.pathname });
               track("Demo Video Played", { video_id: videoId, page: window.location.pathname });

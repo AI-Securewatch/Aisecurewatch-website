@@ -25,8 +25,8 @@ const FLOW = [
 const CAPABILITIES = [
   { icon: AlertCircle, title: "Runtime Policy Evaluation", desc: "Every AI agent intent is evaluated against published policy the moment it's formed, not on a review cadence after the fact." },
   { icon: GitBranch, title: "Deterministic policy generation", desc: "Policy is authored or extracted once, compiled into deterministic rules, and never left ambiguous for a model to interpret at evaluation time." },
-  { icon: Layers, title: "Evaluation engine", desc: "Compiled policy is inspectable and version-controlled, not an opaque model making a judgment call -- every clause that matched is traceable." },
-  { icon: CheckCircle2, title: "Runtime enforcement", desc: "Every intent resolves to one of three outcomes -- allow, escalate to human review, or deny -- evaluated in sub-millisecond time." },
+  { icon: Layers, title: "Evaluation engine", desc: "Compiled policy is inspectable and version-controlled, not an opaque model making a judgment call: every clause that matched is traceable." },
+  { icon: CheckCircle2, title: "Runtime enforcement", desc: "Every intent resolves to one of three outcomes: allow, escalate to human review, or deny, evaluated in sub-millisecond time." },
   { icon: Tag, title: "Policy versioning", desc: "Every compiled policy is a signed, versioned artifact. A decision made under v3 remains explainable as a v3 decision even after v4 ships." },
   { icon: ShieldCheck, title: "Deterministic enforcement", desc: "The same policy and the same input always produce the same decision. No probabilistic judgment sits between an agent and a real action." },
 ];
@@ -134,7 +134,7 @@ export default function RuntimePolicies() {
             </div>
             <p className="text-muted-foreground leading-relaxed mt-6" style={{ maxWidth: 680 }}>
               A policy is drafted, reviewed by an accountable human, compiled into deterministic rules, and
-              published as the active version. Retiring a policy doesn't delete it -- every decision made under a
+              published as the active version. Retiring a policy doesn't delete it: every decision made under a
               since-retired version remains explainable against the exact version that was active when it was made.
             </p>
           </div>

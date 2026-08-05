@@ -6,13 +6,13 @@ import DocLayout, { sectionHeadingStyle } from "../docs/DocLayout";
 const CHAIN = [
   { icon: Bot, color: "#3b8cf8", title: "Agent", desc: "An autonomous AI agent, registered with its own cryptographic identity, forms an intention to take a real-world action." },
   { icon: Fingerprint, color: "#7c6fff", title: "Intent", desc: "That action is expressed as a signed Intent: a structured, cryptographically signed request naming the resource, amount, and counterpart involved. Nothing has happened yet." },
-  { icon: ShieldCheck, color: "#6366f1", title: "Runtime Authority", desc: "The Intent's signature is verified, then it's handed to evaluation. This is the orchestrating layer, not a single check -- it's what queries the two components below." },
-  { icon: GitBranch, color: "#22c55e", title: "Authority Graph", desc: "Answers \"is this agent's principal entitled to delegate this kind of action, and to this extent?\" -- modeled from the organization's actual governance documents." },
-  { icon: ScrollText, color: "#22d3ee", title: "Runtime Policies", desc: "Answers \"under what conditions is this specific action permitted?\" -- compiled, versioned rules evaluated against the Intent's actual content." },
+  { icon: ShieldCheck, color: "#6366f1", title: "Runtime Authority", desc: "The Intent's signature is verified, then it's handed to evaluation. This is the orchestrating layer, not a single check: it's what queries the two components below." },
+  { icon: GitBranch, color: "#22c55e", title: "Authority Graph", desc: "Answers \"is this agent's principal entitled to delegate this kind of action, and to this extent?\" (modeled from the organization's actual governance documents)." },
+  { icon: ScrollText, color: "#22d3ee", title: "Runtime Policies", desc: "Answers \"under what conditions is this specific action permitted?\" (compiled, versioned rules evaluated against the Intent's actual content)." },
   { icon: Cpu, color: "#a78bfa", title: "Decision Engine", desc: "Combines both answers deterministically into exactly one outcome: Allow, Deny, or Human Review. The same Intent, Graph, and Policy always produce the same Decision." },
-  { icon: FileCheck2, color: "#f59e0b", title: "Authorization Receipt", desc: "The Decision is recorded as signed evidence the moment it's made. Today this is the Evidence Portal's record; the planned evolution is a portable, independently verifiable artifact -- see Authorization Receipts." },
-  { icon: Database, color: "#f472b6", title: "Evidence Portal", desc: "Where that record is searched, investigated, audited, and exported -- the human-facing layer over every decision the runtime has made." },
-  { icon: Building2, color: "#94a3b8", title: "Enterprise System", desc: "Only on an Allow does execution proceed to the actual system of record -- the payment rail, ERP, or infrastructure API the agent was trying to reach in the first place." },
+  { icon: FileCheck2, color: "#f59e0b", title: "Authorization Receipt", desc: "The Decision is recorded as signed evidence the moment it's made. Today this is the Evidence Portal's record; the planned evolution is a portable, independently verifiable artifact, see Authorization Receipts." },
+  { icon: Database, color: "#f472b6", title: "Evidence Portal", desc: "Where that record is searched, investigated, audited, and exported: the human-facing layer over every decision the runtime has made." },
+  { icon: Building2, color: "#94a3b8", title: "Enterprise System", desc: "Only on an Allow does execution proceed to the actual system of record: the payment rail, ERP, or infrastructure API the agent was trying to reach in the first place." },
 ];
 
 export default function Architecture() {
@@ -60,7 +60,7 @@ export default function Architecture() {
 
         <h2 style={sectionHeadingStyle}>Why this is a chain, not a single check</h2>
         <p>
-          A simpler design would run one function -- "is this allowed?" -- against one rule set. Runtime
+          A simpler design would run one function ("is this allowed?") against one rule set. Runtime
           Authority deliberately keeps the Authority Graph and Runtime Policies as separate components
           evaluated together, because they answer separate questions your organization already keeps separate:
           who is entitled to delegate authority (an org-chart and Delegation of Authority question) versus
@@ -71,9 +71,9 @@ export default function Architecture() {
         <h2 style={sectionHeadingStyle}>What's live today vs. planned</h2>
         <p>
           Agent, Intent, Runtime Authority, Authority Graph, Runtime Policies, the Decision Engine, and the
-          Evidence Portal are the live system -- every Intent submitted today passes through exactly this path.
+          Evidence Portal are the live system: every Intent submitted today passes through exactly this path.
           Authorization Receipts, as a portable artifact independent of the Evidence Portal's database, are{" "}
-          <strong style={{ color: "#e8ecf4" }}>planned architecture</strong>, not yet shipped -- see{" "}
+          <strong style={{ color: "#e8ecf4" }}>planned architecture</strong>, not yet shipped, see{" "}
           <a href="/developers/authorization-receipts" style={{ color: "#a78bfa" }}>Authorization Receipts</a>{" "}
           for exactly what exists today and what's still direction.
         </p>

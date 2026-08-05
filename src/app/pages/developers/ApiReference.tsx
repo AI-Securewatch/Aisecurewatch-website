@@ -81,7 +81,7 @@ X-PayReality-Key-Id: <certificate_id>              # + X-PayReality-Signature, f
             </thead>
             <tbody>
               {[
-                ["200", "Request succeeded. For /v1/intents, this includes Deny and Human Review -- the platform successfully evaluated the request."],
+                ["200", "Request succeeded. For /v1/intents, this includes Deny and Human Review: the platform successfully evaluated the request."],
                 ["401", "Missing, invalid, or unverifiable signature/credential."],
                 ["403", "Authenticated, but the credential's role lacks the required permission."],
                 ["404", "The referenced resource (agent, decision, evidence record) doesn't exist."],
@@ -121,7 +121,7 @@ X-PayReality-Key-Id: <certificate_id>              # + X-PayReality-Signature, f
         <h2 style={sectionHeadingStyle}>Versioning</h2>
         <p>
           The <code className="mono">/v1</code> prefix is the API version. A breaking change ships as{" "}
-          <code className="mono">/v2</code>, not a silent change to <code className="mono">/v1</code> --
+          <code className="mono">/v2</code>, not a silent change to <code className="mono">/v1</code>:
           existing integrations are never broken by a new version shipping alongside them.
         </p>
 

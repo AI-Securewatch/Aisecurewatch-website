@@ -17,7 +17,7 @@ export default function Security() {
     <>
       <SEO
         title="Security | PayReality"
-        description="What PayReality actually does to secure agent intents, decisions, and evidence -- and, just as importantly, what it doesn't do yet. No certifications claimed."
+        description="What PayReality actually does to secure agent intents, decisions, and evidence, and just as importantly, what it doesn't do yet. No certifications claimed."
         path="/security"
         jsonLd={{
           "@context": "https://schema.org",
@@ -67,7 +67,7 @@ export default function Security() {
             <h2 style={clauseHeadingStyle}>Signed intents</h2>
             <p>
               Every action an AI agent submits to the platform is signed with an Ed25519 key generated on the
-              agent's own side -- the private key is never transmitted to us, only the public key is registered.
+              agent's own side. The private key is never transmitted to us; only the public key is registered.
               We verify the signature against that registered key before evaluating the request. A timestamp
               window plus a uniqueness constraint on each request's nonce prevent a captured request from being
               replayed later.
@@ -77,7 +77,7 @@ export default function Security() {
             <p>
               An agent's signing certificate can be rotated or revoked at any time. Rotating immediately
               invalidates the old certificate for new requests. Because we never hold an agent's private key, a
-              rotation generates a genuinely new keypair on the agent's side -- we can flag an agent for rotation,
+              rotation generates a genuinely new keypair on the agent's side. We can flag an agent for rotation,
               but can't rotate its key for it. Decisions and Evidence already recorded stay valid and explainable
               against whichever certificate was actually active when they were created.
             </p>
@@ -86,13 +86,13 @@ export default function Security() {
             <p>
               Every Decision and its Evidence record is independently signed, separately from the intent that
               produced it. Each signature is checked against the specific signing key that was active at the time
-              it was made, not just whichever key happens to be active now -- so rotating the evidence signing key
+              it was made, not just whichever key happens to be active now, so rotating the evidence signing key
               doesn't invalidate verification of anything signed under a previous one.
             </p>
 
             <h2 style={clauseHeadingStyle}>Access control</h2>
             <p>
-              The platform enforces role-based permissions server-side -- not just hidden in the interface -- across
+              The platform enforces role-based permissions server-side (not just hidden in the interface), across
               six roles (Owner, Governance Administrator, Agent Administrator, Reviewer, Auditor, Executive), each
               with a fixed set of allowed actions.
             </p>
@@ -101,7 +101,7 @@ export default function Security() {
             <p>We'd rather state these plainly than let you assume otherwise:</p>
             <ul className="flex flex-col gap-2.5 mt-1">
               {[
-                "At this stage, a single shared operator credential can act with full administrative authority across an organization, on top of the role-based permissions described above -- it is not yet a scoped, per-user credential. Narrowing this is ongoing work.",
+                "At this stage, a single shared operator credential can act with full administrative authority across an organization, on top of the role-based permissions described above. It is not yet a scoped, per-user credential. Narrowing this is ongoing work.",
                 "We don't currently implement encryption at rest beyond whatever our database hosting provider applies by default. There's no PayReality-specific at-rest encryption layer today.",
                 "We don't hold SOC 2, ISO 27001, or any other formal third-party security certification.",
               ].map((item) => (

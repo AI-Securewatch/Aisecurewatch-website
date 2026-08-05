@@ -56,7 +56,7 @@ export const DOCS_PAGES: DocPageMeta[] = [
   {
     label: "Webhooks",
     path: "/developers/webhooks",
-    desc: "Enterprise events -- IntentReceived, DecisionCompleted, ReceiptIssued, and more -- with real payloads.",
+    desc: "Enterprise events (IntentReceived, DecisionCompleted, ReceiptIssued, and more) with real payloads.",
   },
   {
     label: "Integration Examples",

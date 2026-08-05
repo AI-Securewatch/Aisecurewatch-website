@@ -50,8 +50,8 @@ export default function Rfcs() {
             <p className="text-muted-foreground leading-relaxed">
               The direction described on{" "}
               <a href="/products/authorization-receipts" style={{ color: "#a78bfa" }}>Authorization Receipts</a>{" "}
-              -- portable evidence, independent verification, the distinction between what's signed and what's
-              publicly committed -- came out of exactly this kind of internal RFC. The RFC document itself
+              (portable evidence, independent verification, the distinction between what's signed and what's
+              publicly committed) came out of exactly this kind of internal RFC. The RFC document itself
               isn't published externally yet; what you can read today is its outcome, on the product page and
               in the{" "}
               <a href="/developers/authorization-receipts" style={{ color: "#a78bfa" }}>Developers</a>{" "}

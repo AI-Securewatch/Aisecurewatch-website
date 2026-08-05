@@ -14,14 +14,14 @@ import { useDemoModal } from "../../context/DemoModalContext";
 const PRINCIPLES = [
   { icon: Fingerprint, title: "Portable by construction", desc: "A receipt is a self-contained artifact, not a database row. Verifying one won't require querying PayReality's live systems." },
   { icon: ShieldCheck, title: "Cryptographic integrity", desc: "Every receipt is signed. Tampering with any field after issuance is detectable without trusting the platform that issued it." },
-  { icon: Link2, title: "Independent verification", desc: "The goal is a verifier who never has an operational relationship with PayReality -- an auditor, an insurer, a regulator -- being able to confirm a decision happened, honestly, on their own." },
+  { icon: Link2, title: "Independent verification", desc: "The goal is a verifier who never has an operational relationship with PayReality (an auditor, an insurer, a regulator) being able to confirm a decision happened, honestly, on their own." },
   { icon: EyeOff, title: "Minimal disclosure", desc: "A receipt should prove a decision was made correctly without necessarily exposing its sensitive content to every party who might one day need to confirm it happened." },
 ];
 
 const AUDIENCES = [
   { icon: Scale, title: "Regulators", desc: "Examining a decision years after the fact, without depending on PayReality remaining operational, unchanged, or cooperative." },
   { icon: Building2, title: "Insurers", desc: "Assessing AI-operational risk from a portable artifact, without requiring operational access to a customer's PayReality tenant." },
-  { icon: ShieldCheck, title: "Enterprise customers", desc: "Proving to their own auditors and boards that a specific AI-initiated action was authorized under their governance -- without PayReality as a required intermediary." },
+  { icon: ShieldCheck, title: "Enterprise customers", desc: "Proving to their own auditors and boards that a specific AI-initiated action was authorized under their governance, without PayReality as a required intermediary." },
 ];
 
 export default function AuthorizationReceipts() {
@@ -89,7 +89,7 @@ export default function AuthorizationReceipts() {
             <p className="text-muted-foreground leading-relaxed mb-4" style={{ maxWidth: 680 }}>
               Today, every Runtime Authority decision produces signed evidence inside the Evidence Portal. That
               proves a record wasn't altered after you were shown it. It doesn't, by itself, prove you were shown
-              the complete and honest history -- verifying it still means trusting that PayReality's systems
+              the complete and honest history: verifying it still means trusting that PayReality's systems
               remain available, unchanged, and cooperative, indefinitely.
             </p>
             <p className="text-muted-foreground leading-relaxed" style={{ maxWidth: 680 }}>
@@ -146,7 +146,7 @@ export default function AuthorizationReceipts() {
             </h2>
             <p className="text-muted-foreground leading-relaxed" style={{ maxWidth: 680 }}>
               An Authorization Receipt will prove that an action was authorized. It won't, and shouldn't, be read
-              as proof that the action was actually carried out downstream -- that's a distinct problem from
+              as proof that the action was actually carried out downstream: that's a distinct problem from
               authorization, and this page won't pretend otherwise.
             </p>
           </div>

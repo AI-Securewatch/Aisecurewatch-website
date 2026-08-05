@@ -50,7 +50,7 @@ export default function Overview() {
             <span className="grad-text">Runtime Authority</span>
           </h1>
           <p className="text-muted-foreground leading-relaxed mb-8" style={{ fontSize: "1.125rem", maxWidth: 680 }}>
-            You're integrating a runtime that sits between your AI agents and the systems they act on --
+            You're integrating a runtime that sits between your AI agents and the systems they act on,
             evaluating every signed action against your organization's delegated authority before it executes,
             and handing back a decision and its evidence.
           </p>

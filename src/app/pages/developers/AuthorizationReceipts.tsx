@@ -24,7 +24,7 @@ export default function AuthorizationReceipts() {
       <DocLayout
         eyebrow="DEVELOPERS"
         title="Authorization Receipts"
-        subtitle="What exists today (signed evidence in the Evidence Portal) and what's planned (a portable, independently verifiable artifact) -- kept clearly separate on this page."
+        subtitle="What exists today (signed evidence in the Evidence Portal) and what's planned (a portable, independently verifiable artifact), kept clearly separate on this page."
         currentPath="/developers/authorization-receipts"
       >
         <div className="flex items-center gap-3 -mt-2">
@@ -34,7 +34,7 @@ export default function AuthorizationReceipts() {
 
         <h2 style={sectionHeadingStyle}>Why a log isn't enough</h2>
         <p>
-          Today, every Decision produces a signed record in the Evidence Portal. That's real evidence -- it
+          Today, every Decision produces a signed record in the Evidence Portal. That's real evidence: it
           proves the record wasn't altered after you were shown it. It doesn't, on its own, prove you were
           shown the complete history: verifying it still means trusting that PayReality's systems remain
           available, unchanged, and cooperative. That's a reasonable model while an integration is live. It's
@@ -45,7 +45,7 @@ export default function AuthorizationReceipts() {
         <h2 style={sectionHeadingStyle}>Why receipts exist</h2>
         <p>
           An Authorization Receipt is designed to be a self-contained artifact: signed, chained to the receipt
-          before it, and periodically committed to a public, append-only log -- so a verifier who has never
+          before it, and periodically committed to a public, append-only log, so a verifier who has never
           had an operational relationship with PayReality can confirm a decision happened, honestly, without
           calling PayReality's API at all.
         </p>
@@ -53,17 +53,17 @@ export default function AuthorizationReceipts() {
         <h2 style={sectionHeadingStyle}>Portable trust and independent verification</h2>
         <p>
           Two tiers are planned: <strong style={{ color: "#e8ecf4" }}>shallow verification</strong> (signature
-          valid, chain intact, included in a published log root -- needs nothing from the customer) and{" "}
+          valid, chain intact, included in a published log root, needs nothing from the customer) and{" "}
           <strong style={{ color: "#e8ecf4" }}>deep verification</strong> (the customer discloses the actual
           intent and policy snapshot; the verifier confirms both hash-match the receipt and that replaying
-          evaluation reproduces the same decision). Minimal disclosure is the default -- a receipt should prove
+          evaluation reproduces the same decision). Minimal disclosure is the default: a receipt should prove
           a decision was correct without exposing its sensitive content to every party who might one day need
           to confirm it happened.
         </p>
 
         <h2 style={sectionHeadingStyle}>Receipt lifecycle</h2>
         <p>
-          Created and signed atomically, the instant a Decision is made -- never assembled later from logs.
+          Created and signed atomically, the instant a Decision is made. Never assembled later from logs.
           Exported as a self-contained bundle including its inclusion proof. Verified at whichever tier the
           situation calls for. Retained indefinitely by default. Never edited or deleted: a correction is a
           new, linked receipt, not a mutation of the original.
@@ -101,7 +101,7 @@ export default function AuthorizationReceipts() {
   "decision": "DENY",
   "intent_classification": { "action_type": "payment", "risk_tier": "high" }
 }`}</CodeBlock>
-        <p>A Deny carries the same fields as an Allow. What differs is only <code className="mono">decision</code> and whatever the intent classification reflects -- there is no separate "reason" field disclosed by default, since the reason is recoverable via deep verification against the disclosed policy snapshot.</p>
+        <p>A Deny carries the same fields as an Allow. What differs is only <code className="mono">decision</code> and whatever the intent classification reflects: there is no separate "reason" field disclosed by default, since the reason is recoverable via deep verification against the disclosed policy snapshot.</p>
 
         <div className="flex items-center gap-2 mt-6">
           <span className="text-sm" style={{ color: "#e8ecf4", fontWeight: 600 }}>Human Review receipt</span>
@@ -113,7 +113,7 @@ export default function AuthorizationReceipts() {
 }`}</CodeBlock>
         <p>
           This receipt is issued the moment escalation happens, and it's <em>not</em> later edited when a
-          human resolves it -- it correctly describes "a human's judgment was required," which remains true
+          human resolves it: it correctly describes "a human's judgment was required," which remains true
           forever, independent of what they decided.
         </p>
 
@@ -137,7 +137,7 @@ export default function AuthorizationReceipts() {
   "signing_key_id": "key_2026-q3"
 }`}</CodeBlock>
         <p>
-          A separate, linked receipt, issued when the human actually decides -- immutability is preserved by
+          A separate, linked receipt, issued when the human actually decides. Immutability is preserved by
           never touching the original Human Review receipt. Reviewer identity is a role reference by default,
           not a name, matching minimal disclosure; your own identity system remains where "which specific
           person" resolves.
@@ -147,11 +147,11 @@ export default function AuthorizationReceipts() {
           Transparency log <span style={{ marginLeft: 8 }}><StatusBadge status="Planned Architecture" /></span>
         </h2>
         <p>
-          A periodically published, append-only Merkle log -- modeled on Certificate Transparency, not a
+          A periodically published, append-only Merkle log, modeled on Certificate Transparency, not a
           blockchain, since there's one issuer and what's needed is public commitment, not decentralized
           consensus. Once a batch of receipts is committed, altering or omitting one afterward becomes
           cryptographically detectable rather than merely contractually prohibited. This is the piece that
-          turns "signed" into "independently verifiable" -- without it, verification still means trusting
+          turns "signed" into "independently verifiable": without it, verification still means trusting
           that PayReality showed you everything.
         </p>
 

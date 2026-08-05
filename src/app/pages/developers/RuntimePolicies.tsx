@@ -8,7 +8,7 @@ export default function RuntimePolicies() {
     <>
       <SEO
         title="Runtime Policies | PayReality Developers"
-        description="How a policy is compiled, evaluated deterministically, versioned, and deployed -- and why a Runtime Policy differs from the governance document it came from."
+        description="How a policy is compiled, evaluated deterministically, versioned, and deployed, and why a Runtime Policy differs from the governance document it came from."
         path="/developers/runtime-policies"
         type="article"
         jsonLd={{
@@ -23,7 +23,7 @@ export default function RuntimePolicies() {
       <DocLayout
         eyebrow="DEVELOPERS"
         title="Runtime Policies"
-        subtitle="A Runtime Policy is a compiled artifact, not the governance document it was derived from -- this page covers what that compilation actually does."
+        subtitle="A Runtime Policy is a compiled artifact, not the governance document it was derived from: this page covers what that compilation actually does."
         currentPath="/developers/runtime-policies"
       >
         <p>
@@ -49,7 +49,7 @@ export default function RuntimePolicies() {
   "constraints": { "requires_dual_approval_above": 5000, "evidence_required": true }
 }`}</CodeBlock>
         <p>
-          This is the artifact Runtime Authority actually evaluates against -- structured conditions and a
+          This is the artifact Runtime Authority actually evaluates against: structured conditions and a
           fixed effect (<code className="mono">allow</code>, <code className="mono">deny</code>, or{" "}
           <code className="mono">require_human_review</code>), not a paragraph a model has to interpret at
           decision time.
@@ -67,7 +67,7 @@ export default function RuntimePolicies() {
         <h2 style={sectionHeadingStyle}>Deterministic decisions</h2>
         <p>
           The same compiled policy, evaluated against the same Intent, always produces the same effect. There
-          is no model call, no sampling, and no version drift inside evaluation itself -- if a decision needs
+          is no model call, no sampling, and no version drift inside evaluation itself: if a decision needs
           to be explained months later, re-running the same policy version against the same Intent reproduces
           it exactly.
         </p>
@@ -76,7 +76,7 @@ export default function RuntimePolicies() {
         <p>
           Publishing a new version doesn't edit the old one in place. Every version is retained, and every
           Decision's evidence records the exact <code className="mono">version</code> that was active when it
-          was evaluated -- so a policy change next quarter never silently rewrites what a decision made this
+          was evaluated, so a policy change next quarter never silently rewrites what a decision made this
           quarter meant.
         </p>
 
@@ -94,7 +94,7 @@ export default function RuntimePolicies() {
           The governance document remains the source of truth for what your organization has actually
           decided; the compiled policy is PayReality's operationalization of it, not a replacement. If the two
           ever disagree, that's a signal the compiled policy needs to be corrected to match governance, not
-          the other way around -- Runtime Policies attest to enforcement of your authority, they don't
+          the other way around: Runtime Policies attest to enforcement of your authority, they don't
           originate it.
         </p>
       </DocLayout>

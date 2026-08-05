@@ -7,7 +7,7 @@ type NavLink = (typeof NAV_LINKS)[number];
 
 // Type guard: distinguishes a flat link ({label, href}) from a grouped one
 // ({label, groups: [...]}) without widening every NAV_LINKS consumer to
-// handle both shapes -- only this file needs to branch on it.
+// handle both shapes; only this file needs to branch on it.
 function hasGroups(link: NavLink): link is NavLink & { groups: NonNullable<Extract<NavLink, { groups: unknown }>["groups"]> } {
   return "groups" in link && Array.isArray((link as { groups?: unknown }).groups);
 }
@@ -20,7 +20,7 @@ export default function SiteNav() {
   const dropdownTriggerRefs = useRef<Record<string, HTMLButtonElement | null>>({});
   const { openDemo } = useDemoModal();
 
-  // Close an open desktop dropdown on outside click -- the dropdown has no
+  // Close an open desktop dropdown on outside click. The dropdown has no
   // backdrop of its own (it's a small panel, not a modal), so this is the
   // only thing that closes it besides picking a link or re-toggling it.
   useEffect(() => {
@@ -101,14 +101,23 @@ export default function SiteNav() {
                       className="glass-card absolute top-full left-1/2 -translate-x-1/2 mt-3 rounded-2xl p-2 z-50"
                       style={{
                         width: 320,
-                        // .glass-card's default background is ~3% opacity --
-                        // fine for a card sitting on a calm dark background,
-                        // but not enough to fully obscure page content
-                        // (hero headlines, body text) behind a popover menu:
-                        // it ghosts through and reads as the menu and the
-                        // page "overlapping". Near-opaque override here only.
+                        // .glass-card's default background is ~3% opacity.
+                        // That's fine for a card sitting on a calm dark
+                        // background, but not enough to fully obscure page
+                        // content (hero headlines, body text) behind a
+                        // popover menu: it ghosts through and reads as the
+                        // menu and the page "overlapping". Near-opaque
+                        // override here only.
                         background: "rgba(9,10,18,0.98)",
                         boxShadow: "0 12px 32px rgba(0,0,0,0.45)",
+                        // Solutions has 8 groups; on shorter viewports (or
+                        // with a browser toolbar eating vertical space) that
+                        // content is taller than the space actually left
+                        // below the nav, and it had no way to reach the
+                        // items that got cut off. Cap the height relative to
+                        // the viewport and let the panel scroll internally.
+                        maxHeight: "calc(100vh - 96px)",
+                        overflowY: "auto",
                       }}
                     >
                       {l.groups.map((g) => (
@@ -181,7 +190,7 @@ export default function SiteNav() {
         <div
           className="lg:hidden border-t border-border"
           style={{
-            // This sits inside <nav>, which is position: fixed -- so when
+            // This sits inside <nav>, which is position: fixed, so when
             // it opens it overlays page content below rather than pushing
             // it down. It has no background of its own, so it was showing
             // whatever page content sat underneath through .glass-nav's

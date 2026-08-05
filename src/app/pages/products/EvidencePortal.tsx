@@ -13,11 +13,11 @@ import { PLATFORM, SITE_URL } from "../../lib/site";
 import { useDemoModal } from "../../context/DemoModalContext";
 
 const CAPABILITIES = [
-  { icon: FileSearch, title: "Investigation", desc: "Trace any decision back to the exact intent, policy version, and Authority Graph state that produced it -- not a summary of what happened, the actual evaluation." },
+  { icon: FileSearch, title: "Investigation", desc: "Trace any decision back to the exact intent, policy version, and Authority Graph state that produced it, not a summary of what happened, the actual evaluation." },
   { icon: Search, title: "Search", desc: "Find decisions by agent, outcome, policy, business unit, or time range. Every field that mattered to the decision is a field you can search on." },
   { icon: ShieldCheck, title: "Audit", desc: "Every record carries a cryptographic signature verifiable in the portal, so an auditor can confirm a record hasn't been altered since it was produced." },
   { icon: BarChart3, title: "Compliance", desc: "Roll up decisions by policy, outcome, and time period into the shape a compliance review actually needs, without a separate reporting pipeline." },
-  { icon: Fingerprint, title: "Evidence lifecycle", desc: "Every Allow, Deny, and Human Review outcome produces a record the moment it happens -- not a log line reconstructed later from application traces." },
+  { icon: Fingerprint, title: "Evidence lifecycle", desc: "Every Allow, Deny, and Human Review outcome produces a record the moment it happens, not a log line reconstructed later from application traces." },
   { icon: Download, title: "Reporting", desc: "Export the evidence a specific review needs, scoped to exactly what's relevant, rather than granting broad access to the underlying system." },
 ];
 
@@ -74,7 +74,7 @@ export default function EvidencePortal() {
               Every decision Runtime Authority makes becomes a signed record
             </h2>
             <p className="text-muted-foreground leading-relaxed" style={{ maxWidth: 680 }}>
-              Allow, Deny, and Human Review outcomes are not application logs -- they're cryptographically signed
+              Allow, Deny, and Human Review outcomes are not application logs: they're cryptographically signed
               evidence records, produced at the moment of decision, tied to the exact agent, intent, and policy
               version involved. The Evidence Portal is where that evidence is investigated, searched, audited,
               and exported, without requiring anyone to query the underlying runtime directly. For how to verify
@@ -111,7 +111,7 @@ export default function EvidencePortal() {
             </h2>
             <p className="text-muted-foreground leading-relaxed" style={{ maxWidth: 680 }}>
               The Evidence Portal's role is evolving from displaying database records to presenting{" "}
-              <a href="/products/authorization-receipts" style={{ color: "#a78bfa" }}>Authorization Receipts</a> --
+              <a href="/products/authorization-receipts" style={{ color: "#a78bfa" }}>Authorization Receipts</a>:
               a portable, independently verifiable artifact that doesn't require access to PayReality's systems
               to confirm. The portal itself isn't going away; what it's a window into is changing.
             </p>

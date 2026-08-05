@@ -25,7 +25,7 @@ interface SolutionLayoutProps {
 // The shared structure every /solutions/* page follows: hero, industry
 // problem, the (identical, on purpose) Runtime Authority flow, use cases,
 // why, and the same five Related Products links every time. Only the copy
-// and use-case data differ per industry -- this is the "no duplicate
+// and use-case data differ per industry: this is the "no duplicate
 // content between pages" requirement enforced at the code level, not just
 // the writing level.
 const FLOW = [
@@ -113,7 +113,7 @@ export default function SolutionLayout({
             ))}
           </div>
 
-          {/* Runtime Authority in this industry -- identical flow every page, on purpose */}
+          {/* Runtime Authority in this industry: identical flow every page, on purpose */}
           <div className="mb-20">
             <div className="section-label mb-4">RUNTIME AUTHORITY IN {industryLabel.toUpperCase()}</div>
             <h2 className="mb-8" style={{ fontFamily: "'Onest', system-ui, sans-serif", fontWeight: 700, fontSize: "clamp(1.5rem, 3vw, 2.1rem)", letterSpacing: "-0.025em", color: "#e8ecf4" }}>
@@ -140,7 +140,7 @@ export default function SolutionLayout({
               </div>
             </div>
             <p className="text-muted-foreground leading-relaxed mt-6" style={{ maxWidth: 680 }}>
-              Nothing about this path changes by industry -- the same{" "}
+              Nothing about this path changes by industry: the same{" "}
               <a href="/products/runtime-authority" style={{ color: "#a78bfa" }}>Runtime Authority</a> engine
               evaluates every Intent against your own{" "}
               <a href="/products/authority-graph" style={{ color: "#a78bfa" }}>Authority Graph</a> and{" "}
@@ -183,7 +183,7 @@ export default function SolutionLayout({
             ))}
           </div>
 
-          {/* Related Products -- identical five links every page, on purpose */}
+          {/* Related Products: identical five links every page, on purpose */}
           <div className="mb-20">
             <div className="section-label mb-4">RELATED PRODUCTS</div>
             <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">

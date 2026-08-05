@@ -4,7 +4,7 @@ import { DemoModalProvider } from "./context/DemoModalContext";
 import AppRoutes from "./AppRoutes";
 import { initAnalytics, page } from "./services/analytics";
 
-// Only ever rendered from main.tsx (the real browser entry) -- entry-server.tsx
+// Only ever rendered from main.tsx (the real browser entry). entry-server.tsx
 // renders AppRoutes directly under StaticRouter, never this component, so
 // initAnalytics() here is never reached during SSR prerendering. Lives inside
 // BrowserRouter (needs router context for useLocation) but outside AppRoutes,
