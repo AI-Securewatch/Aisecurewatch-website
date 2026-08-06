@@ -27,7 +27,16 @@ export default function EvidenceVerification() {
         subtitle="Verifying a signature and exporting evidence today, both live; offline verification independent of PayReality's systems, planned."
         currentPath="/developers/evidence-verification"
       >
-        <h2 style={{ ...sectionHeadingStyle, marginTop: 0 }}>Signature verification (live)</h2>
+        <p style={{ marginTop: 0 }}>
+          An authorization decision is only as trustworthy as the ability of someone other than PayReality
+          to check it. A regulator reviewing a case months later, an insurer with no operational access, or
+          an engineering team investigating an incident shouldn't have to take PayReality's word that a
+          record is accurate: they need to be able to confirm it themselves. What follows covers what's
+          independently verifiable today, and what's planned to make that checking possible without a call
+          back to PayReality's systems at all.
+        </p>
+
+        <h2 style={sectionHeadingStyle}>Signature verification (live)</h2>
         <p>
           Every Decision produces a signed Evidence record. Verifying its signature today is an API call, and
           also a one-click action in the{" "}

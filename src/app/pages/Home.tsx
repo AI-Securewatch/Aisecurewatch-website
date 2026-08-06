@@ -11,6 +11,9 @@ import {
   Users,
   Code2,
   Building2,
+  Bot,
+  Brain,
+  Send,
 } from "lucide-react";
 import { PLATFORM } from "../lib/site";
 import { useDemoModal } from "../context/DemoModalContext";
@@ -22,6 +25,19 @@ const EXISTING_FRAMEWORKS = [
   { label: "Risk Frameworks", icon: Shield },
   { label: "Internal Controls", icon: Lock },
   { label: "Audit Processes", icon: Archive },
+];
+
+// The recurring flow: this exact box-and-connector pattern already appears
+// on every Solutions page and on the Products overview, so reusing it here
+// (rather than inventing a new diagram style) is what makes it read as one
+// consistent architectural concept across the site, not a homepage-only
+// graphic.
+const AUTHORITY_FLOW = [
+  { label: "AI Agent", icon: Bot, color: "#3b8cf8" },
+  { label: "Reasons", icon: Brain, color: "#22d3ee" },
+  { label: "Requests Execution", icon: Send, color: "#6366f1" },
+  { label: "Runtime Authority", icon: Shield, color: "#7c6fff" },
+  { label: "Enterprise System", icon: Building2, color: "#a78bfa" },
 ];
 
 // The four pathways every visitor should be able to name after reading this
@@ -96,7 +112,7 @@ export default function Home() {
 
           {/* Headline */}
           <h1
-            className="mb-8"
+            className="mb-4"
             style={{
               fontFamily: "'Onest', system-ui, sans-serif",
               fontWeight: 800,
@@ -106,21 +122,32 @@ export default function Home() {
               color: "#e8ecf4",
             }}
           >
-            The Authority Layer
-            <br />
-            for{" "}
-            <span className="grad-text">Autonomous AI</span>
+            <span className="grad-text">Runtime Authority</span>
           </h1>
+
+          {/* Category line */}
+          <p
+            className="mx-auto mb-8"
+            style={{
+              maxWidth: 620,
+              fontFamily: "'Onest', system-ui, sans-serif",
+              fontWeight: 600,
+              fontSize: "clamp(1.05rem, 2vw, 1.35rem)",
+              letterSpacing: "-0.01em",
+              color: "#e8ecf4",
+            }}
+          >
+            The Enterprise AI Authority Infrastructure
+          </p>
 
           {/* Sub headline */}
           <p
             className="mx-auto mb-12 text-muted-foreground leading-relaxed"
             style={{ maxWidth: 620, fontSize: "1.125rem", fontWeight: 400 }}
           >
-            Organizations already know how to delegate authority to people.
-            They have no infrastructure to delegate it safely to AI. PayReality
-            determines whether an AI system is actually authorized to execute a
-            business action, before it executes it.
+            Runtime Authority determines whether autonomous AI systems are
+            authorized to execute real-world actions before they happen, by
+            enforcing your organization's existing delegated authority.
           </p>
 
           {/* CTAs */}
@@ -180,84 +207,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── The Core Idea (What is Runtime Authority) ── */}
+      {/* ── 01 / The Shift (AI moving from assistance to execution) ── */}
       <section className="pt-8 pb-32 px-6 relative overflow-hidden">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <div className="section-label mb-4">01 / THE CORE IDEA</div>
-          <h2
-            style={{
-              fontFamily: "'Onest', system-ui, sans-serif",
-              fontWeight: 700,
-              fontSize: "clamp(1.8rem, 4vw, 3rem)",
-              letterSpacing: "-0.025em",
-              color: "#e8ecf4",
-            }}
-          >
-            We don't make AI smarter.
-            <br />
-            <span className="grad-text">We make it obedient.</span>
-          </h2>
-          <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
-            Enterprises already know how to delegate authority. PayReality makes autonomous systems
-            obey it, before every action executes.
-          </p>
-        </div>
-
-        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
-          <div className="glass-card rounded-2xl p-8">
-            <div className="mono text-xs mb-6 text-center" style={{ color: "#6b7280", letterSpacing: "0.1em" }}>TODAY</div>
-            <div className="flex flex-col items-center gap-0">
-              <div className="rounded-xl px-5 py-3 text-sm text-center w-full text-foreground" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)" }}>
-                Enterprise Policy
-              </div>
-              <div className="arch-connector" />
-              <div className="rounded-xl px-5 py-3 text-sm text-center w-full text-foreground" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)" }}>
-                Humans
-              </div>
-              <div className="arch-connector" />
-              <div className="rounded-xl px-5 py-3 text-sm text-center w-full text-foreground" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)" }}>
-                Execution
-              </div>
-            </div>
-          </div>
-
-          <div
-            className="glass-card rounded-2xl p-8"
-            style={{ border: "1px solid rgba(124,111,255,0.25)", boxShadow: "0 0 32px rgba(124,111,255,0.08)" }}
-          >
-            <div className="mono text-xs mb-6 text-center" style={{ color: "#a78bfa", letterSpacing: "0.1em" }}>TOMORROW</div>
-            <div className="flex flex-col items-center gap-0">
-              <div className="rounded-xl px-5 py-3 text-sm text-center w-full text-foreground" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)" }}>
-                Enterprise Policy
-              </div>
-              <div className="arch-connector" />
-              <div
-                className="rounded-xl px-5 py-3 text-sm text-center w-full"
-                style={{ background: "linear-gradient(135deg, rgba(124,111,255,0.18), rgba(59,140,248,0.18))", border: "1px solid rgba(124,111,255,0.35)", color: "#e8ecf4", fontWeight: 600 }}
-              >
-                PayReality
-              </div>
-              <div className="arch-connector" />
-              <div className="grid grid-cols-2 gap-2 w-full">
-                <div className="rounded-lg px-3 py-2 text-xs text-center text-muted-foreground" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)" }}>Humans</div>
-                <div className="rounded-lg px-3 py-2 text-xs text-center text-muted-foreground" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)" }}>AI Agents</div>
-                <div className="rounded-lg px-3 py-2 text-xs text-center text-muted-foreground" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)" }}>Robots</div>
-                <div className="rounded-lg px-3 py-2 text-xs text-center text-muted-foreground" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)" }}>Automation</div>
-              </div>
-              <div className="arch-connector" />
-              <div className="rounded-xl px-5 py-3 text-sm text-center w-full text-foreground" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)" }}>
-                Execution
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── The Problem (Why it matters) ── */}
-      <section className="py-32 px-6 relative overflow-hidden">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-20">
-            <div className="section-label mb-4">02 / THE PROBLEM</div>
+            <div className="section-label mb-4">01 / THE SHIFT</div>
             <h2
               style={{
                 fontFamily: "'Onest', system-ui, sans-serif",
@@ -269,12 +223,12 @@ export default function Home() {
             >
               AI is moving from
               <br />
-              recommendation to execution
+              assistance to execution
             </h2>
             <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
-              AI already knows how to perform the work. It does not know whether it's authorized
-              to. As AI moves from recommending actions to executing them, enterprises need
-              infrastructure that answers that second question, every time, before the action happens.
+              Organizations are increasingly comfortable with AI executing real-world actions on
+              its own. They are not yet comfortable with AI deciding, on its own, whether it's
+              allowed to.
             </p>
           </div>
 
@@ -289,8 +243,7 @@ export default function Home() {
               {[
                 { era: "Assistant", desc: "AI answers questions at human request. Humans decide and act.", done: true },
                 { era: "Recommendation", desc: "AI proposes an action. A human still approves before anything happens.", done: true },
-                { era: "Execution", desc: "AI initiates and executes business actions directly against enterprise systems.", active: true },
-                { era: "The Authority Layer", desc: "The infrastructure that determines whether that execution was actually authorized.", highlight: true },
+                { era: "Execution", desc: "AI initiates and executes business actions directly against enterprise systems.", highlight: true },
               ].map((step, i) => (
                 <div
                   key={step.era}
@@ -306,7 +259,7 @@ export default function Home() {
                           fontFamily: "'Onest', system-ui, sans-serif",
                           fontWeight: step.highlight ? 700 : 600,
                           fontSize: step.highlight ? "1.1rem" : "1rem",
-                          color: step.highlight ? "#a78bfa" : step.active ? "#e8ecf4" : "#6b7280",
+                          color: step.highlight ? "#a78bfa" : "#6b7280",
                           letterSpacing: "-0.015em",
                         }}
                       >
@@ -321,9 +274,9 @@ export default function Home() {
                     <div
                       className="w-4 h-4 rounded-full border-2"
                       style={{
-                        background: step.highlight ? "#7c6fff" : step.active ? "#3b8cf8" : "#1a1d2e",
-                        borderColor: step.highlight ? "#7c6fff" : step.active ? "#3b8cf8" : "rgba(255,255,255,0.12)",
-                        boxShadow: step.highlight ? "0 0 20px rgba(124,111,255,0.6)" : step.active ? "0 0 12px rgba(59,140,248,0.4)" : "none",
+                        background: step.highlight ? "#7c6fff" : "#1a1d2e",
+                        borderColor: step.highlight ? "#7c6fff" : "rgba(255,255,255,0.12)",
+                        boxShadow: step.highlight ? "0 0 20px rgba(124,111,255,0.6)" : "none",
                       }}
                     />
                   </div>
@@ -336,7 +289,100 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Delegated Authority Gap (Why PayReality) ── */}
+      {/* ── 02 / Governance was built for people ── */}
+      <section className="py-32 px-6 relative overflow-hidden">
+        <div className="max-w-4xl mx-auto text-center mb-16">
+          <div className="section-label mb-4">02 / GOVERNANCE, TODAY</div>
+          <h2
+            style={{
+              fontFamily: "'Onest', system-ui, sans-serif",
+              fontWeight: 700,
+              fontSize: "clamp(1.8rem, 4vw, 3rem)",
+              letterSpacing: "-0.025em",
+              color: "#e8ecf4",
+            }}
+          >
+            Existing governance was
+            <br />
+            <span className="grad-text">built for people.</span>
+          </h2>
+          <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
+            Every enterprise already operates delegation of authority, approval matrices,
+            procurement policy, and risk frameworks. They were written for a person to read,
+            interpret, and follow. Nothing about them is evaluated at the moment an agent, rather
+            than a person, decides to act.
+          </p>
+        </div>
+
+        <div className="max-w-3xl mx-auto grid grid-cols-2 sm:grid-cols-3 gap-4">
+          {EXISTING_FRAMEWORKS.map((f) => (
+            <div key={f.label} className="glass-card rounded-xl p-5 flex items-center gap-4 group cursor-default">
+              <div
+                className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors"
+                style={{ background: "rgba(124,111,255,0.1)", border: "1px solid rgba(124,111,255,0.2)" }}
+              >
+                <f.icon size={18} style={{ color: "#7c6fff" }} />
+              </div>
+              <span className="text-sm font-medium text-foreground leading-tight">{f.label}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── 03 / AI reasons; it does not authorize itself ── */}
+      <section className="py-32 px-6 relative overflow-hidden" style={{ background: "rgba(13,16,32,0.6)" }}>
+        <div className="absolute inset-0 pointer-events-none dot-grid opacity-40" />
+        <div className="max-w-4xl mx-auto relative">
+          <div className="text-center mb-16">
+            <div className="section-label mb-4">03 / THE DISTINCTION</div>
+            <h2
+              style={{
+                fontFamily: "'Onest', system-ui, sans-serif",
+                fontWeight: 700,
+                fontSize: "clamp(1.8rem, 4vw, 3rem)",
+                letterSpacing: "-0.025em",
+                color: "#e8ecf4",
+              }}
+            >
+              AI reasons.
+              <br />
+              <span className="grad-text">It doesn't authorize itself.</span>
+            </h2>
+            <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
+              AI can reason, analyze, recommend, negotiate, and plan. None of that means it should
+              decide whether a specific action is within its authority. That decision has to come
+              from the organization, the same way it already does for every person who acts on the
+              organization's behalf.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            <div className="glass-card rounded-2xl p-7">
+              <div className="mono text-xs mb-4" style={{ color: "#6b7280", letterSpacing: "0.1em" }}>WHAT AI DOES</div>
+              <div className="flex flex-col gap-2.5">
+                {["Reasons", "Analyzes", "Recommends", "Negotiates", "Plans"].map((item) => (
+                  <div key={item} className="flex items-center gap-2.5 text-sm text-muted-foreground">
+                    <span className="w-1 h-1 rounded-full flex-shrink-0" style={{ background: "#6b7280" }} />
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div
+              className="glass-card rounded-2xl p-7"
+              style={{ border: "1px solid rgba(124,111,255,0.25)", boxShadow: "0 0 32px rgba(124,111,255,0.08)" }}
+            >
+              <div className="mono text-xs mb-4" style={{ color: "#a78bfa", letterSpacing: "0.1em" }}>WHAT ONLY THE ORGANIZATION DECIDES</div>
+              <div className="text-sm text-foreground leading-relaxed">
+                Whether this specific action, right now, is within the authority that's actually
+                been delegated to this agent.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 04 / Runtime Authority fills the gap ── */}
       <section id="runtime-authority" className="py-32 px-6 relative" style={{ background: "rgba(124,111,255,0.025)" }}>
         <div className="absolute inset-0 pointer-events-none">
           <div
@@ -347,7 +393,7 @@ export default function Home() {
 
         <div className="max-w-5xl mx-auto relative">
           <div className="text-center mb-20">
-            <div className="section-label mb-4">03 / WHY PAYREALITY</div>
+            <div className="section-label mb-4">04 / RUNTIME AUTHORITY</div>
             <h2
               style={{
                 fontFamily: "'Onest', system-ui, sans-serif",
@@ -362,7 +408,8 @@ export default function Home() {
             <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
               Organizations have governance committees, IAM, and policy frameworks. None of them
               determine whether an AI is actually authorized to execute a given action. Identity
-              asks who you are. Authority asks what you're allowed to do.
+              asks who you are. Authority asks what you're allowed to do. Runtime Authority is the
+              infrastructure that fills that gap.
             </p>
           </div>
 
@@ -459,8 +506,38 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center mt-24">
+          {/* Recurring flow: AI Agent -> Reasons -> Requests Execution -> Runtime Authority -> Enterprise System */}
+          <div className="max-w-3xl mx-auto mt-16">
+            <div className="glass-card rounded-2xl p-6 sm:p-8" style={{ borderColor: "rgba(124,111,255,0.2)" }}>
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-0 justify-center">
+                {AUTHORITY_FLOW.map((step, i) => (
+                  <div key={step.label} className="flex items-center gap-3 sm:gap-0">
+                    <div
+                      className="rounded-xl p-4 flex sm:flex-col items-center text-center gap-3 sm:gap-2"
+                      style={{ width: "100%", minWidth: 130, background: `${step.color}12`, border: `1px solid ${step.color}30` }}
+                    >
+                      <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: `${step.color}20` }}>
+                        <step.icon size={16} style={{ color: step.color }} />
+                      </div>
+                      <div className="text-xs text-foreground leading-snug">{step.label}</div>
+                    </div>
+                    {i < AUTHORITY_FLOW.length - 1 && (
+                      <div className="hidden sm:block w-6 h-px flex-shrink-0" style={{ background: "rgba(124,111,255,0.25)" }} />
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 05 / PayReality: the Enterprise AI Authority Infrastructure ── */}
+      <section className="py-32 px-6 relative overflow-hidden">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
+              <div className="section-label mb-4">05 / PAYREALITY</div>
               <h3
                 className="mb-6"
                 style={{
@@ -480,8 +557,8 @@ export default function Home() {
               <p className="text-muted-foreground leading-relaxed mb-8">
                 Every enterprise already operates approval matrices, spending limits, delegation of
                 authority policies, procurement policies, and risk frameworks. These were written for
-                people. PayReality compiles them into rules an AI runtime can enforce, without asking
-                you to rebuild any of them.
+                people. PayReality, the Enterprise AI Authority Infrastructure, compiles them into
+                rules Runtime Authority can enforce, without asking you to rebuild any of them.
               </p>
               <a
                 href="/products/runtime-authority"
@@ -493,7 +570,7 @@ export default function Home() {
             </div>
 
             <div className="grid grid-cols-2 gap-4">
-              {EXISTING_FRAMEWORKS.map((f) => (
+              {EXISTING_FRAMEWORKS.slice(0, 4).map((f) => (
                 <div key={f.label} className="glass-card rounded-xl p-5 flex items-center gap-4 group cursor-default">
                   <div
                     className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors"
@@ -511,7 +588,7 @@ export default function Home() {
                 <div
                   style={{ fontFamily: "'Onest', system-ui, sans-serif", fontWeight: 700, fontSize: "0.9rem", color: "#a78bfa" }}
                 >
-                  ↓ PayReality compiles these into enforceable rules
+                  ↓ Runtime Authority compiles these into enforceable rules
                 </div>
               </div>
             </div>
@@ -524,7 +601,7 @@ export default function Home() {
         <div className="absolute inset-0 pointer-events-none dot-grid opacity-40" />
         <div className="max-w-5xl mx-auto relative">
           <div className="text-center mb-16">
-            <div className="section-label mb-4">04 / EXPLORE THE PLATFORM</div>
+            <div className="section-label mb-4">06 / EXPLORE THE PLATFORM</div>
             <h2
               style={{
                 fontFamily: "'Onest', system-ui, sans-serif",
@@ -580,7 +657,7 @@ export default function Home() {
         </div>
 
         <div className="max-w-3xl mx-auto text-center relative">
-          <div className="section-label mb-6">05 / GET STARTED</div>
+          <div className="section-label mb-6">07 / GET STARTED</div>
           <h2
             className="mb-6"
             style={{

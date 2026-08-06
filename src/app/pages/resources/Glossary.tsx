@@ -2,6 +2,8 @@ import SEO from "../../components/SEO";
 import { SITE_URL } from "../../lib/site";
 
 const TERMS = [
+  { term: "Governance", def: "The delegated authority, approval structures, separation of duties, and policies an organization already operates. Governance defines authority; Runtime Authority enforces it. Neither replaces the other." },
+  { term: "Reasoning vs. Authority", def: "An AI agent can reason, analyze, recommend, negotiate, and plan. Authority to actually act has to come from the organization, not from the AI itself, no matter how well it reasoned its way there." },
   { term: "Runtime Authority", def: "The infrastructure layer that determines whether an autonomous AI agent is authorized to perform a specific action, evaluated immediately before execution. The flagship product; also the name of the overall capability.", href: "/products/runtime-authority" },
   { term: "Authority Graph", def: "The structure modeling who holds delegated authority, who it's been extended to (including AI agents), and what constraints apply, built from an organization's existing governance documents.", href: "/products/authority-graph" },
   { term: "Runtime Policies", def: "Deterministic, versioned rules compiled from delegated authority, evaluated against every Intent to determine the specific conditions under which an action is permitted.", href: "/products/runtime-policies" },

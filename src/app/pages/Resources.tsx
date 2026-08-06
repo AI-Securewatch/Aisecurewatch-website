@@ -11,8 +11,8 @@ const CATEGORIES = [
   { icon: BookOpen, title: "Research", desc: "Original research on delegated authority, AI execution risk, and runtime enforcement.", href: "/resources/research" },
   { icon: FileText, title: "Whitepapers", desc: "Technical deep dives into PayReality's policy compiler, authority runtime, and evidence architecture.", href: "/resources/whitepapers" },
   { icon: GitPullRequestArrow, title: "RFCs", desc: "How PayReality's own architecture decisions get made, and the RFCs that resulted from that process.", href: "/resources/rfcs" },
-  { icon: Building2, title: "Case Studies", desc: "How enterprise teams put Enterprise AI Authority Infrastructure into production.", href: "/resources/case-studies" },
-  { icon: HelpCircle, title: "FAQ", desc: "Direct answers to the questions we hear most from CTOs, CISOs, and compliance leaders.", href: "/resources/faq" },
+  { icon: Building2, title: "Case Studies", desc: "How enterprise teams put Runtime Authority into production.", href: "/resources/case-studies" },
+  { icon: HelpCircle, title: "FAQ", desc: "Direct answers to the questions we hear most from AI transformation leaders and enterprise architects.", href: "/resources/faq" },
   { icon: BookMarked, title: "Glossary", desc: "Every term used across this site, defined once, consistently.", href: "/resources/glossary" },
 ];
 

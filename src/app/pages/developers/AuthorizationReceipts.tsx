@@ -39,7 +39,9 @@ export default function AuthorizationReceipts() {
           shown the complete history: verifying it still means trusting that PayReality's systems remain
           available, unchanged, and cooperative. That's a reasonable model while an integration is live. It's
           weaker than what a five-year-later regulatory review, or an insurer underwriting risk without
-          system access, actually needs.
+          system access, actually needs. A receipt is what lets a third party confirm that authorization was
+          actually enforced by something other than the AI that requested the action: it's the record of the
+          fact that the AI didn't authorize itself.
         </p>
 
         <h2 style={sectionHeadingStyle}>Why receipts exist</h2>

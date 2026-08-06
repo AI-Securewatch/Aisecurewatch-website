@@ -12,7 +12,7 @@ const EXPERTISE = [
 
 const SPEAKING_TOPICS = [
   "Why authority, not governance, is the open infrastructure category in enterprise AI",
-  "What procurement and treasury teams already know that AI platform teams don't",
+  "The delegated-authority discipline procurement and treasury teams already run, and why AI platform teams are converging on the same pattern",
   "Delegated authority as a design pattern for autonomous systems",
   "Deterministic policy enforcement vs. probabilistic AI guardrails",
 ];
@@ -30,7 +30,7 @@ export default function SeanChihwendu() {
     <>
       <SEO
         title="Sean Chihwendu | Founder & CEO, AI Securewatch"
-        description="Sean Chihwendu founded AI Securewatch to build Enterprise AI Authority Infrastructure: the runtime that enforces delegated authority against autonomous AI."
+        description="Sean Chihwendu founded AI Securewatch to build Enterprise AI Authority Infrastructure, anchored by Runtime Authority, the mechanism that enforces delegated authority against autonomous AI."
         path="/leadership/sean-chihwendu"
         jsonLd={{
           "@context": "https://schema.org",
@@ -86,11 +86,11 @@ export default function SeanChihwendu() {
             <section>
               <h2 className="mb-4" style={sectionHeadingStyle}>What he is building</h2>
               <p className="text-muted-foreground leading-relaxed">
-                Sean leads the development of PayReality: a deterministic runtime that compiles an
-                enterprise's existing delegated authority policy into machine-enforceable rules, and
-                evaluates every action an autonomous AI agent attempts to execute against that policy
-                before it runs. Every decision resolves to one of three outcomes: approve, reject, or
-                route to human review, and produces cryptographically verifiable evidence of what was
+                Sean leads the development of PayReality: Runtime Authority, a deterministic runtime that
+                compiles an enterprise's existing delegated authority policy into machine-enforceable
+                rules, and evaluates every action an autonomous AI agent attempts to execute against that
+                policy before it runs. Every decision resolves to one of three outcomes: approve, reject,
+                or route to human review, and produces cryptographically verifiable evidence of what was
                 authorized and what happened.
               </p>
             </section>

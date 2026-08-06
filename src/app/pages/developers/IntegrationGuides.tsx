@@ -6,7 +6,7 @@ import StatusBadge from "../docs/StatusBadge";
 const GROUPS = [
   {
     heading: "Agent frameworks and protocols",
-    note: "Any Python process can call the SDK's authorize() before taking an action: these frameworks are all Python-native, so the integration pattern works today even without a dedicated connector.",
+    note: "Already usable today via authorize(), as described above: these frameworks are all Python-native.",
     items: [
       { name: "OpenAI Agents SDK", status: "Early Access" as const },
       { name: "Anthropic Claude (tool use / Agent SDK)", status: "Early Access" as const },
@@ -67,10 +67,18 @@ export default function IntegrationGuides() {
         currentPath="/developers/integration-guides"
       >
         <p>
-          None of the entries below are a fabricated "it just works" integration. Agent frameworks that are
-          Python-native can call the SDK directly today, using the exact same{" "}
-          <code className="mono">agent.authorize(...)</code> call shown throughout these docs. Cloud platforms
-          and enterprise systems that would need a dedicated connector are marked accordingly.
+          Authorization is a call site, not a platform integration. Runtime Authority doesn't need to be built
+          into a given agent framework to work with it: any Python process can call the SDK's{" "}
+          <code className="mono">authorize()</code> before taking an action, at the exact point where the agent
+          would otherwise act. That's why LangGraph, CrewAI, AutoGen, MCP, the OpenAI Agents SDK, and Anthropic's
+          Claude Agent SDK all already work today, without a dedicated connector or a named integration package
+          for any of them, and why Runtime Authority stays independent of whichever framework or orchestration
+          layer you're running.
+        </p>
+        <p>
+          None of the entries below are a fabricated "it just works" integration, though. Cloud platforms and
+          enterprise systems that would need a dedicated connector, rather than a direct SDK call, are marked
+          accordingly.
         </p>
 
         {GROUPS.map((g) => (

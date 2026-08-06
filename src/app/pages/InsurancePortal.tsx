@@ -14,8 +14,8 @@ import { CONTACT_EMAIL, SITE_URL, mailto } from "../lib/site";
 import { useDemoModal } from "../context/DemoModalContext";
 
 const FLOW = [
-  { label: "Runtime Validation", icon: AlertCircle, color: "#3b8cf8" },
-  { label: "Execution", icon: CheckCircle2, color: "#22d3ee" },
+  { label: "Runtime Authority Decides", icon: AlertCircle, color: "#3b8cf8" },
+  { label: "Execution (only on Allow)", icon: CheckCircle2, color: "#22d3ee" },
   { label: "Cryptographic Evidence", icon: Fingerprint, color: "#a78bfa" },
 ];
 
@@ -188,8 +188,10 @@ export default function InsurancePortal() {
                 ))}
               </div>
               <p className="text-xs text-muted-foreground text-center mt-6">
-                The certificate produced at the final stage is independently verifiable using a public cryptographic
-                key, verifiable by an auditor, regulator, or insurer, with no access to PayReality itself.
+                Execution only proceeds on an Allow decision: Runtime Authority evaluates and decides first,
+                before anything happens against a live system, not after. The certificate produced at the final
+                stage is independently verifiable using a public cryptographic key, verifiable by an auditor,
+                regulator, or insurer, with no access to PayReality itself.
               </p>
             </div>
           </div>

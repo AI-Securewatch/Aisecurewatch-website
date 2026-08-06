@@ -69,6 +69,21 @@ export default function EvidencePortal() {
           </div>
 
           <div className="mb-20">
+            <div className="section-label mb-4">THE PROBLEM</div>
+            <h2 className="mb-5" style={{ fontFamily: "'Onest', system-ui, sans-serif", fontWeight: 700, fontSize: "clamp(1.5rem, 3vw, 2.1rem)", letterSpacing: "-0.025em", color: "#e8ecf4" }}>
+              Knowing a decision happened isn't the same as knowing why
+            </h2>
+            <p className="text-muted-foreground leading-relaxed" style={{ maxWidth: 680 }}>
+              When an agent's action gets escalated, blocked, or produces an unexpected outcome in
+              production, an engineering or platform team needs to understand why just as urgently as an
+              auditor does later, for a different reason: to fix what's live, not to answer for it after the
+              fact. Today, that means going looking: pulling application logs, reconstructing state from
+              memory, and hoping the context that mattered at decision time is still recoverable. The record
+              exists. Nothing surfaces it to the team that needs it first.
+            </p>
+          </div>
+
+          <div className="mb-20">
             <div className="section-label mb-4">WHAT IT IS</div>
             <h2 className="mb-5" style={{ fontFamily: "'Onest', system-ui, sans-serif", fontWeight: 700, fontSize: "clamp(1.5rem, 3vw, 2.1rem)", letterSpacing: "-0.025em", color: "#e8ecf4" }}>
               Every decision Runtime Authority makes becomes a signed record

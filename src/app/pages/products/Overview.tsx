@@ -15,7 +15,7 @@ import { PLATFORM, SITE_URL } from "../../lib/site";
 import { useDemoModal } from "../../context/DemoModalContext";
 
 const PRODUCTS = [
-  { icon: ShieldAlert, color: "#7c6fff", title: "Runtime Authority", desc: "The flagship product: evaluates every AI agent's signed intent and returns a binding decision before execution.", href: "/products/runtime-authority" },
+  { icon: ShieldAlert, color: "#7c6fff", title: "Runtime Authority", desc: "The decision engine at the center of the runtime: evaluates every AI agent's signed intent and returns a binding decision before execution.", href: "/products/runtime-authority" },
   { icon: GitBranch, color: "#22c55e", title: "Authority Graph", desc: "Models who holds delegated authority, and who it's been extended to, from your existing governance documents.", href: "/products/authority-graph" },
   { icon: ScrollText, color: "#3b8cf8", title: "Runtime Policies", desc: "Compiles delegated authority into deterministic, versioned rules a runtime can evaluate.", href: "/products/runtime-policies" },
   { icon: Database, color: "#a78bfa", title: "Evidence Portal", desc: "The enterprise evidence layer: every decision, signed, searchable, audited, and exportable.", href: "/products/evidence-portal" },
@@ -64,8 +64,8 @@ export default function ProductsOverview() {
           </h1>
           <p className="text-muted-foreground leading-relaxed mb-10" style={{ fontSize: "1.125rem", maxWidth: 680 }}>
             Runtime Authority is not a bundle of separate tools. It's one deterministic runtime, and each
-            product below is a component of it, built to be understood individually, but only
-            meaningful together.
+            product below, including the Runtime Authority decision engine at its center, is a component
+            of it: built to be understood individually, but only meaningful together.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mb-20">
             <button onClick={openDemo} className="btn-primary px-7 py-3.5 rounded-xl text-sm inline-flex items-center justify-center gap-2">
@@ -88,10 +88,11 @@ export default function ProductsOverview() {
               "Is this AI agent authorized to take this specific action, right now?" isn't answered by a
               single check. It requires knowing who holds delegated authority (the Authority Graph),
               what conditions apply to a given action (Runtime Policies), a deterministic way to combine
-              both into one outcome (Runtime Authority), and a record of what was decided and why (the
-              Evidence Portal, evolving toward Authorization Receipts). See{" "}
-              <a href="/platform" style={{ color: "#a78bfa" }}>Platform</a> for how these fit together
-              architecturally.
+              both into one outcome (the Runtime Authority decision engine), and a record of what was
+              decided and why (the Evidence Portal, evolving toward Authorization Receipts). This page is
+              the catalog: what each component does, and where to explore it on its own. For how they
+              evaluate an intent together, see{" "}
+              <a href="/platform" style={{ color: "#a78bfa" }}>Platform</a>.
             </p>
           </div>
 

@@ -60,8 +60,9 @@ export default function Terms() {
 
             <h2 style={clauseHeadingStyle}>The service</h2>
             <p>
-              PayReality is Enterprise AI Authority Infrastructure: it evaluates whether an AI agent's requested
-              action is within its delegated authority, before that action executes. Some capabilities described on
+              PayReality is the Enterprise AI Authority Infrastructure: Runtime Authority evaluates whether an AI
+              agent's requested action is within its delegated authority, before that action executes. Some
+              capabilities described on
               this site are marked "Coming Soon," "Planned," or "Roadmap." Those are not currently available, carry
               no availability date or warranty, and using this site does not entitle you to them.
             </p>

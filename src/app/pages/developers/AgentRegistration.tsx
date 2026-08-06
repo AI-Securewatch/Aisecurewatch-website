@@ -32,7 +32,19 @@ export default function AgentRegistration() {
           with every transition producing a signed, immutable audit record.
         </p>
 
-        <h2 style={{ ...sectionHeadingStyle, marginTop: 0 }}>The state machine</h2>
+        <h2 style={{ ...sectionHeadingStyle, marginTop: 0 }}>Ownership vs. Principal</h2>
+        <p>
+          <code className="mono">owner</code>, <code className="mono">business_unit</code>, and{" "}
+          <code className="mono">environment</code> are organisational labels for who's responsible
+          for an agent (e.g. "Finance Team"). They're separate from{" "}
+          <code className="mono">acting_for_principal_id</code>, the Principal an agent's actions are
+          evaluated under for policy purposes (e.g. "Finance Manager"). Transferring ownership changes
+          who's responsible for an agent; it never silently changes whose authority it acts under.
+          Authority comes from the Principal, which comes from the organization, never from the
+          agent itself.
+        </p>
+
+        <h2 style={sectionHeadingStyle}>The state machine</h2>
         <CodeBlock>{`registered -> active -> suspended -> active -> retired
                                           \\-> revoked
 registered ---------------------------------> retired
@@ -100,16 +112,6 @@ registered ---------------------------------> revoked`}</CodeBlock>
           recorded and immediately sent to Human Review rather than evaluated against any rule,
           since suspension is temporary and reviewable: what was attempted while suspended is
           preserved, not silently dropped.
-        </p>
-
-        <h2 style={sectionHeadingStyle}>Ownership vs. Principal</h2>
-        <p>
-          <code className="mono">owner</code>, <code className="mono">business_unit</code>, and{" "}
-          <code className="mono">environment</code> are organisational labels for who's responsible
-          for an agent (e.g. "Finance Team"). They're separate from{" "}
-          <code className="mono">acting_for_principal_id</code>, the Principal an agent's actions are
-          evaluated under for policy purposes (e.g. "Finance Manager"). Transferring ownership changes
-          who's responsible for an agent; it never silently changes whose authority it acts under.
         </p>
       </DocLayout>
     </>

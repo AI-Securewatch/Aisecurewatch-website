@@ -6,7 +6,6 @@ import {
   AlertCircle,
   CheckCircle2,
   Layers,
-  ShieldCheck,
   History,
   Tag,
 } from "lucide-react";
@@ -23,12 +22,10 @@ const FLOW = [
 ];
 
 const CAPABILITIES = [
-  { icon: AlertCircle, title: "Runtime Policy Evaluation", desc: "Every AI agent intent is evaluated against published policy the moment it's formed, not on a review cadence after the fact." },
-  { icon: GitBranch, title: "Deterministic policy generation", desc: "Policy is authored or extracted once, compiled into deterministic rules, and never left ambiguous for a model to interpret at evaluation time." },
-  { icon: Layers, title: "Evaluation engine", desc: "Compiled policy is inspectable and version-controlled, not an opaque model making a judgment call: every clause that matched is traceable." },
-  { icon: CheckCircle2, title: "Runtime enforcement", desc: "Every intent resolves to one of three outcomes: allow, escalate to human review, or deny, evaluated in sub-millisecond time." },
-  { icon: Tag, title: "Policy versioning", desc: "Every compiled policy is a signed, versioned artifact. A decision made under v3 remains explainable as a v3 decision even after v4 ships." },
-  { icon: ShieldCheck, title: "Deterministic enforcement", desc: "The same policy and the same input always produce the same decision. No probabilistic judgment sits between an agent and a real action." },
+  { icon: AlertCircle, title: "Runtime Policy Evaluation", desc: "Every AI agent intent is evaluated against published policy the moment it's formed, resolving to allow, escalate to human review, or deny, in sub-millisecond time, not on a review cadence after the fact." },
+  { icon: GitBranch, title: "Deterministic Policy Compilation", desc: "Policy is authored or extracted once and compiled into deterministic rules. The same policy and the same input always produce the same decision: no probabilistic judgment sits between an agent and a real action." },
+  { icon: Layers, title: "Inspectable Evaluation Engine", desc: "Compiled policy is inspectable and version-controlled, not an opaque model making a judgment call: every clause that matched a decision is traceable." },
+  { icon: Tag, title: "Policy Versioning", desc: "Every compiled policy is a signed, versioned artifact. A decision made under v3 remains explainable as a v3 decision even after v4 ships." },
 ];
 
 export default function RuntimePolicies() {
@@ -142,7 +139,7 @@ export default function RuntimePolicies() {
           <div className="mb-20">
             <div className="section-label mb-4">KEY CAPABILITIES</div>
             <h2 className="mb-8" style={{ fontFamily: "'Onest', system-ui, sans-serif", fontWeight: 700, fontSize: "clamp(1.5rem, 3vw, 2.1rem)", letterSpacing: "-0.025em", color: "#e8ecf4" }}>
-              Six capabilities, one deterministic runtime
+              Four capabilities, one deterministic runtime
             </h2>
             <div className="grid md:grid-cols-2 gap-5">
               {CAPABILITIES.map((c) => (
@@ -189,8 +186,8 @@ export default function RuntimePolicies() {
                 Book a Demo
                 <ArrowRight size={15} />
               </button>
-              <a href="/manifesto" className="btn-ghost px-8 py-3.5 rounded-xl text-sm inline-flex items-center justify-center gap-2">
-                Read the Manifesto
+              <a href="/platform" className="btn-ghost px-8 py-3.5 rounded-xl text-sm inline-flex items-center justify-center gap-2">
+                Explore the Platform
               </a>
             </div>
           </div>

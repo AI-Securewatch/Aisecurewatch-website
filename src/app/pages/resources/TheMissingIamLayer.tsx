@@ -121,15 +121,27 @@ export default function TheMissingIamLayer() {
             </p>
 
             {/* III */}
-            <h2 style={sectionHeadingStyle}>Safety and authority are complementary, not competitive</h2>
+            <h2 style={sectionHeadingStyle}>Reasoning and authority are different problems</h2>
             <p>
-              The AI safety market (guardrails, prompt-injection detection, adversarial testing, content
-              filters) is well funded and doing important work. But safety and authority solve different
-              problems. Safety systems manage what a model <em>thinks</em> it should do: they operate on
+              An agent can reason, analyze, recommend, negotiate, and plan, and keep getting better at
+              all of it. None of that is the same problem as deciding whether a specific action is
+              within its authority. Reasoning quality and authorization are two different questions,
+              and improving one doesn't answer the other: an agent that reasons well can still act
+              outside the authority it was actually delegated, and an agent reasoning poorly can still
+              stay well inside it. Authority has to come from the organization, not from how well the
+              model reasoned its way there.
+            </p>
+            <p>
+              This is also why the AI safety market (guardrails, prompt-injection detection, adversarial
+              testing, content filters) doesn't close this gap on its own, well-funded and important as
+              it is. Safety systems manage what a model <em>thinks</em> it should do: they operate on
               the reasoning layer, catching harmful outputs and behavioral drift. Authority systems
               manage what a model is <em>allowed to do</em>: they operate on the execution layer,
-              stopping a compromised or hallucinating agent from taking an unintended action on a real
-              system, regardless of what its credentials permit.
+              independent of the reasoning that produced the request, stopping a compromised or
+              hallucinating agent from taking an unintended action on a real system regardless of what
+              its credentials permit. Critically, the system deciding what's authorized should never be
+              the same system doing the reasoning: an agent verifying its own authorization is not
+              meaningfully different from it having none.
             </p>
             <p>
               In the procurement example, a safety system might flag that $150,000 is unusual relative
@@ -147,6 +159,13 @@ export default function TheMissingIamLayer() {
               at the execution layer, before consequences occur: an inline interceptor positioned
               between the agent and the systems it acts on (databases, payment rails, contract-signing
               services), running as a deterministic policy engine rather than a judgment call.
+            </p>
+            <p>
+              None of this replaces the governance an enterprise already has. The approval limits,
+              vendor restrictions, and multi-signature thresholds referenced below already exist in
+              someone's delegation of authority policy and approval matrix; this architecture compiles
+              what's already been decided into a form a runtime can enforce, rather than asking a
+              compliance team to author a new, AI-specific governance model from scratch.
             </p>
             <p>The architecture that makes this work has four properties:</p>
             <ol className="flex flex-col gap-4 pl-5" style={{ listStyleType: "decimal" }}>
@@ -240,7 +259,10 @@ export default function TheMissingIamLayer() {
               </a>
               . Traditional RBAC and API scopes are necessary but not sufficient. Enterprises need a way
               to express and enforce authority boundaries that account for stochasticity and
-              hallucination risk, and that standard is still early.
+              hallucination risk, and that standard is still early. Whatever that layer ends up looking
+              like, it has to sit independently of any one LLM, agent framework, or orchestration
+              platform, the same way workload identity today doesn't care which cloud a service happens
+              to run on.
             </p>
             <p>
               A concrete version of this pattern already exists in production: every agent PayReality

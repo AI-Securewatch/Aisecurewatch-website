@@ -91,9 +91,14 @@ export default function PlatformPage() {
           <h1 className="mb-6" style={{ fontFamily: "'Onest', system-ui, sans-serif", fontWeight: 800, fontSize: "clamp(2rem, 5vw, 3.5rem)", lineHeight: 1.08, letterSpacing: "-0.03em", color: "#e8ecf4", maxWidth: 800 }}>
             One runtime. <span className="grad-text">Every AI agent action, evaluated before it executes.</span>
           </h1>
-          <p className="text-muted-foreground leading-relaxed mb-10" style={{ fontSize: "1.125rem", maxWidth: 700 }}>
+          <p className="text-muted-foreground leading-relaxed mb-4" style={{ fontSize: "1.125rem", maxWidth: 700 }}>
             Runtime Authority is not a single feature. It's the runtime that connects your delegated authority,
             your policy, and every AI agent's intent into one deterministic decision, with evidence behind it.
+          </p>
+          <p className="text-muted-foreground leading-relaxed mb-10" style={{ maxWidth: 700 }}>
+            This page is the architecture: how the pieces evaluate an intent, together. For the individual
+            products this runtime is built from, and a quick way into any one of them on its own, see{" "}
+            <a href="/products" style={{ color: "#a78bfa" }}>Products</a>.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mb-24">
             <button onClick={openDemo} className="btn-primary px-7 py-3.5 rounded-xl text-sm inline-flex items-center justify-center gap-2">
@@ -210,6 +215,11 @@ export default function PlatformPage() {
               one system, because your organization doesn't either: your org chart and your approval matrix are
               already two different documents, maintained by different people, on different cadences. The
               runtime respects that separation and evaluates both, together, for every intent.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mt-4" style={{ maxWidth: 700 }}>
+              Runtime Authority sits independently between your AI systems and your enterprise systems. It
+              evaluates the signed intent an agent sends, whatever produced it: it isn't tied to a specific
+              LLM, agent framework, or orchestration platform.
             </p>
           </div>
 

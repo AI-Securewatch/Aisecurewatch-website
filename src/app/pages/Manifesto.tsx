@@ -59,7 +59,7 @@ const TRAJECTORY = [
 const RUNTIME_FLOW = [
   { label: "Enterprise Policy", icon: FileText, color: "#7c6fff" },
   { label: "Authority Model", icon: GitBranch, color: "#6366f1" },
-  { label: "Runtime Validation", icon: AlertCircle, color: "#3b8cf8" },
+  { label: "Runtime Authority", icon: AlertCircle, color: "#3b8cf8" },
   { label: "Execution", icon: CheckCircle2, color: "#22d3ee" },
   { label: "Cryptographic Evidence", icon: Fingerprint, color: "#a78bfa" },
 ];
@@ -235,7 +235,7 @@ function RuntimeDecisionDiagram() {
       <div className="flex items-center justify-center gap-3 mt-5 pt-5" style={{ borderTop: "1px dashed rgba(255,255,255,0.1)" }}>
         <Users size={14} style={{ color: "#f59e0b" }} />
         <span className="text-xs text-muted-foreground">
-          Runtime Validation escalates to <span style={{ color: "#e8ecf4" }}>Human Review</span>, resolved, back to
+          Runtime Authority escalates to <span style={{ color: "#e8ecf4" }}>Human Review</span>, resolved, back to
           Execution
         </span>
       </div>
@@ -1005,7 +1005,7 @@ export default function Manifesto() {
                   exercise whether or not a machine is involved.
                 </p>
                 <p className="mb-6">
-                  <strong style={{ color: "#e8ecf4" }}>Runtime Validation.</strong> An autonomous agent forms an
+                  <strong style={{ color: "#e8ecf4" }}>Runtime Authority.</strong> An autonomous agent forms an
                   intent, expressed as a structured claim, evaluated against the authority model before the action
                   proceeds. The outcome is one of three: <em>approve</em>: within the authority the agent has
                   borrowed; <em>escalate</em>: human review, exactly as a human delegate's request would route to a

@@ -47,7 +47,10 @@ export default function Webhooks() {
         <p>
           Rather than requiring every integration to poll for state changes, the planned webhook system
           notifies your enterprise system directly when something happens inside Runtime Authority. The six
-          events below are the planned taxonomy.
+          events below are the planned taxonomy: two of them, <code className="mono">PolicyPublished</code>{" "}
+          and <code className="mono">AuthorityGraphUpdated</code>, are distinct from the rest because they
+          signal that governance itself changed, which means enforcement changed with it, not just that one
+          more decision was made.
         </p>
 
         <h2 style={{ ...sectionHeadingStyle, marginTop: 0 }}>Event taxonomy</h2>

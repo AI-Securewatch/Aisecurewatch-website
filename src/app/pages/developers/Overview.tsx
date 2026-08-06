@@ -64,6 +64,12 @@ export default function Overview() {
             </button>
           </div>
 
+          <p className="text-muted-foreground leading-relaxed mb-16" style={{ fontSize: "1.0625rem", maxWidth: 680 }}>
+            An agent can now reason about a situation and decide, on its own, to request a real-world action.
+            Nothing has independently confirmed that it's actually authorized to take that action until Runtime
+            Authority evaluates it.
+          </p>
+
           {/* Where it sits */}
           <div className="glass-card rounded-2xl p-6 sm:p-8 mb-16" style={{ borderColor: "rgba(124,111,255,0.2)" }}>
             <p className="text-xs mono uppercase tracking-widest text-muted-foreground mb-5">Where Runtime Authority sits</p>

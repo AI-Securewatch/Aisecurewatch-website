@@ -38,7 +38,14 @@ export default function Architecture() {
         subtitle="Nine components, one deterministic path, from an agent's signed intent to a decision your enterprise system can act on."
         currentPath="/developers/architecture"
       >
-        <div className="flex flex-col gap-0 -mt-2 mb-4">
+        <p className="-mt-2">
+          An agent can reason about what to do next. It shouldn't be the one deciding whether it's
+          authorized to do it. Everything below exists to answer that second question,
+          deterministically, in the moment between an agent forming an intent and an enterprise
+          system acting on it, without ever asking the agent itself.
+        </p>
+
+        <div className="flex flex-col gap-0 mb-4">
           {CHAIN.map((c, i) => (
             <div key={c.title} className="flex gap-4 sm:gap-5">
               <div className="flex flex-col items-center flex-shrink-0">

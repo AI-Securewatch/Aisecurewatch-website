@@ -34,6 +34,14 @@ const FAQS = [
     a: "Identity and access management answers who someone (or something) is, and what systems it can reach. It doesn't evaluate whether a specific action, right now, is actually within that identity's delegated authority. Runtime Authority sits on top of identity, not in place of it: it answers the second question, not the first.",
   },
   {
+    q: "Is Runtime Authority tied to a specific LLM, agent framework, or orchestration platform?",
+    a: "No. It sits independently between your AI systems and your enterprise systems, and evaluates the signed intent an agent sends regardless of what produced it. Whether your agents run on LangGraph, CrewAI, AutoGen, an MCP server, or a direct model API call doesn't change how it's evaluated.",
+  },
+  {
+    q: "Is this a governance tool, or something new?",
+    a: "Something new. It's not an AI governance platform: it doesn't decide what your policy should say. Runtime Authority is infrastructure that enforces the governance you already have, at the moment an agent tries to act, the same way Identity or Observability became their own infrastructure categories rather than features of something else.",
+  },
+  {
     q: "Does PayReality use an AI model to decide whether an action is authorized?",
     a: "No. Evaluation is deterministic: the same policy and the same input always produce the same decision. Runtime Policies compile into rules an engine evaluates, not a judgment call a model makes. We deliberately don't use one AI model to judge whether another AI model's action is authorized.",
   },
@@ -74,7 +82,7 @@ export default function Faq() {
     <>
       <SEO
         title="FAQ | PayReality Resources"
-        description="Direct answers to the questions CTOs, CISOs, and compliance leaders ask most about Runtime Authority, deterministic evaluation, and delegated authority."
+        description="Direct answers to the questions AI transformation leaders, enterprise architects, and MLOps teams (and governance and compliance leaders) ask most about Runtime Authority."
         path="/resources/faq"
         jsonLd={{
           "@context": "https://schema.org",
