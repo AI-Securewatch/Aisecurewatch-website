@@ -80,6 +80,14 @@ elif decision.outcome == "HUMAN_REVIEW":
           recognize is never silently allowed: it's escalated to a human, the same fail-closed
           behavior the Decision Engine applies everywhere.
         </p>
+        <p>
+          Calling <code className="mono">authorize()</code> doesn't ask PayReality to decide whether
+          the action is a good idea. It asks Runtime Authority to independently check the request
+          against the policy your organization already set, the same approval matrices and spending
+          limits that govern your human workforce, now enforced against an agent instead of a person.
+          The organization's policy is what authorizes the action; <code className="mono">authorize()</code>{" "}
+          is the call that gets it enforced.
+        </p>
 
         <h2 style={sectionHeadingStyle}>What api_key actually authenticates</h2>
         <p>

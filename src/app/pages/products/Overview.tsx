@@ -15,7 +15,7 @@ import { PLATFORM, SITE_URL } from "../../lib/site";
 import { useDemoModal } from "../../context/DemoModalContext";
 
 const PRODUCTS = [
-  { icon: ShieldAlert, color: "#7c6fff", title: "Runtime Authority", desc: "The decision engine at the center of the runtime: evaluates every AI agent's signed intent and returns a binding decision before execution.", href: "/products/runtime-authority" },
+  { icon: ShieldAlert, color: "#7c6fff", title: "Runtime Authority", desc: "The enforcement engine at the center of the runtime: evaluates every AI agent's signed intent against your organization's delegated authority and returns a binding decision before execution.", href: "/products/runtime-authority" },
   { icon: GitBranch, color: "#22c55e", title: "Authority Graph", desc: "Models who holds delegated authority, and who it's been extended to, from your existing governance documents.", href: "/products/authority-graph" },
   { icon: ScrollText, color: "#3b8cf8", title: "Runtime Policies", desc: "Compiles delegated authority into deterministic, versioned rules a runtime can evaluate.", href: "/products/runtime-policies" },
   { icon: Database, color: "#a78bfa", title: "Evidence Portal", desc: "The enterprise evidence layer: every decision, signed, searchable, audited, and exportable.", href: "/products/evidence-portal" },

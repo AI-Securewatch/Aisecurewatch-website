@@ -34,16 +34,18 @@ export default function Careers() {
               color: "#e8ecf4",
             }}
           >
-            Help build the
+            Help build the infrastructure
             <br />
-            <span className="grad-text">authority layer for AI</span>
+            <span className="grad-text">the AI workforce runs on</span>
           </h1>
 
           <div className="flex flex-col gap-5 text-muted-foreground leading-relaxed mb-12" style={{ fontSize: "1.0625rem" }}>
             <p>
-              AI Securewatch is building Enterprise AI Authority Infrastructure for autonomous AI: the
-              deterministic runtime, evidence architecture, and enterprise tooling that let organizations
-              delegate authority to AI with the same confidence they delegate it to people.
+              AI Securewatch is building Enterprise AI Authority Infrastructure for a workforce that's
+              becoming part AI: the deterministic runtime, evidence architecture, and enterprise
+              tooling that let organizations enforce the authority they already delegate, at the
+              moment an autonomous agent tries to act, with the same confidence they have delegating
+              it to people.
             </p>
             <p>
               We don't have open roles listed here today. What we do have is a small, founder-built

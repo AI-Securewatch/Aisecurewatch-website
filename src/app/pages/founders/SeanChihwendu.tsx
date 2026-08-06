@@ -88,10 +88,11 @@ export default function SeanChihwendu() {
               <p className="text-muted-foreground leading-relaxed">
                 Sean leads the development of PayReality: Runtime Authority, a deterministic runtime that
                 compiles an enterprise's existing delegated authority policy into machine-enforceable
-                rules, and evaluates every action an autonomous AI agent attempts to execute against that
-                policy before it runs. Every decision resolves to one of three outcomes: approve, reject,
-                or route to human review, and produces cryptographically verifiable evidence of what was
-                authorized and what happened.
+                rules. The organization authorizes, through the policy it already runs; Runtime Authority
+                enforces that authorization against every action an autonomous AI agent attempts, before
+                it executes. Every decision resolves to one of three outcomes: approve, reject, or route
+                to human review, and produces cryptographically verifiable evidence of what was authorized
+                and what happened.
               </p>
             </section>
 
@@ -115,6 +116,15 @@ export default function SeanChihwendu() {
                     Enterprise AI Authority Infrastructure
                   </a>{" "}
                   is his name for that layer.
+                </p>
+                <p>
+                  Sean's view is that this isn't fundamentally an AI problem, it's an organizational
+                  design problem. As AI moves from assisting people, to executing tasks on its own, to
+                  functioning as part of the workforce itself, organizations need a way to preserve the
+                  authority, decision rights, and accountability they already built for people, now that
+                  some of that workforce is autonomous. Runtime Authority doesn't decide who is
+                  authorized. It enforces the authority an organization's operating model already
+                  grants.
                 </p>
               </div>
             </section>

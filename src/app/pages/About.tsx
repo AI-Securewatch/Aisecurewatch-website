@@ -129,10 +129,12 @@ export default function About() {
             <div className="flex flex-col gap-5 text-muted-foreground leading-relaxed">
               <p>
                 Every enterprise already knows how to delegate authority to people: procurement policy,
-                treasury policy, approval matrices, governance frameworks. Autonomous AI breaks that
-                model, because nothing forces an AI agent to check a policy before it acts. The gap is
-                not governance. It's translating authority that already exists into a form a machine
-                can actually obey, before it executes, not after.
+                treasury policy, approval matrices, governance frameworks. Historically, humans made
+                the decisions and software only executed them, so that governance worked without
+                anyone having to check it in real time. Autonomous AI breaks that model, because
+                nothing forces an AI agent to check a policy before it acts. The gap is not governance.
+                It's translating authority that already exists into a form a machine can actually obey,
+                before it executes, not after.
               </p>
               <a
                 href="/why-we-exist"
@@ -160,8 +162,8 @@ export default function About() {
                   lineHeight: 1.4,
                 }}
               >
-                Build the infrastructure that makes autonomous AI obedient to the authority
-                organizations already delegate. Not smarter AI. Obedient AI.
+                Build the infrastructure that makes autonomous AI accountable to the authority
+                organizations already delegate. Not smarter AI. Accountable AI.
               </p>
             </div>
             <div
@@ -181,7 +183,7 @@ export default function About() {
                 }}
               >
                 Become the enterprise authority layer that sits between AI reasoning and real-world
-                execution.
+                execution, enforcing the authority organizations already hold.
               </p>
             </div>
           </div>

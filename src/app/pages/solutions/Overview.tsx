@@ -37,9 +37,10 @@ export default function SolutionsOverview() {
             One runtime. <span className="grad-text">Every industry's own delegated authority.</span>
           </h1>
           <p className="text-muted-foreground leading-relaxed mb-16" style={{ fontSize: "1.125rem", maxWidth: 700 }}>
-            Runtime Authority doesn't change by industry. What changes is whose governance it evaluates, and
-            what the workflow on either side of it looks like: the platform underneath every page below is
-            identical.
+            Runtime Authority doesn't change by industry. Your organization already holds this
+            authority: it's built into an approval matrix, a sign-off chain, a signing policy. What
+            changes is whose authority it enforces, and what the workflow on either side of it looks
+            like: the platform underneath every page below is identical.
           </p>
 
           <div className="grid md:grid-cols-2 gap-5">

@@ -30,7 +30,7 @@ const WHAT_YOU_SEE = [
 
 const CAPABILITIES = [
   { icon: FileText, title: "Governance Ingestion", desc: "Translate existing enterprise governance into Runtime Policies." },
-  { icon: Shield, title: "Runtime Authority", desc: "Determine whether an AI is authorized before execution." },
+  { icon: Shield, title: "Runtime Authority", desc: "Enforces whether an AI agent's requested action is within its already-delegated authority, before execution." },
   { icon: Fingerprint, title: "AI Identity", desc: "Every AI agent receives its own verifiable identity." },
   { icon: Archive, title: "Cryptographic Evidence", desc: "Every decision is independently verifiable." },
   { icon: Users, title: "Human Review", desc: "Unknown or out-of-policy actions fail safely." },
@@ -108,9 +108,9 @@ export default function Demo() {
             See PayReality operating in a real enterprise workflow.
           </p>
           <p className="text-muted-foreground leading-relaxed mb-10" style={{ maxWidth: 640 }}>
-            The short version of what you're about to watch: governance defines authority, Runtime
-            Authority enforces it, the AI agent reasons, Runtime Authority authorizes, and only then
-            does the AI agent execute.
+            The short version of what you're about to watch: governance defines authority, the AI
+            agent reasons, the organization's existing authority governs what it's allowed to do, and
+            Runtime Authority enforces that authority at the moment of execution.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mb-20">
             <button onClick={openDemo} className="btn-primary px-7 py-3.5 rounded-xl text-sm inline-flex items-center justify-center gap-2">

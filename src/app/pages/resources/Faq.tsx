@@ -27,7 +27,7 @@ function renderAnswer(text: string) {
 const FAQS = [
   {
     q: "What is Runtime Authority?",
-    a: "The capability of determining whether an autonomous AI agent has delegated authority to perform a specific action, evaluated immediately before that action executes. Not a policy on file, not a log entry after the fact, but a decision, made at the moment it matters. See {{Platform}} for the full picture.",
+    a: "Your organization defines who, or what, holds authority to act, the same way it already does for employees. Runtime Authority enforces that: it evaluates, immediately before an autonomous AI agent's action executes, whether the action falls within the authority your organization has already delegated. Not a policy on file, not a log entry after the fact, but an enforcement decision, made at the moment it matters. See {{Platform}} for the full picture.",
   },
   {
     q: "How is this different from IAM or access control?",
@@ -40,6 +40,10 @@ const FAQS = [
   {
     q: "Is this a governance tool, or something new?",
     a: "Something new. It's not an AI governance platform: it doesn't decide what your policy should say. Runtime Authority is infrastructure that enforces the governance you already have, at the moment an agent tries to act, the same way Identity or Observability became their own infrastructure categories rather than features of something else.",
+  },
+  {
+    q: "Does PayReality decide what AI agents are allowed to do?",
+    a: "No, your organization does, the same way it already decides what any employee or system is allowed to do, through delegation of authority, approval matrices, and policy. Runtime Authority doesn't originate that decision; it enforces it, at the exact moment an agent tries to act. In short: AI reasons, your organization authorizes, Runtime Authority enforces.",
   },
   {
     q: "Does PayReality use an AI model to decide whether an action is authorized?",

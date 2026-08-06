@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import { ArrowRight, ExternalLink, Bot, ShieldAlert, Building2, FileCheck2 } from "lucide-react";
+import { ArrowRight, ExternalLink, Bot, ShieldAlert, Building2, FileCheck2, Scale } from "lucide-react";
 import SEO from "../../components/SEO";
 import { PLATFORM, SITE_URL } from "../../lib/site";
 import { useDemoModal } from "../../context/DemoModalContext";
@@ -29,9 +29,10 @@ interface SolutionLayoutProps {
 // content between pages" requirement enforced at the code level, not just
 // the writing level.
 const FLOW = [
-  { label: "AI Agent", icon: Bot, color: "#3b8cf8" },
-  { label: "Runtime Authority", icon: ShieldAlert, color: "#7c6fff" },
-  { label: "Enterprise Systems", icon: Building2, color: "#22d3ee" },
+  { label: "Your Delegated Authority", icon: Scale, color: "#6366f1" },
+  { label: "AI Agent (reasons)", icon: Bot, color: "#3b8cf8" },
+  { label: "Runtime Authority (enforces)", icon: ShieldAlert, color: "#7c6fff" },
+  { label: "Enterprise Systems (executes)", icon: Building2, color: "#22d3ee" },
   { label: "Evidence & Authorization Receipts", icon: FileCheck2, color: "#a78bfa" },
 ];
 
@@ -117,7 +118,7 @@ export default function SolutionLayout({
           <div className="mb-20">
             <div className="section-label mb-4">RUNTIME AUTHORITY IN {industryLabel.toUpperCase()}</div>
             <h2 className="mb-8" style={{ fontFamily: "'Onest', system-ui, sans-serif", fontWeight: 700, fontSize: "clamp(1.5rem, 3vw, 2.1rem)", letterSpacing: "-0.025em", color: "#e8ecf4" }}>
-              The same runtime, evaluating your governance
+              The same runtime, enforcing your authority
             </h2>
             <div className="glass-card rounded-2xl p-6 sm:p-8" style={{ borderColor: "rgba(124,111,255,0.2)" }}>
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-0 justify-center">
@@ -140,12 +141,15 @@ export default function SolutionLayout({
               </div>
             </div>
             <p className="text-muted-foreground leading-relaxed mt-6" style={{ maxWidth: 680 }}>
-              Nothing about this path changes by industry: the same{" "}
+              Your organization already has this authority: it's built into an approval matrix, a
+              sign-off chain, a signing policy. The same{" "}
               <a href="/products/runtime-authority" style={{ color: "#a78bfa" }}>Runtime Authority</a> engine
-              evaluates every Intent against your own{" "}
+              enforces your own{" "}
               <a href="/products/authority-graph" style={{ color: "#a78bfa" }}>Authority Graph</a> and{" "}
-              <a href="/products/runtime-policies" style={{ color: "#a78bfa" }}>Runtime Policies</a>. What
-              changes is whose governance it's evaluating, and what the workflow on either side of it looks like.
+              <a href="/products/runtime-policies" style={{ color: "#a78bfa" }}>Runtime Policies</a> against
+              every Intent: AI reasons, your organization authorizes, Runtime Authority enforces. What
+              changes by industry is whose authority it's enforcing, and what the workflow on either side
+              of it looks like.
             </p>
           </div>
 
@@ -174,7 +178,7 @@ export default function SolutionLayout({
           <div className="mb-20">
             <div className="section-label mb-4">WHY RUNTIME AUTHORITY</div>
             <h2 className="mb-5" style={{ fontFamily: "'Onest', system-ui, sans-serif", fontWeight: 700, fontSize: "clamp(1.5rem, 3vw, 2.1rem)", letterSpacing: "-0.025em", color: "#e8ecf4" }}>
-              A governance document was never evaluated at the moment of action
+              Governance defines authority. It was never enforced at the moment of action
             </h2>
             {whyBody.map((p, i) => (
               <p key={i} className="text-muted-foreground leading-relaxed mb-4 last:mb-0" style={{ maxWidth: 680 }}>

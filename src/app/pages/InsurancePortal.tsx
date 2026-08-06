@@ -188,8 +188,9 @@ export default function InsurancePortal() {
                 ))}
               </div>
               <p className="text-xs text-muted-foreground text-center mt-6">
-                Execution only proceeds on an Allow decision: Runtime Authority evaluates and decides first,
-                before anything happens against a live system, not after. The certificate produced at the final
+                Execution only proceeds on an Allow decision: Runtime Authority checks the agent's requested
+                action against the organization's already-active policy and enforces the result, before
+                anything happens against a live system, not after. The certificate produced at the final
                 stage is independently verifiable using a public cryptographic key, verifiable by an auditor,
                 regulator, or insurer, with no access to PayReality itself.
               </p>

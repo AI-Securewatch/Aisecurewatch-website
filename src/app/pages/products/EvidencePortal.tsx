@@ -86,7 +86,7 @@ export default function EvidencePortal() {
           <div className="mb-20">
             <div className="section-label mb-4">WHAT IT IS</div>
             <h2 className="mb-5" style={{ fontFamily: "'Onest', system-ui, sans-serif", fontWeight: 700, fontSize: "clamp(1.5rem, 3vw, 2.1rem)", letterSpacing: "-0.025em", color: "#e8ecf4" }}>
-              Every decision Runtime Authority makes becomes a signed record
+              Every decision Runtime Authority enforces becomes a signed record
             </h2>
             <p className="text-muted-foreground leading-relaxed" style={{ maxWidth: 680 }}>
               Allow, Deny, and Human Review outcomes are not application logs: they're cryptographically signed

@@ -71,8 +71,9 @@ export default function RuntimeAuthority() {
             <span className="grad-text">Runtime Authority</span>
           </h1>
           <p className="text-muted-foreground leading-relaxed mb-10" style={{ fontSize: "1.125rem", maxWidth: 680 }}>
-            The infrastructure layer that determines whether an autonomous AI agent is authorized to perform a
-            real-world action, evaluated before that action executes.
+            AI reasons. Your organization authorizes, through the governance it already runs. Runtime
+            Authority enforces that authorization at the moment an agent tries to act, before anything
+            executes.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mb-20">
             <button onClick={openDemo} className="btn-primary px-7 py-3.5 rounded-xl text-sm inline-flex items-center justify-center gap-2">
@@ -89,7 +90,7 @@ export default function RuntimeAuthority() {
           <div className="mb-20">
             <div className="section-label mb-4">THE PROBLEM</div>
             <h2 className="mb-5" style={{ fontFamily: "'Onest', system-ui, sans-serif", fontWeight: 700, fontSize: "clamp(1.5rem, 3vw, 2.1rem)", letterSpacing: "-0.025em", color: "#e8ecf4" }}>
-              AI agents are moving from generating information to taking actions
+              AI agents are moving from generating information, to taking actions, to becoming part of the workforce
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4" style={{ maxWidth: 680 }}>
               An agent that drafts an email carries limited downside if it's wrong. An agent that initiates a
@@ -99,11 +100,16 @@ export default function RuntimeAuthority() {
               machine speed, at machine scale, and without the institutional friction that normally slows a person
               down long enough for someone to notice.
             </p>
-            <p className="text-muted-foreground leading-relaxed" style={{ maxWidth: 680 }}>
+            <p className="text-muted-foreground leading-relaxed mb-4" style={{ maxWidth: 680 }}>
               Enterprises already have governance structures built for exactly this problem: Delegation of
               Authority, approval limits, separation of duties, role hierarchies, accountability models. None of
               them were written with a machine actor in mind, and none of them are currently enforced at the
               moment an AI agent decides to act.
+            </p>
+            <p className="text-muted-foreground leading-relaxed" style={{ maxWidth: 680 }}>
+              As AI moves from a tool a person operates to an actor with standing to act on the organization's
+              behalf, the question stops being an AI question and becomes an organizational one: how does the
+              organization preserve the authority it already has, now that part of its workforce isn't human?
             </p>
           </div>
 

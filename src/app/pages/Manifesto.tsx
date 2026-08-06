@@ -40,7 +40,7 @@ const TOC = [
   { id: "part-8", label: "Deterministic Authority" },
   { id: "part-9", label: "The Runtime Decision" },
   { id: "part-10", label: "The Economics of Authority" },
-  { id: "part-11", label: "Enterprise Authority Infrastructure" },
+  { id: "part-11", label: "Enterprise AI Authority Infrastructure" },
   { id: "part-12", label: "The Autonomous Enterprise" },
   { id: "part-13", label: "An Implementation of the Category" },
   { id: "principles", label: "Principles of Enterprise Authority" },
@@ -53,7 +53,7 @@ const TRAJECTORY = [
   { decade: "2000s", label: "Identity becomes infrastructure", icon: Lock },
   { decade: "2010s", label: "Workflow automation", icon: Workflow },
   { decade: "2020s", label: "Autonomous systems execute", icon: Cpu },
-  { decade: "2030s", label: "Enterprise Authority Infrastructure", icon: Shield, highlight: true },
+  { decade: "2030s", label: "Enterprise AI Authority Infrastructure", icon: Shield, highlight: true },
 ];
 
 const RUNTIME_FLOW = [
@@ -75,7 +75,7 @@ const AFTER_CONSOLIDATION = [
   "Identity Infrastructure",
   "Networking",
   "Payments Infrastructure",
-  "Enterprise Authority Infrastructure",
+  "Enterprise AI Authority Infrastructure",
 ];
 
 const RELATED = [
@@ -423,7 +423,7 @@ export default function Manifesto() {
     <>
       <SEO
         title="The Enterprise Authority Manifesto | AI Securewatch"
-        description="Why every autonomous enterprise will require authority infrastructure. The founding manifesto for Enterprise Authority Infrastructure, from AI Securewatch."
+        description="Why every autonomous enterprise will require authority infrastructure. The founding manifesto for Enterprise AI Authority Infrastructure, from AI Securewatch."
         path="/manifesto"
         type="article"
         jsonLd={{
@@ -684,7 +684,7 @@ export default function Manifesto() {
                   inside every agent and every workflow. Consolidation is the only step left to happen.
                 </p>
                 <p className="mb-6">
-                  Enterprise Authority Infrastructure is not a category invented to justify a product. It is the next
+                  Enterprise AI Authority Infrastructure is not a category invented to justify a product. It is the next
                   layer produced by the mechanism that produced identity infrastructure, arriving on schedule. Identity
                   looked like a login problem until the number of applications made it a strategic one. Authority
                   looks, today, like an AI oversight problem, because AI is the first actor to make the missing
@@ -815,7 +815,7 @@ export default function Manifesto() {
                   exactly as it is. It simply cannot do a preventive control's job, because timing is not a detail of
                   a control. Timing is the control.
                 </p>
-                <PullQuote lines={["Governance tells you what happened.", "Authority decides what is allowed to happen."]} />
+                <PullQuote lines={["Governance tells you what happened.", "Enforcement makes sure only what's allowed happens."]} />
                 <p className="mb-6">
                   The cost of an authority failure is not evenly distributed across time. A payment released outside a
                   delegation, a contract executed outside mandate, a claim settled above an approved limit: these
@@ -970,7 +970,7 @@ export default function Manifesto() {
                   this contract) and presenting that claim for evaluation. What AI should not do is decide, by its
                   own probabilistic judgement, whether the claim is authorised.
                 </p>
-                <PullQuote lines={["Intelligence recommends.", "Authority decides."]} />
+                <PullQuote lines={["AI reasons.", "Organizations authorize.", "Runtime Authority enforces."]} />
                 <p className="mb-6">
                   A rule inside a model's weights or prompt is a rule the model can be argued out of, or miscalculate
                   under unusual input. A rule inside a policy engine, evaluated independently of the model that
@@ -1098,7 +1098,7 @@ export default function Manifesto() {
                 </p>
                 <PartFooterNav index={9} />
 
-                <PartHeading id="part-11" n={11} title="Enterprise Authority Infrastructure" />
+                <PartHeading id="part-11" n={11} title="Enterprise AI Authority Infrastructure" />
                 <p className="mb-6">
                   A capability crosses from optional to load-bearing when it stops being logic embedded separately
                   inside every application and becomes a shared layer instead.
@@ -1124,7 +1124,7 @@ export default function Manifesto() {
                   networking problem, and the payments problem, recurring in a fourth domain.
                 </p>
                 <p className="mb-6">
-                  Enterprise Authority Infrastructure is the shared layer this pressure produces: a single authority
+                  Enterprise AI Authority Infrastructure is the shared layer this pressure produces: a single authority
                   plane through which every autonomous agent's actions are checked against delegated authority,
                   producing an authority certificate in a consistent, verifiable form, regardless of which team built
                   the agent.
@@ -1147,6 +1147,12 @@ export default function Manifesto() {
                   Extend this reasoning and a picture emerges of the enterprise once autonomous agents are a normal
                   part of its operating model: a standard participant alongside humans and existing automation, not
                   an exception.
+                </p>
+                <p className="mb-6">
+                  This is the arc autonomous AI is already running: assistance, then execution, then workforce. The
+                  first two stages changed what AI could do. The third changes what an organisation is: a business
+                  where part of the workforce reasons and acts without being human, and still has to answer to the
+                  same authority every other part of the workforce answers to.
                 </p>
                 <p className="mb-6">
                   Humans, AI agents, robotic systems, and traditional automation all initiate consequential actions:
@@ -1218,7 +1224,7 @@ export default function Manifesto() {
                   Whether or not this particular implementation succeeds, the argument in the preceding twelve parts
                   does not change. An enterprise that deploys autonomous agents into consequential workflows will
                   need a runtime layer that checks delegated authority before execution and produces evidence a
-                  sceptical outside party can verify. Enterprise Authority Infrastructure will exist. The only
+                  sceptical outside party can verify. Enterprise AI Authority Infrastructure will exist. The only
                   uncertainty left to settle is who builds it, and how soon the enterprises reading this paper decide
                   they can no longer wait to find out.
                 </p>
@@ -1239,12 +1245,12 @@ export default function Manifesto() {
                     <li>Governance must become executable. Written policy that cannot be checked automatically is not yet a control.</li>
                     <li>Evidence must be cryptographically verifiable, or it is not evidence: only a description.</li>
                     <li>Runtime is where authority exists. Before it, there is only planning. After it, only consequence.</li>
-                    <li>Enterprise Authority Infrastructure becomes foundational, for the same reason identity, networking, and payments did before it.</li>
+                    <li>Enterprise AI Authority Infrastructure becomes foundational, for the same reason identity, networking, and payments did before it.</li>
                   </ol>
                 </div>
 
                 <p className="mt-8 text-center" style={{ fontStyle: "italic" }}>
-                  AI Securewatch (Pty) Ltd. PayReality: Enterprise Authority Infrastructure for Autonomous AI.
+                  AI Securewatch (Pty) Ltd. PayReality: Enterprise AI Authority Infrastructure.
                 </p>
               </div>
 
@@ -1291,7 +1297,7 @@ export default function Manifesto() {
                   <div style={{ fontFamily: "'Onest', system-ui, sans-serif", fontWeight: 700, fontSize: "1.1rem", color: "#e8ecf4" }}>
                     AI Securewatch (Pty) Ltd
                   </div>
-                  <p className="text-sm text-muted-foreground mt-2">Building Enterprise Authority Infrastructure for Autonomous AI</p>
+                  <p className="text-sm text-muted-foreground mt-2">Building Enterprise AI Authority Infrastructure</p>
                   <a href={SITE_URL} className="text-sm inline-block mt-2" style={{ color: "#7c6fff" }}>
                     {SITE_URL.replace("https://", "")}
                   </a>
@@ -1320,7 +1326,7 @@ export default function Manifesto() {
                     Sean Chihwendu
                   </a>
                   <div className="text-sm mb-3" style={{ color: "#a78bfa" }}>
-                    Founder &amp; CEO, AI Securewatch · Enterprise Authority Infrastructure
+                    Founder &amp; CEO, AI Securewatch · Enterprise AI Authority Infrastructure
                   </div>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     Sean founded AI Securewatch after years in procurement and tender management, where he saw

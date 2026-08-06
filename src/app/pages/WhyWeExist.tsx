@@ -46,6 +46,10 @@ export default function WhyWeExist() {
 
           <div className="flex flex-col gap-7 text-muted-foreground leading-relaxed" style={{ fontSize: "1.0625rem" }}>
             <p>
+              As AI becomes part of the workforce, organizations don't need to invent a new way to
+              control it. They need to extend the one they already have.
+            </p>
+            <p>
               Every large enterprise already knows how to delegate authority. Procurement policy.
               Treasury policy. Approval matrices. Spending limits. Governance frameworks. Risk
               frameworks. These are not new ideas. They are some of the most mature, most

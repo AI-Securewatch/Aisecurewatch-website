@@ -57,12 +57,13 @@ export default function Resources() {
             <span className="grad-text">our thinking</span>
           </h1>
           <p className="text-muted-foreground leading-relaxed mb-16" style={{ fontSize: "1.125rem", maxWidth: 640 }}>
-            Insights, research, and technical writing on Enterprise AI Authority Infrastructure,
-            delegated authority, and runtime enforcement, from{" "}
+            As AI becomes part of the workforce, organizations need a way to keep the authority
+            they already have. This is where{" "}
             <a href="/about" style={{ color: "#a78bfa" }}>
               AI Securewatch
-            </a>
-            . Read the case for the category in{" "}
+            </a>{" "}
+            writes about delegated authority, Runtime Authority, and what it takes to enforce it
+            at the moment an agent acts. Read the case for the category in{" "}
             <a href="/why-we-exist" style={{ color: "#a78bfa" }}>
               Why We Exist
             </a>

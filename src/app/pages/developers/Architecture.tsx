@@ -39,8 +39,9 @@ export default function Architecture() {
         currentPath="/developers/architecture"
       >
         <p className="-mt-2">
-          An agent can reason about what to do next. It shouldn't be the one deciding whether it's
-          authorized to do it. Everything below exists to answer that second question,
+          An agent can reason about what to do next. Whether it's authorized to do it isn't the
+          agent's call, and it isn't Runtime Authority's either: that's the organization's, through
+          the governance it already runs. Everything below exists to enforce that answer,
           deterministically, in the moment between an agent forming an intent and an enterprise
           system acting on it, without ever asking the agent itself.
         </p>

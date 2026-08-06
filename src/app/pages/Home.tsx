@@ -145,9 +145,11 @@ export default function Home() {
             className="mx-auto mb-12 text-muted-foreground leading-relaxed"
             style={{ maxWidth: 620, fontSize: "1.125rem", fontWeight: 400 }}
           >
-            Runtime Authority determines whether autonomous AI systems are
-            authorized to execute real-world actions before they happen, by
-            enforcing your organization's existing delegated authority.
+            As AI becomes part of the workforce, organizations need a way to
+            preserve the authority they already hold. Runtime Authority
+            enforces it: checking whether an AI system is authorized to
+            execute a specific action, before it happens, against delegation
+            your organization has already granted.
           </p>
 
           {/* CTAs */}
@@ -221,14 +223,15 @@ export default function Home() {
                 color: "#e8ecf4",
               }}
             >
-              AI is moving from
+              AI is moving from assistance,
               <br />
-              assistance to execution
+              to execution, to workforce
             </h2>
             <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
               Organizations are increasingly comfortable with AI executing real-world actions on
-              its own. They are not yet comfortable with AI deciding, on its own, whether it's
-              allowed to.
+              its own. The next step is AI operating as a standing part of the workforce, not a
+              tool invoked occasionally. What hasn't kept pace is who decides whether any of that
+              activity is allowed.
             </p>
           </div>
 
@@ -243,7 +246,8 @@ export default function Home() {
               {[
                 { era: "Assistant", desc: "AI answers questions at human request. Humans decide and act.", done: true },
                 { era: "Recommendation", desc: "AI proposes an action. A human still approves before anything happens.", done: true },
-                { era: "Execution", desc: "AI initiates and executes business actions directly against enterprise systems.", highlight: true },
+                { era: "Execution", desc: "AI initiates and executes business actions directly against enterprise systems.", done: true },
+                { era: "Workforce", desc: "AI operates as a standing participant in the business, initiating actions continuously, not on request.", highlight: true },
               ].map((step, i) => (
                 <div
                   key={step.era}
@@ -674,8 +678,8 @@ export default function Home() {
             <span className="grad-text">needs authority.</span>
           </h2>
           <p className="text-muted-foreground mb-12 text-lg leading-relaxed max-w-xl mx-auto">
-            Identity proved who the agent is. PayReality proves what it's authorized to do,
-            before it does it.
+            Identity proved who the agent is. PayReality enforces what your organization
+            already authorized it to do, before it does it.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">

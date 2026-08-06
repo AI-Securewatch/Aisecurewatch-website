@@ -11,7 +11,7 @@ export default function EnterpriseIt() {
       oneLiner="Change management and access control already exist to stop exactly what an ungoverned AI agent introduces: an action taken outside anyone's actual authority to approve it."
       problemTitle="An agent that can open a change request can usually also merge it"
       problemBody={[
-        "Enterprise IT already runs on delegated change and access authority: who can approve an infrastructure change, provision access, authorize cloud spend, or escalate an incident response. Change advisory boards and access reviews exist because the cost of an unauthorized change is measured in outages and breaches, not inconvenience.",
+        "Enterprise IT already runs on delegated change and access authority: who can approve an infrastructure change, provision access, authorize cloud spend, or escalate an incident response. Change advisory boards and access reviews exist because an unauthorized change carries real operational cost, not just process overhead.",
         "An AI agent operating inside CI/CD, infrastructure-as-code, or access management doesn't remove that risk. It removes the deliberate slowness that made the risk manageable, since an agent can propose and, without a check, execute a change far faster than any change advisory board was built to review.",
       ]}
       useCases={[

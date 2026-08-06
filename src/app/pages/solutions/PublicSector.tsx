@@ -15,14 +15,15 @@ export default function PublicSector() {
         "An AI agent that can draft a disbursement, flag a benefits determination, or initiate a contractor payment is operating inside that same structure whether or not anything checks it against the structure first. The absence of a check doesn't reduce the exposure, it just moves where the exposure gets discovered.",
       ]}
       useCases={[
-        { icon: Banknote, title: "Benefits and grant disbursement", desc: "A disbursement an agent proposes is evaluated against eligibility and sign-off rules before it's approved, not reconciled against them afterward." },
+        { icon: Banknote, title: "Benefits and grant disbursement", desc: "A disbursement an agent proposes is evaluated against eligibility and sign-off rules before your agency approves it, not reconciled against them afterward." },
         { icon: Landmark, title: "Budget authorization", desc: "A budget commitment an agent initiates is evaluated against the appropriated authority actually delegated to the requesting role." },
         { icon: Users, title: "Interagency delegation", desc: "An action crossing agency or department lines is evaluated against the specific delegation that permits it, rather than assumed permitted by default." },
         { icon: FileSignature, title: "Contractor payment approval", desc: "A contractor payment an agent flags for release is evaluated against procurement thresholds that require additional review before it executes." },
       ]}
       whyBody={[
         "An appropriations rule or benefits eligibility policy is written to be interpreted by a caseworker or budget officer. It's never been evaluated automatically at the point an agent proposes a disbursement or commitment, because nothing sat between the proposal and the system of record. Runtime Authority's Authority Graph models the actual delegation and appropriation structure; Runtime Policies compile the specific conditions (thresholds, eligibility rules, sign-off chains) an action has to satisfy.",
-        "Every decision produces evidence the moment it's made. This page describes how Runtime Authority applies to public sector governance structures. It does not claim any specific government compliance certification, authorization, or contract vehicle, current or pending.",
+        "Every decision produces evidence the moment it's made, giving a budget office or oversight body a live record instead of a reconstruction after the fact.",
+        "This page describes how Runtime Authority applies to public sector governance structures. It does not claim any specific government compliance certification, authorization, or contract vehicle, current or pending.",
       ]}
     />
   );

@@ -221,6 +221,12 @@ export default function PlatformPage() {
               evaluates the signed intent an agent sends, whatever produced it: it isn't tied to a specific
               LLM, agent framework, or orchestration platform.
             </p>
+            <p className="text-muted-foreground leading-relaxed mt-4" style={{ maxWidth: 700 }}>
+              None of this replaces your organization's governance. It enforces the authority your
+              organization already delegates, at the one moment an AI agent's intent becomes a real
+              action, the same moment that matters whether that agent is assisting, executing, or
+              operating as a standing part of the workforce.
+            </p>
           </div>
 
           <div className="glass-card rounded-2xl p-8 sm:p-10 text-center" style={{ border: "1px solid rgba(124,111,255,0.25)", boxShadow: "0 0 32px rgba(124,111,255,0.08)" }}>

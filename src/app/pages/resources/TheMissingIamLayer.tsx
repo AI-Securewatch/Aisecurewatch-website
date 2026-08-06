@@ -119,6 +119,15 @@ export default function TheMissingIamLayer() {
               outside its delegated authority. Enterprise controls stop an agent from reaching systems it
               shouldn't. They do not stop it from misusing systems it legitimately can reach.
             </p>
+            <p>
+              That question is becoming urgent for a reason beyond agent count or transaction volume:
+              AI is not stopping at assistance. It is moving from suggesting the next step, to executing
+              that step itself, to operating as a standing part of the workforce, taking real actions
+              inside real enterprise systems, continuously, without a person initiating each one. Each
+              stage moves further from a human's hands. What doesn't move is the organization's
+              authority: the question is whether that authority still holds once part of the workforce
+              making decisions is no longer a person.
+            </p>
 
             {/* III */}
             <h2 style={sectionHeadingStyle}>Reasoning and authority are different problems</h2>
@@ -329,8 +338,11 @@ export default function TheMissingIamLayer() {
             <p>
               The enterprises that solve this well will be the ones that maintain control, visibility,
               and accountability as they scale autonomous agent deployment. The ones that don't will
-              accumulate unauditable agent decisions and unquantifiable risk. This is a governance
-              problem in its consequences, but it is an infrastructure problem in its solution: read{" "}
+              accumulate unauditable agent decisions and unquantifiable risk. This is not, at its core,
+              an AI problem. It's an organizational design problem: who holds decision rights, how
+              accountability is assigned, and how delegated authority actually gets operationalized,
+              once part of the workforce making decisions is autonomous AI rather than a person. AI
+              reasons. Organizations authorize. Runtime Authority enforces. Read{" "}
               <a href="/why-we-exist" style={{ color: "#a78bfa" }}>
                 why AI Securewatch built PayReality to solve it
               </a>
