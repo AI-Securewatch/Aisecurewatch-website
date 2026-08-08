@@ -1,5 +1,10 @@
 export const SITE_URL = "https://aisecurewatch.com";
-export const PLATFORM = "https://payreality.aisecurewatch.com";
+// Every marketing CTA that sends a visitor to "the platform" (View
+// Platform, Explore the Platform, etc.) points here -- the public,
+// credential-free demo, not the real product (which now requires login
+// and isn't meant for anonymous marketing traffic). There is no separate
+// customer sign-in link anywhere on this site to preserve.
+export const PLATFORM = "https://demo.aisecurewatch.com";
 export const API_URL = "https://api.aisecurewatch.com";
 
 export const CONTACT_EMAIL = "sean@aisecurewatch.com";
