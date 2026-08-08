@@ -15,6 +15,8 @@
 // localhost without VITE_MIXPANEL_DEBUG=true. Every exported function is
 // always safe to call regardless of whether analytics is actually active.
 
+import { PLATFORM } from "../lib/site";
+
 type Mixpanel = typeof import("mixpanel-browser").default;
 
 const TOKEN = import.meta.env.VITE_MIXPANEL_TOKEN as string | undefined;
@@ -102,7 +104,7 @@ function bindLinkTracking(): void {
       const href = anchor.getAttribute("href");
       if (!href) return;
 
-      if (href.startsWith("https://payreality.aisecurewatch.com")) {
+      if (href.startsWith(PLATFORM)) {
         track("Platform Button Clicked", { href, page: window.location.pathname });
         return;
       }
